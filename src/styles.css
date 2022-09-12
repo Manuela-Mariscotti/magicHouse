@@ -1,4 +1,44 @@
 /* You can add global styles to this file, and also import other style files */
+:root{
+    --background-color: #E6E6E6;
+    --background-color: #E6E6E6;
+    --primary-color: #297373;
+    --accent-color: #FFCE4F;
+    --header-color: #969696;
+    --header-height: 60px;
+    --footer-height: 50px;
+}
 
-html, body { height: 100%; }
+html, body { 
+    height: 100%;
+    color: var(--primary-color) 
+}
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.page{
+    width: 480px;
+    height: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: calc(var(--header-height) + 10px);
+    padding-bottom: calc (var(--footer-height) + 10px);
+}
+.texto-gral{
+    font-size: 16px;
+    font-weight: light;
+}
+.texto-titulo{
+    font-size: 30px;
+    font-weight: medium;
+}
+.text-subt{
+    font-size: 22px;
+    font-weight: light;
+}
+.text-navbar{
+    font-size: 12px;
+    font-weight: medium;
+}
+.texto-peq{
+    font-size: 10px;
+}
