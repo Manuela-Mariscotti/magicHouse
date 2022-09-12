@@ -1,14 +1,47 @@
 <main class="page">
     <figure>
         <img src="../../../assets/img/MagicHouse-transparente-logo-png.png" alt="Logo Magic house">
-        <figcaption>Iniciar sesion</figcaption>
     </figure>
 
-    <form class="form">
-        <input type="text" placeholder="Nombre de usuario">
-        <input type="text" placeholder="Password">
+    <form class="form" #loginForm="ngForm" (ngSubmit)="onSubmit()">
 
-        <button>Login</button>
-        <button class="button--secondary">Registrate</button>
+        <div class="inputs">
+
+            <!--
+                <input type="text" placeholder="Nombre de usuario" name="username" [(ngModel)]="user.username"
+                [ngClass]="{'is-invalid': user.touched}" #username="ngModel" required>
+
+             <div class="invalid-feedback" *ngIf="user.invalid">
+                <p *ngIf="user.errors.required">Introduce el nombre de usuario</p>
+            </div>
+
+            -->
+
+            <input type="text" placeholder="Nombre de usuario" name="username"
+                [ngClass]="{'is-invalid': username.invalid && username.touched}" [(ngModel)]="user.username" #username="ngModel" required>
+            
+                <div class="invalid-feedback" *ngIf="username.invalid">
+                    <p *ngIf="username.errors?.['required']">Introduce tu nombre de usuario</p>
+                </div>
+
+            <input type="password" placeholder="Password" name="password" 
+                [ngClass]="{'is-invalid': password.invalid && password.touched}" [(ngModel)]="user.password" #password="ngModel" required>
+
+                <div class="invalid-feedback" *ngIf="password.invalid">
+                    <p *ngIf="password.errors?.['required']">Introduce tu password</p>
+                </div>    
+
+            
+        </div>
+
+        <div class="buttons">
+
+            <button>Login</button>
+            <button class="button--secondary">Registrate</button>
+            
+        </div>
+
     </form>
+
+    
 </main>
