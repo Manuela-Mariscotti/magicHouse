@@ -5,10 +5,14 @@
     --primary-color: #297373;
     --accent-color: #FFCE4F;
     --header-color: #A6CBC2;
-    --header-height: 40px;
+    --header-height: 45px;
     --footer-height: 50px;
 }
-
+*{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+}
 html, body { 
     height: 100%;
     color: var(--primary-color) 
@@ -16,13 +20,14 @@ html, body {
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 .page{
-    width: 480px;
+    width: 100%;
     height: auto;
     padding-left: 15px;
     padding-right: 15px;
     padding-top: calc(var(--header-height) + 10px);
     padding-bottom: calc (var(--footer-height) + 10px);
 }
+
 .texto-gral{
     font-size: 16px;
     font-weight: light;
@@ -41,4 +46,47 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 }
 .texto-peq{
     font-size: 10px;
+}
+
+input{
+    padding: 2%;
+    padding-bottom: 2px;
+    
+    color: var(--primary-color);
+    font-size: 12px;
+    font-weight: bold;
+
+    outline:none;
+
+    border: none;
+    border-bottom: 3px solid var(--primary-color);
+}
+
+button{
+    height: 30px;
+
+    background: var(--primary-color);
+
+    border: var(--primary-color);
+    border-radius: 3px;
+
+    color: white;
+    font-weight: medium;
+}
+
+.button--secondary{
+    background: transparent;
+    color: var(--primary-color);
+    border: 3px solid var(--primary-color);
+    border-radius: 3px;
+}
+
+input:focus{
+    animation: input 1s forwards ;
+}
+
+@keyframes input {
+    to {
+        border-bottom: 3px solid var(--accent-color);
+    } 
 }

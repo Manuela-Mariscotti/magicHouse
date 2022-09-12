@@ -7,21 +7,24 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 5.5%;
-    border: 2px solid black;
-    /* justify-content:center; */
+    justify-content: space-between;
+
 }
 .header1_1 img{
-    width: 20px;
+    width: 25px;
     margin-left: 6px;
+    margin-top: 6px;
     
 }
 .header1_2 img{
-    width: 100px;
-    height: 100%;
-    border: 2px solid red;
+    width: 180px;
+    margin-top: 10px;
+    
+
 }
 .header1_3 img{
-    width: 20px;
+    width: 30px;
     margin-right: 5px;
+    margin-top: 6px;
+
 }
