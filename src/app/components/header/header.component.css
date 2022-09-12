@@ -1,7 +1,27 @@
 .header1{
     width: 100%;
     height: var(--header-height);
-    background-color: var(--primary-color);
+    background-color: var(--header-color);
     position: fixed;
     top: 0px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5.5%;
+    border: 2px solid black;
+    /* justify-content:center; */
+}
+.header1_1 img{
+    width: 20px;
+    margin-left: 6px;
+    
+}
+.header1_2 img{
+    width: 100px;
+    height: 100%;
+    border: 2px solid red;
+}
+.header1_3 img{
+    width: 20px;
+    margin-right: 5px;
 }
