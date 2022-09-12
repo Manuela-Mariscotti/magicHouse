@@ -23,6 +23,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     padding-top: calc(var(--header-height) + 10px);
     padding-bottom: calc (var(--footer-height) + 10px);
 }
+
 .texto-gral{
     font-size: 16px;
     font-weight: light;
