@@ -13,7 +13,7 @@ html, body {
     height: 100%;
     color: var(--primary-color) 
 }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; } 
 
 .page{
     width: 480px;
