@@ -1,0 +1,12 @@
+.bg-red{
+    background-color: red;
+}
+.conten-titulo{
+    height: 100px;
+    display: flex;
+    justify-content: center;
+}
+.conten-input{
+    display: inline-block;
+
+}
