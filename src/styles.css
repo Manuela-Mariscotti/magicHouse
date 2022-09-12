@@ -16,13 +16,14 @@ html, body {
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 .page{
-    width: 480px;
+    width: 100%;
     height: auto;
     padding-left: 15px;
     padding-right: 15px;
     padding-top: calc(var(--header-height) + 10px);
     padding-bottom: calc (var(--footer-height) + 10px);
 }
+
 .texto-gral{
     font-size: 16px;
     font-weight: light;
