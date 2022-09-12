@@ -20,6 +20,7 @@ import { CalendarioComponent } from './pages/calendario/calendario.component';
 import { NuevoEventoComponent } from './pages/nuevo-evento/nuevo-evento.component';
 import { AjustesComponent } from './pages/ajustes/ajustes.component';
 import { PerfilComponent } from './pages/perfil/perfil.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { PerfilComponent } from './pages/perfil/perfil.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
