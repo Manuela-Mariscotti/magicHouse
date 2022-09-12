@@ -64,5 +64,5 @@ input:focus{
 @keyframes input {
     to {
         border-bottom: 3px solid var(--accent-color);
-    }
+    } 
 }

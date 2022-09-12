@@ -1,0 +1,19 @@
+.page{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    gap: 20px;
+
+    height: 90vh;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+
+    height: 50%;
+    width: 80%;
+
+    /* border: 1px solid blue; */
+}
