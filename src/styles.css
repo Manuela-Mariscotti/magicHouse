@@ -17,11 +17,13 @@ html, body {
     height: 100%;
     color: var(--primary-color) 
 }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; } 
+body {
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    background-color: var(--background-color);
+} 
 
 .page{
     width: 100%;
-    height: auto;
     padding-left: 15px;
     padding-right: 15px;
     padding-top: calc(var(--header-height) + 10px);
@@ -48,6 +50,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     font-size: 10px;
 }
 
+
 input{
     padding: 2%;
     padding-bottom: 2px;
@@ -73,6 +76,7 @@ button{
     color: white;
     font-weight: medium;
 }
+
 button:active{
     color: var(--accent-color)
 }
@@ -89,13 +93,15 @@ button:active{
 }
 
 input:focus{
-    animation: input 1s forwards ;
+    animation: input 1s forwards;
 }
 
 @keyframes input {
+
     to {
         border-bottom: 3px solid var(--accent-color);
     } 
+
 }
 
 .caja-blanca{
