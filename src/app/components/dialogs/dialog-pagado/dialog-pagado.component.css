@@ -1,0 +1,14 @@
+.page{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    height: 35vh;
+
+    padding: 10px;
+
+}
+.fila{
+    display: flex;
+    justify-content: space-between;
+}
