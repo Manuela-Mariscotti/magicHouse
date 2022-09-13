@@ -13,10 +13,22 @@
     display: flex;
     flex-direction: column;
 
-    gap: 2%;
+    gap: 10%;
 
     height: 80%;
     width: 80%;
 
     /* border: 1px solid blue; */
+}
+
+.inputs{
+    display: flex;
+    flex-direction: column;
+    gap: 10px
+}
+
+.buttons{
+    display: flex;
+    flex-direction: column;
+    gap: 10px
 }
