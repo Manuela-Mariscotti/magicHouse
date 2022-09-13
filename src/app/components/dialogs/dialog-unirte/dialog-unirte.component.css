@@ -1,0 +1,39 @@
+/*----------TITULO-------------*/
+.texto-titulo{
+    font-weight: bold;
+    color:var(--primary-color);
+    text-align: center;
+}
+
+/*----------FORMULARIO-------------*/
+.conten-popup{
+    display: flex;
+    flex-direction: column;
+    margin:1rem auto; 
+    max-width: 600px; 
+    padding: 1rem;
+}
+
+/*----------INPUTS-------------*/
+.conten-inputs input{
+    width: 100%;
+    margin-bottom: 15px; 
+}
+
+/*----------BOTONES CONFIRM / CANCEL-------------*/
+.conten-buttons{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.button-popup{
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.button-cancelar{
+    background: none;
+    color: var(--primary-color);
+    border: none;
+    font-weight: bold;
+}

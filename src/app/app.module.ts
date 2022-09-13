@@ -22,6 +22,13 @@ import { NuevoEventoComponent } from './pages/nuevo-evento/nuevo-evento.componen
 import { AjustesComponent } from './pages/ajustes/ajustes.component';
 import { PerfilComponent } from './pages/perfil/perfil.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatDialogModule } from '@angular/material/dialog';
+import { DialogCrearComponent } from './components/dialogs/dialog-crear/dialog-crear.component';
+import { MatButtonModule } from '@angular/material/button';
+import { FormsModule } from '@angular/forms';
+import { MatTableModule } from '@angular/material/table';
+import { DialogUnirteComponent } from './components/dialogs/dialog-unirte/dialog-unirte.component';
+
 
 @NgModule({
   declarations: [
@@ -42,14 +49,20 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     CalendarioComponent,
     NuevoEventoComponent,
     AjustesComponent,
-    PerfilComponent
+    PerfilComponent,
+    DialogCrearComponent,
+    DialogUnirteComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatDialogModule,
+    MatButtonModule,
+    FormsModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]
