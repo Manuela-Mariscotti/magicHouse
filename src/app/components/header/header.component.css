@@ -16,6 +16,9 @@
     margin-top: 6px;
     
 }
+.header1_1 img:active{
+    transform: scale(0.8);
+}
 .header1_2 img{
     width: 180px;
     margin-top: 10px;
@@ -27,4 +30,7 @@
     margin-right: 5px;
     margin-top: 6px;
 
+}
+.header1_3 img:active{
+    transform: scale(0.8);
 }
