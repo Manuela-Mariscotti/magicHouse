@@ -1,0 +1,30 @@
+.page{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+.texto-titulo--pagina{
+    text-align: center;
+    color: black;
+}
+.caja-blanca{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2%;
+    width: 100%;
+    height: 10vh;
+}
+
+.top-area{
+    display: flex;
+    justify-content: flex-end;
+
+    width: 100%;
+}
+
+.btn_abajo{
+    width: 30%;
+    height: 30px;
+}
