@@ -24,6 +24,7 @@ import { PerfilComponent } from './pages/perfil/perfil.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import {MatIconModule} from '@angular/material/icon'; 
 
 
 @NgModule({
@@ -55,6 +56,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     MatInputModule,
     FormsModule,
     ReactiveFormsModule,
+    MatIconModule,
     NgbModule
   ],
   providers: [],
