@@ -28,3 +28,18 @@
     width: 30%;
     height: 30px;
 }
+.importe{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: end;
+}
+.importe p:first-child{
+    color: red
+}
+.importe p:first-child::before{
+    content: '-'
+}
+.importe p{
+    margin: 2px
+}
