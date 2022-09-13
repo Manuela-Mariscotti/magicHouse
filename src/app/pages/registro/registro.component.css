@@ -1,0 +1,82 @@
+/* .bg-red{
+    background-color: red;
+}*/
+.bg-blue{
+    background-color: blue;
+} 
+.fondo{
+    height: 100vh;
+    background-color: var(--background-color);
+}
+.conten-titulo{
+    height: 15vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.texto-titulo-2{
+    font-size: 30px;
+    font-weight: bold;/*PUSE EL TITULO EN BOLD*/
+    /*añadir a reglas generales*/
+    color: black;
+}
+.conten-form{
+    width: 100%;
+    height: 50vh;
+    padding: 10px;    
+    display: block;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    background-color: #FBFBFB;/*añadir a reglas generales*/
+    box-shadow: 0px 2px 3px 2px #d3d2d2;/*añadir a reglas generales*/
+}
+.form-registro{
+    width: 100%;
+    height: 45vh;
+    display: block;
+    /* background-color: yellow; */
+    display: flex;
+    padding: 10px;
+    flex-direction: column;
+    justify-content: center;
+    align-content: space-around;
+}
+
+.form-registro input{
+    margin-bottom: 15px;  
+}
+
+.conten-checkbox{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items:baseline;
+    margin: 20px;
+}
+
+.conten-checkbox label{
+    margin-left: 10px;
+}
+
+.conten-button{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.button-registro{
+    width: fit-content;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin: 20px;
+}
+
+.button-cancelar{
+    background: none;
+    color: var(--primary-color);
+    border: none;
+    font-weight: bold;
+}
