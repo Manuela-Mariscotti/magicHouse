@@ -7,16 +7,6 @@
 
         <div class="inputs">
 
-            <!--
-                <input type="text" placeholder="Nombre de usuario" name="username" [(ngModel)]="user.username"
-                [ngClass]="{'is-invalid': user.touched}" #username="ngModel" required>
-
-             <div class="invalid-feedback" *ngIf="user.invalid">
-                <p *ngIf="user.errors.required">Introduce el nombre de usuario</p>
-            </div>
-
-            -->
-
             <input type="text" placeholder="Nombre de usuario" name="username"
                 [ngClass]="{'is-invalid': username.invalid && username.touched}" [(ngModel)]="user.username" #username="ngModel" required>
             
