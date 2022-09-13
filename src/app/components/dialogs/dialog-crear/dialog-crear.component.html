@@ -1,0 +1,31 @@
+<!-- MODAL -->
+<div>
+<!-- TITULO -->
+    <h1 class="texto-titulo" mat-dialog-title>Crear una casa</h1>
+
+    <div mat-dialog-content>
+<!-- FORMULARIO -->
+        <div class="conten-popup">
+            <form>
+<!-- INPUTS -->
+                <div class="conten-inputs">
+                    <input type="text" placeholder="Nombre de hogar">
+                    <input type="text" placeholder="tipo de hogar">
+                </div>
+<!-- BOTONES CONFIRM / CANCEL -->
+                <div mat-dialog-actions>
+                    <div class="conten-buttons">
+                        <button class="button-popup button-cancelar" (click)="cancelar()">Cancelar</button>                        
+                        <button class="button-popup" [mat-dialog-close]>Confirmar</button>
+
+                    </div>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</div>
