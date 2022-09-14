@@ -19,8 +19,14 @@ export class TableTareasComponent implements OnInit {
 
   constructor(private dialog: MatDialog) { }
 
-  openDialog(td:HTMLTableCellElement){
-    const dialog = this.dialog.open(DialogTareasComponent, {data: td})
+  openDialog(td:HTMLTableCellElement, task:string){
+
+    const dialog_data = {
+      td: td,
+      task_name: task
+    };
+
+    const dialog = this.dialog.open(DialogTareasComponent, {data: dialog_data})
   }
 
   ngOnInit(): void {

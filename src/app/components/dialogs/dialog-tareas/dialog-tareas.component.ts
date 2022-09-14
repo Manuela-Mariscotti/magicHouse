@@ -9,13 +9,14 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 export class DialogTareasComponent implements OnInit {
 
   dia:string;
+  tarea:string;
 
 
   constructor(public dialogRef:MatDialogRef<DialogTareasComponent>, 
-    @Inject(MAT_DIALOG_DATA) public data:HTMLTableCellElement)
+    @Inject(MAT_DIALOG_DATA) public data:any)
   {
 
-    switch(data.cellIndex){
+    switch(data.td.cellIndex){
       case 1:
         this.dia = 'Lunes';
         break;
@@ -28,7 +29,7 @@ export class DialogTareasComponent implements OnInit {
       case 4:
         this.dia = 'Jueves';
         break;
-      case 5:
+      case 5:HTMLTableCellElement;
         this.dia = 'Viernes'
         break;
       case 6:
@@ -38,6 +39,8 @@ export class DialogTareasComponent implements OnInit {
         this.dia = 'Domingo'
         break;
     }
+
+    this.tarea = data.task_name;
     
     console.log(data)
   }

@@ -3,9 +3,11 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  gap: 20px
+  gap: 20px;
+  height: 100%;
 }
 
-.button-add{
+
+.caja-btn-add{
   align-self: flex-end;
-} 
+}

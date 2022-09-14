@@ -1,5 +1,11 @@
 <div class="page">
   <p class="texto-titulo">Division de tareas</p>
-  <button class="button-add" (click)="navigate('nuevaTarea')">+</button>
+
+  <div class="caja-btn-add" (click)="navigate('nueva-tarea')">
+    <button type="button">
+      <p>+</p>
+    </button>
+  </div>
+
   <app-table-tareas> </app-table-tareas>
 </div>

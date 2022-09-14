@@ -10,18 +10,18 @@
             <th>D</th>
         </tr>
 
-        <ng-container *ngFor="let tarea of tareas">
+        <ng-container *ngFor="let tarea of tareas;">
 
             <tr class="tr_tareas">
                 <td>{{tarea}}</td>
 
-                <td (click)="openDialog(L)" #L><mat-icon>person</mat-icon></td>
-                <td (click)="openDialog(M)" #M><mat-icon>person</mat-icon></td>
-                <td (click)="openDialog(X)" #X><mat-icon>person</mat-icon></td>
-                <td (click)="openDialog(J)" #J><mat-icon>person</mat-icon></td>
-                <td (click)="openDialog(V)" #V><mat-icon>person</mat-icon></td>
-                <td (click)="openDialog(S)" #S><mat-icon>person</mat-icon></td>
-                <td (click)="openDialog(D)" #D><mat-icon>person</mat-icon></td>
+                <td (click)="openDialog(L, tarea)" #L><mat-icon>person</mat-icon></td>
+                <td (click)="openDialog(M, tarea)" #M><mat-icon>person</mat-icon></td>
+                <td (click)="openDialog(X, tarea)" #X><mat-icon>person</mat-icon></td>
+                <td (click)="openDialog(J, tarea)" #J><mat-icon>person</mat-icon></td>
+                <td (click)="openDialog(V, tarea)" #V><mat-icon>person</mat-icon></td>
+                <td (click)="openDialog(S, tarea)" #S><mat-icon>person</mat-icon></td>
+                <td (click)="openDialog(D, tarea)" #D><mat-icon>person</mat-icon></td>
             </tr>
 
         </ng-container>
