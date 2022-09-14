@@ -1,0 +1,25 @@
+<div class="caja-blanca">
+    <div class="eliminar">
+        X
+    </div>
+    <div class="notificacion">
+        
+        <div class="notificacion__icono">
+            
+            <ng-container *ngIf="info.type == 'task'">
+                <img src="../../../assets/img/escoba.png">
+            </ng-container>
+            
+            <ng-container *ngIf="info.type == 'event'">
+                <img src="../../../assets/img/calendario.png">
+            </ng-container>
+            
+        </div>
+        
+        <div class="notificacion__contenido">
+            <h1>{{info.title}}</h1>
+            <p class="texto-gral">{{info.content}}</p>
+        </div>
+
+    </div>
+</div>

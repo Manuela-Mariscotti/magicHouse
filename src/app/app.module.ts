@@ -33,6 +33,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {MatIconModule} from '@angular/material/icon';
 import { DialogPagadoComponent } from './components/dialogs/dialog-pagado/dialog-pagado.component'; 
 import { CardGastoComponent } from './components/card-gasto/card-gasto.component';
+import { CardHomeComponent } from './components/card-home/card-home.component';
 
 
 @NgModule({
@@ -58,7 +59,8 @@ import { CardGastoComponent } from './components/card-gasto/card-gasto.component
     DialogCrearComponent,
     DialogUnirteComponent,
     DialogPagadoComponent,
-    CardGastoComponent
+    CardGastoComponent,
+    CardHomeComponent
   ],
   imports: [
     BrowserModule,

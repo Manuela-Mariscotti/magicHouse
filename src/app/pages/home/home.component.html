@@ -2,96 +2,10 @@
 
     <p class="texto-titulo">Notificaciones</p>
 
-    <div class="caja-blanca">
-
-        <div class="notificacion">
-            
-            <div class="notificacion__icono">
-                <img src="../../../assets/img/escoba.png">
-            </div>
-            
-            <div class="notificacion__contenido">
-                <h1 >Titulo de la notificacion</h1>
-                <p class="texto-gral">contenido dszgsfdg sdghsdiog sdifhusi9duf dasifguds</p>
-            </div>
-
-        </div>
-
+    <div class="cards" *ngFor="let notificacion of notificaciones">
+        <app-card-home [info]="notificacion"></app-card-home>
     </div>
+
     
-    <div class="caja-blanca">
-        <div class="notificacion">
-            
-            <div class="notificacion__icono">
-                <img src="../../../assets/img/calendario.png">
-            </div>
-            
-            <div class="notificacion__contenido">
-                <h1>Titulo de la notificacion</h1>
-                <p class="texto-gral">contenido</p>
-            </div>
-
-        </div>
-    </div>
-
-    <div class="caja-blanca">
-        <div class="notificacion">
-            
-            <div class="notificacion__icono">
-                <img src="../../../assets/img/escoba.png">
-            </div>
-            
-            <div class="notificacion__contenido">
-                <h1>Titulo de la notificacion</h1>
-                <p class="texto-gral">contenido</p>
-            </div>
-
-        </div>
-    </div>
-
-    <div class="caja-blanca">
-        <div class="notificacion">
-            
-            <div class="notificacion__icono">
-                <img src="../../../assets/img/escoba.png">
-            </div>
-            
-            <div class="notificacion__contenido">
-                <h1>Titulo de la notificacion</h1>
-                <p class="texto-gral">contenido</p>
-            </div>
-
-        </div>
-    </div>
-
-    <div class="caja-blanca">
-        <div class="notificacion">
-            
-            <div class="notificacion__icono">
-                <img src="../../../assets/img/calendario.png">
-            </div>
-            
-            <div class="notificacion__contenido">
-                <h1>Titulo de la notificacion</h1>
-                <p class="texto-gral">contenido</p>
-            </div>
-
-        </div>
-    </div>
-
-    <div class="caja-blanca">
-        <div class="notificacion">
-            
-            <div class="notificacion__icono">
-                <img src="../../../assets/img/escoba.png">
-            </div>
-            
-            <div class="notificacion__contenido">
-                <h1>Titulo de la notificacion</h1>
-                <p class="texto-gral">contenido</p>
-            </div>
-
-        </div>
-    </div>
 </div>
 

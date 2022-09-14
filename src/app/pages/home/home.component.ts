@@ -7,6 +7,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
+  notificaciones:any = [
+    {
+      title: 'Calendario',
+      content: 'Cita con el medico a las 16:00',
+      type: 'event'
+    },
+    {
+      title: 'Tareas',
+      content: 'Te toca fregar el suelo',
+      type: 'task'
+    },
+    {
+      title: 'Calendario',
+      content: 'Cumpleanos del gato',
+      type: 'event'
+    }
+  ]
+
   constructor() { }
 
   ngOnInit(): void {
