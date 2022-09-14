@@ -1,1 +1,47 @@
-<p>nueva-tarea works!</p>
+<div class="page">
+    <p class="texto-titulo">
+        Añadir tarea
+    </p>
+
+    <img src="../../../assets/img/escoba.png" alt="icono-escoba">
+    <div class="caja-blanca">
+        <form class="form">
+
+            <select name="" id="">
+                <option value="0">Elige un usuario</option>
+
+                <ng-container *ngFor="let user of users; let i = index">
+
+                    <option value="{{i+1}}">{{user}}</option>
+
+                </ng-container>
+                
+            </select>
+
+            <select name="" id="">
+                <option value="0">Elige una tarea</option>
+
+                <ng-container *ngFor="let task of tareas; let i = index">
+                
+                    <option value="{{i+1}}">{{task}}</option>
+                
+                </ng-container>
+
+            </select>
+
+            <select name="" id="">
+                <option value="0">Elige un dia</option>
+
+                <ng-container *ngFor="let day of dias; let i = index">
+                
+                    <option value="{{i+1}}">{{day}}</option>
+                
+                </ng-container>
+                
+            </select>
+
+            <button>Añadir tarea</button>
+
+        </form>
+    </div>
+</div>
