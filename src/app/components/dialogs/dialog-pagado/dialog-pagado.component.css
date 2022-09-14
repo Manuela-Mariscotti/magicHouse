@@ -12,3 +12,15 @@
     display: flex;
     justify-content: space-between;
 }
+
+.button-popup{
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.button-cancelar{
+    background: none;
+    color: var(--primary-color);
+    border: none;
+    font-weight: bold;
+}
