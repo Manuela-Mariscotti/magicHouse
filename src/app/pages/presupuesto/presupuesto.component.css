@@ -1,0 +1,117 @@
+/* .bg-red{
+    background-color: red;
+} */
+/* .bg-blue{
+    background-color: blue;
+} */
+/* .bg-yellow{
+    background-color: yellow;
+} */
+/*----------TITULO-------------*/
+.conten-titulo{
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.texto-titulo-2{
+    font-size: 30px;
+    font-weight: bold;
+    color: black;
+}
+
+/*----------IMPORTE PRESUPUESTO-------------*/
+.importe{
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.conten-input{
+    /* background-color: aqua;
+    min-width:15vh;
+    max-width: fit-content; */
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+}
+
+input{
+    width: 100px;
+    color:var(--primary-color);
+    font-size: 30px;
+    font-weight: lighter;
+    text-align: center;
+    border-bottom: none;
+}
+
+input:focus{
+    animation: none;
+}
+/*----------BTN-AÑADIR-------------*/
+
+.btn-add{
+    height: 10vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+.caja-btn-add{
+    width: 60px;
+    height: 60px;
+    background-color: var(--primary-color);
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: 0px 2px 3px 2px #d3d2d2;
+}
+.caja-btn-add p{
+    color: var(--background-color);
+    font-size: 50px;
+    margin: 0px;
+    padding: 0px;
+}
+
+/* ----------LISTA GASTOS-------- */
+.caja-blanca{
+    height: fit-content;
+    padding: 5px;
+}
+
+.conten-gasto{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    border-bottom: 3px solid var(--background-color);
+    padding: 5px;
+    padding-top: 5px;
+    color:black
+}
+
+.gasto-titulo{
+    /* background-color: blue; */
+    width: 80%;
+    height: 50px;
+    display: flex;
+    flex-direction: column;
+    
+}
+.gasto-titulo p{
+    font-size: 28px;
+}
+.gasto-importe{
+    font-size: 28px;
+
+}
+.gasto-cifras{
+    /* background-color: coral; */
+    width: 20%;
+    height: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+}
