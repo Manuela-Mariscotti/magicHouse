@@ -49,3 +49,6 @@ a{
     text-decoration: none;
     /* background-color: aqua; */
 }
+.footer-selected{
+    color:var(--accent-color);
+}
