@@ -1,0 +1,23 @@
+.page{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 20px;
+
+    padding: 5px;
+}
+
+button{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    width: 40px;
+    height: 40px;
+}
+.buttons{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}

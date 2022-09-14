@@ -34,8 +34,9 @@ import {MatIconModule} from '@angular/material/icon';
 import { DialogPagadoComponent } from './components/dialogs/dialog-pagado/dialog-pagado.component';
 import { CardGastoComponent } from './components/card-gasto/card-gasto.component';
 import { CardHomeComponent } from './components/card-home/card-home.component';
-import { DialogPresupuestoComponent } from './components/dialogs/dialog-presupuesto/dialog-presupuesto.component';
-import { CardPresuComponent } from './components/card-presu/card-presu.component'; 
+import { TableTareasComponent } from './components/table-tareas/table-tareas.component';
+import { DialogTareasComponent } from './components/dialogs/dialog-tareas/dialog-tareas.component';
+import { DialogPresupuestoComponent } from './components/dialogs/dialog-presupuesto/dialog-presupuesto.component'; 
 
 
 @NgModule({
@@ -63,8 +64,9 @@ import { CardPresuComponent } from './components/card-presu/card-presu.component
     DialogPagadoComponent,
     CardGastoComponent,
     CardHomeComponent,
+    TableTareasComponent,
+    DialogTareasComponent,
     DialogPresupuestoComponent,
-    CardPresuComponent
   ],
   imports: [
     BrowserModule,
@@ -78,9 +80,9 @@ import { CardPresuComponent } from './components/card-presu/card-presu.component
     MatTableModule,
     ReactiveFormsModule,
     MatIconModule,
-    NgbModule
+    NgbModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
