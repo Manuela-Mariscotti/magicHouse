@@ -25,13 +25,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDialogModule } from '@angular/material/dialog';
 import { DialogCrearComponent } from './components/dialogs/dialog-crear/dialog-crear.component';
 import { MatButtonModule } from '@angular/material/button';
-import { FormsModule } from '@angular/forms';
 import { MatTableModule } from '@angular/material/table';
 import { DialogUnirteComponent } from './components/dialogs/dialog-unirte/dialog-unirte.component';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import {MatIconModule} from '@angular/material/icon'; 
+import { MatIconModule } from '@angular/material/icon'; 
 
 
 @NgModule({

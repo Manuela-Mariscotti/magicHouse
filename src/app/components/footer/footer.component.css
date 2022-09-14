@@ -4,4 +4,48 @@
     background-color: var(--primary-color);
     position: fixed;
     bottom: 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.conten-imgs{
+    width: 92%;
+    height: 85%;
+    /* background-color: chartreuse; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between
+}
+
+.caja{
+    width: 42px;
+    height: 42px;
+    /* background-color: blue; */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+.mat-icon{
+    /* background-color: aqua; */
+    color:var(--background-color)
+}
+.caja p{
+    text-align: center;
+    /* background-color: coral; */
+    margin: 0px;
+}
+.mat-icon:active{
+    color:var(--accent-color)
+}
+a{
+    height: fit-content;
+    margin: 0px;
+    padding: 0px;
+    margin-bottom:-5px;
+    text-decoration: none;
+    /* background-color: aqua; */
 }
