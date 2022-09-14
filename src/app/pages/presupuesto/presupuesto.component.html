@@ -1,17 +1,19 @@
 <!-- PAGINA -->
 <div class="page fondo">
+
 <!-- TITULO -->
     <div class="conten-titulo bg-red">
         <h1 class="texto-titulo-2">Presupuesto</h1>
     </div>
+
 <!-- IMPORTE PRESUPUESTO-->
     <div class="importe bg-blue">
-        
         <div class="conten-input">
             <input readonly type="number" value="5000">
-            <mat-icon>create</mat-icon>
+            <button type="button" (click)="editarPresu()"><mat-icon>create</mat-icon></button>
         </div>
     </div>
+
 <!-- BTN-AÑADIR -->
     <div class="btn-add bg-yellow">
         <div class="caja-btn-add">
@@ -21,115 +23,23 @@
 
 <!-- LISTA GASTOS -->
     <div class="caja-blanca">
-
-        <div class="conten-gasto">
-
-            <div class="gasto-titulo">
-                <p>Luz</p>
-            </div>
-            <div class="gasto-cifras">
-                <div class="gasto-importe">
-                    <p>50€</p>
-                </div>
-                <div class="gasto-saldo">
-                    <p>200€</p> 
-                </div>
-            </div>
-
+        <div class="cards" *ngFor="let gasto of gastos">
+            <app-card-presu [info]="gasto"></app-card-presu>
         </div>
+    </div>    
 
-        <!-- <div class="conten-gasto">
+<!-- card hardcoded -->
 
-            <div class="gasto-titulo">
-                <p>Luz</p>
-            </div>
-            <div class="gasto-cifras">
-                <div class="gasto-importe">
-                    <p>50€</p>
-                </div>
-                <div class="gasto-saldo">
-                    <p>200€</p> 
-                </div>
-            </div>
-
-        </div>
-        <div class="conten-gasto">
-
-            <div class="gasto-titulo">
-                <p>Luz</p>
-            </div>
-            <div class="gasto-cifras">
-                <div class="gasto-importe">
-                    <p>50€</p>
-                </div>
-                <div class="gasto-saldo">
-                    <p>200€</p> 
-                </div>
-            </div>
-
-        </div>
-        <div class="conten-gasto">
-
-            <div class="gasto-titulo">
-                <p>Luz</p>
-            </div>
-            <div class="gasto-cifras">
-                <div class="gasto-importe">
-                    <p>50€</p>
-                </div>
-                <div class="gasto-saldo">
-                    <p>200€</p> 
-                </div>
-            </div>
-
-        </div>
-        <div class="conten-gasto">
-
-            <div class="gasto-titulo">
-                <p>Luz</p>
-            </div>
-            <div class="gasto-cifras">
-                <div class="gasto-importe">
-                    <p>50€</p>
-                </div>
-                <div class="gasto-saldo">
-                    <p>200€</p> 
-                </div>
-            </div>
-
-        </div>
-        <div class="conten-gasto">
-
-            <div class="gasto-titulo">
-                <p>Luz</p>
-            </div>
-            <div class="gasto-cifras">
-                <div class="gasto-importe">
-                    <p>50€</p>
-                </div>
-                <div class="gasto-saldo">
-                    <p>200€</p> 
-                </div>
-            </div>
-
-        </div>        
-        <div class="conten-gasto">
-
-            <div class="gasto-titulo">
-                <p>Luz</p>
-            </div>
-            <div class="gasto-cifras">
-                <div class="gasto-importe">
-                    <p>50€</p>
-                </div>
-                <div class="gasto-saldo">
-                    <p>200€</p> 
-                </div>
-            </div>
-
-        </div>
-
+<!-- <div class="conten-gasto">
+    <div class="gasto-titulo">
+        <p>Luz</p>
     </div>
-     -->
-
-</div>
+    <div class="gasto-cifras">
+        <div class="gasto-importe">
+            <p>50€</p>
+        </div>
+        <div class="gasto-saldo">
+            <p>200€</p> 
+        </div>
+    </div>
+</div> -->

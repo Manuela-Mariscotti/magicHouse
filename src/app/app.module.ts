@@ -34,7 +34,8 @@ import {MatIconModule} from '@angular/material/icon';
 import { DialogPagadoComponent } from './components/dialogs/dialog-pagado/dialog-pagado.component';
 import { CardGastoComponent } from './components/card-gasto/card-gasto.component';
 import { CardHomeComponent } from './components/card-home/card-home.component';
-import { DialogPresupuestoComponent } from './components/dialogs/dialog-presupuesto/dialog-presupuesto.component'; 
+import { DialogPresupuestoComponent } from './components/dialogs/dialog-presupuesto/dialog-presupuesto.component';
+import { CardPresuComponent } from './components/card-presu/card-presu.component'; 
 
 
 @NgModule({
@@ -61,7 +62,9 @@ import { DialogPresupuestoComponent } from './components/dialogs/dialog-presupue
     DialogUnirteComponent,
     DialogPagadoComponent,
     CardGastoComponent,
-    CardHomeComponent
+    CardHomeComponent,
+    DialogPresupuestoComponent,
+    CardPresuComponent
   ],
   imports: [
     BrowserModule,

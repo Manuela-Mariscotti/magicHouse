@@ -1,1 +1,23 @@
-<p>dialog-presupuesto works!</p>
+<!-- MODAL -->
+<div>
+<!-- TITULO -->    
+    <h1 class="texto-titulo" mat-dialog-title>Editar presupuesto</h1>
+<!-- FORMULARIO -->
+    <div mat-dialog-content>
+        <form>
+<!-- INPUTS -->
+            <div class="conten-inputs">
+                <input type="text" placeholder="Ingrese nuevo importe">
+            </div>
+<!-- BOTONES CONFIRM / CANCEL -->
+            <div mat-dialog-actions>
+                <div class="conten-buttons">
+                    <button  class="button-popup button-cancelar" (click)="cancelar()">Cancelar</button>
+
+                    <button [mat-dialog-close] class="button-popup" >Confirmar</button>                        
+                </div>
+            </div>
+
+        </form>
+    </div>   
+</div>
