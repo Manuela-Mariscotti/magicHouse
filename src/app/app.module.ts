@@ -30,12 +30,9 @@ import { DialogUnirteComponent } from './components/dialogs/dialog-unirte/dialog
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-<<<<<<< HEAD
 import {MatIconModule} from '@angular/material/icon';
 import { DialogPagadoComponent } from './components/dialogs/dialog-pagado/dialog-pagado.component'; 
-=======
 import { CardGastoComponent } from './components/card-gasto/card-gasto.component';
->>>>>>> gastos
 
 
 @NgModule({
@@ -58,13 +55,10 @@ import { CardGastoComponent } from './components/card-gasto/card-gasto.component
     NuevoEventoComponent,
     AjustesComponent,
     PerfilComponent,
-<<<<<<< HEAD
     DialogCrearComponent,
     DialogUnirteComponent,
-    DialogPagadoComponent
-=======
+    DialogPagadoComponent,
     CardGastoComponent
->>>>>>> gastos
   ],
   imports: [
     BrowserModule,
