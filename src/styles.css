@@ -1,7 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 :root{
-    --background-color: #E6E6E6;/*repetido?*/
-    --background-color: #E6E6E6;
+    --background-color: #E6E6E6;/*borré el repe. Manu*/
     --primary-color: #297373;
     --accent-color: #FFCE4F;
     --header-color: #A6CBC2;
@@ -45,6 +44,7 @@ body {
 .text-navbar{
     font-size: 12px;
     font-weight: medium;
+    color: var(--background-color);/*agregué color. Manu*/
 }
 .texto-peq{
     font-size: 10px;
@@ -119,4 +119,9 @@ input:focus{
     border-radius: 4px;
     background-color: #FBFBFB ;
     box-shadow: 0px 2px 3px 2px #d3d2d2;
+}
+
+.footer-selected{
+    /*para poner en navbar de pagina seleccionada(icono y palabra)*/
+    color:var(--accent-color);
 }
