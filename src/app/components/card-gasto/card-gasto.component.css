@@ -1,0 +1,36 @@
+
+.caja-blanca{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2%;
+    width: 100%;
+    height: 10vh;
+}
+
+.importe{
+    display: flex;
+    justify-content: flex-start;
+    gap: 30px;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+.info_gasto__titulo, .info_gasto__valor{
+    display: flex;
+    flex-direction: column;
+}
+.info_gasto__valor{
+    align-items: flex-end;
+
+}
+
+.info_gasto__valor p:first-child{
+    color: red
+}
+.info_gasto__valor p:first-child::before{
+    content: '-'
+}
+.importe p{
+    margin: 2px
+}

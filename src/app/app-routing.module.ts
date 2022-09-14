@@ -5,6 +5,7 @@ import { GastosComponent } from './pages/gastos/gastos.component';
 import { HomeComponent } from './pages/home/home.component';
 import { ListaCompraComponent } from './pages/lista-compra/lista-compra.component';
 import { TareasComponent } from './pages/tareas/tareas.component';
+import { ResumenGastosComponent } from './pages/resumen-gastos/resumen-gastos.component';
 
 const routes: Routes = [
   {path: "",component: HomeComponent},
@@ -12,7 +13,9 @@ const routes: Routes = [
   {path: "gastos", component: GastosComponent},
   {path: "gastos", component: GastosComponent},
   {path: "lista-compra", component: ListaCompraComponent},
-  {path: "calendario", component: CalendarioComponent}
+  {path: "calendario", component: CalendarioComponent},
+  {path: "resumen-gastos", component: ResumenGastosComponent},
+
 ];
 
 @NgModule({
