@@ -38,6 +38,7 @@ import { TableTareasComponent } from './components/table-tareas/table-tareas.com
 import { DialogTareasComponent } from './components/dialogs/dialog-tareas/dialog-tareas.component';
 import { DialogPresupuestoComponent } from './components/dialogs/dialog-presupuesto/dialog-presupuesto.component'; 
 import { CardPresuComponent } from './components/card-presu/card-presu.component';
+import { CalendarComponentComponent } from './components/calendar-component/calendar-component.component';
 
 
 @NgModule({
@@ -68,7 +69,8 @@ import { CardPresuComponent } from './components/card-presu/card-presu.component
     TableTareasComponent,
     DialogTareasComponent,
     DialogPresupuestoComponent,
-    CardPresuComponent
+    CardPresuComponent,
+    CalendarComponentComponent
   ],
   imports: [
     BrowserModule,
