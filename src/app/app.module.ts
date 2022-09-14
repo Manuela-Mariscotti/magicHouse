@@ -31,11 +31,12 @@ import { DialogUnirteComponent } from './components/dialogs/dialog-unirte/dialog
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {MatIconModule} from '@angular/material/icon';
-import { DialogPagadoComponent } from './components/dialogs/dialog-pagado/dialog-pagado.component'; 
+import { DialogPagadoComponent } from './components/dialogs/dialog-pagado/dialog-pagado.component';
 import { CardGastoComponent } from './components/card-gasto/card-gasto.component';
 import { CardHomeComponent } from './components/card-home/card-home.component';
 import { TableTareasComponent } from './components/table-tareas/table-tareas.component';
 import { DialogTareasComponent } from './components/dialogs/dialog-tareas/dialog-tareas.component';
+import { DialogPresupuestoComponent } from './components/dialogs/dialog-presupuesto/dialog-presupuesto.component'; 
 
 
 @NgModule({
@@ -64,7 +65,8 @@ import { DialogTareasComponent } from './components/dialogs/dialog-tareas/dialog
     CardGastoComponent,
     CardHomeComponent,
     TableTareasComponent,
-    DialogTareasComponent
+    DialogTareasComponent,
+    DialogPresupuestoComponent,
   ],
   imports: [
     BrowserModule,
@@ -78,9 +80,9 @@ import { DialogTareasComponent } from './components/dialogs/dialog-tareas/dialog
     MatTableModule,
     ReactiveFormsModule,
     MatIconModule,
-    NgbModule
+    NgbModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

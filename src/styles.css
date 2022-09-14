@@ -126,6 +126,31 @@ input:focus{
 }
 
 .footer-selected{
-    /*para poner en navbar de pagina seleccionada(icono y palabra)*/
+/*para poner en navbar de pagina seleccionada(icono y palabra)*/
     color:var(--accent-color);
+}
+
+/* -------------BTN-ADD-------------- */
+
+/* 
+<div class="caja-btn-add">
+    <button type="button"><p>+</p></button>
+</div> 
+*/
+
+.caja-btn-add{
+    width: 60px;
+    height: 60px;
+    background-color: var(--primary-color);
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: 0px 2px 3px 2px #d3d2d2;
+}
+.caja-btn-add p{
+    color: var(--background-color);
+    font-size: 50px;
+    margin: 0px;
+    padding: 0px;
 }
