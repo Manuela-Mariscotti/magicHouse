@@ -31,7 +31,8 @@ import { DialogUnirteComponent } from './components/dialogs/dialog-unirte/dialog
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {MatIconModule} from '@angular/material/icon';
-import { DialogPagadoComponent } from './components/dialogs/dialog-pagado/dialog-pagado.component'; 
+import { DialogPagadoComponent } from './components/dialogs/dialog-pagado/dialog-pagado.component';
+import { DialogPresupuestoComponent } from './components/dialogs/dialog-presupuesto/dialog-presupuesto.component'; 
 
 
 @NgModule({
@@ -56,7 +57,8 @@ import { DialogPagadoComponent } from './components/dialogs/dialog-pagado/dialog
     PerfilComponent,
     DialogCrearComponent,
     DialogUnirteComponent,
-    DialogPagadoComponent
+    DialogPagadoComponent,
+    DialogPresupuestoComponent
   ],
   imports: [
     BrowserModule,
