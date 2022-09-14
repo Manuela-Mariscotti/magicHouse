@@ -24,6 +24,7 @@ import { PerfilComponent } from './pages/perfil/perfil.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { CardGastoComponent } from './components/card-gasto/card-gasto.component';
 
 
 @NgModule({
@@ -45,7 +46,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     CalendarioComponent,
     NuevoEventoComponent,
     AjustesComponent,
-    PerfilComponent
+    PerfilComponent,
+    CardGastoComponent
   ],
   imports: [
     BrowserModule,

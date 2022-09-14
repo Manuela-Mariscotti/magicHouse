@@ -8,6 +8,12 @@ import { Router } from '@angular/router';
 })
 export class GastosComponent implements OnInit {
 
+  gastos = [
+    {title: 'Luz', importe: 100},
+    {title: 'Agua', importe: 50},
+    {title: 'Internet', importe: 50},
+  ]
+
   constructor(private router:Router) { }
 
   ngOnInit(): void {
