@@ -1,1 +1,49 @@
-<p>perfil works!</p>
+<!-- PAGINA -->
+<div class="page fondo">
+<!-- TITULO -->
+        <div class="conten-titulo bg-red">
+            <h1 class="texto-titulo-2">Pepe</h1>
+        </div>
+<!-- INICIAL USUARIO -->
+    <div class="conten-inicial-usuario">
+        <div class="conten-inicial">
+            <p>P</p>
+        </div>
+    </div>
+<!-- BTN-EDITAR -->
+    <div class="btn-editar">
+        <button ><mat-icon>create</mat-icon></button>
+    </div>
+<!-- FORMULARIO -->
+    <div class="conten-datos caja-blanca">
+        <form class="form-registro">
+
+            <div class="conten-inputs">
+                <label for="">Nombre:</label>
+                <p class="text-subt">{{user[0].name}}</p>
+                <label for="">Email:</label>
+                <p class="text-subt">{{user[0].email}}</p>
+                <label for="">Movil:</label>
+                <p class="text-subt">{{user[0].phone}}</p>
+                <label for="">Fecha de nacimiento:</label>
+                <p class="text-subt">{{user[0].birth}}</p>
+            </div>
+
+<!-- DATOS EDITABLES -->
+
+            <!-- <label for="">Nombre:</label>
+            <input type="text" placeholder="{{user[0].name}}">
+            <label for="">Email:</label>
+            <input type="text" placeholder="{{user[0].email}}">
+            <label for="">Teléfono:</label>
+            <input type="text" placeholder="{{user[0].phone}}">
+            <label for="">Fecha de nacimiento:</label>
+            <input type="text" placeholder="{{user[0].birth}}"> -->
+
+<!-- BTN ELIMINAR PERFIL -->
+            <div class="conten-button">
+                <button class="button-eliminar">Eliminar perfil</button>
+            </div>
+        </form>
+    </div>
+</div>
