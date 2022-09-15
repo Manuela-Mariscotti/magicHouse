@@ -1,27 +1,40 @@
-
-    <button>Semana</button>
-    <button>Mes</button>
-    <br>
-    <button (click)="changeMonth(-1)">&lt;</button>
-    {{daySelected | date: 'MMMM yyyy'}}
-    <button (click)="changeMonth(+1)">&gt;</button>
-
-
-
-  <div class="calendar">
-
-    <ng-container *ngFor="let dia of dias_semana">
-        <p>{{dia | slice:0:3}}</p>
-    </ng-container>
-
-    <ng-container *ngFor="let day of dateSelected">
-
-        <div [ngClass]="day.weekDay == -1 ? ['dia', 'dia--disabled'] : 'dia'" (click)="showEvent(day)">
-            <div [ngClass]="day.events ? ['dia', 'dia--event']: 'dia'">{{day.value}}</div> 
+<div class="page">
+    
+    <div class="controls">
+        <div class="month_chooser">
+            <button (click)="changeMonth(-1)">&lt;</button>
+            {{daySelected | date: 'MMMM yyyy'}}
+            <button (click)="changeMonth(+1)">&gt;</button>
         </div>
+        
+        <div class="period_buttons">
+            <button>Semana</button>
+            <button>Mes</button>
+        </div>
+    </div>
+    
+    
+    
+    <div class="calendar">
+    
+        <ng-container *ngFor="let dia of dias_semana">
+            <p>{{dia | slice:0:3}}</p>
+        </ng-container>
+    
+        <ng-container *ngFor="let day of dateSelected">
+    
+            <div [ngClass]="day.weekDay == -1 ? ['dia', 'dia--disabled'] : 'dia'" (click)="showDayEvents(day)">
+                <div [ngClass]="day.events ? 'dia--event' : '' ">{{day.value}} <br> </div>
+            </div>
+    
+        </ng-container>
+    
+    </div>
 
+    <ng-container *ngFor="let event of showingEvents">
+
+        <app-card-event [event]="event"></app-card-event>
+        
     </ng-container>
 
-
-
-  </div>
+</div>

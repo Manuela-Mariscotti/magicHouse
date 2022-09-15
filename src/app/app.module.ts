@@ -39,6 +39,7 @@ import { DialogTareasComponent } from './components/dialogs/dialog-tareas/dialog
 import { DialogPresupuestoComponent } from './components/dialogs/dialog-presupuesto/dialog-presupuesto.component'; 
 import { CardPresuComponent } from './components/card-presu/card-presu.component';
 import { CalendarComponentComponent } from './components/calendar-component/calendar-component.component';
+import { CardEventComponent } from './components/card-event/card-event.component';
 
 
 @NgModule({
@@ -70,7 +71,8 @@ import { CalendarComponentComponent } from './components/calendar-component/cale
     DialogTareasComponent,
     DialogPresupuestoComponent,
     CardPresuComponent,
-    CalendarComponentComponent
+    CalendarComponentComponent,
+    CardEventComponent
   ],
   imports: [
     BrowserModule,

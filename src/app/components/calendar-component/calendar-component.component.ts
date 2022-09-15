@@ -13,7 +13,7 @@ export class CalendarComponentComponent implements OnInit {
   daySelected;
   dateSelected;
 
-  dias_semana = ['Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado', 'Domin']
+  dias_semana = ['Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado', 'Domingo']
 
   events = [
     {
@@ -27,6 +27,8 @@ export class CalendarComponentComponent implements OnInit {
       description: 'XXXXXX'
     } 
   ];
+
+  showingEvents;
 
   constructor() {
     let date = new Date()
@@ -50,14 +52,8 @@ export class CalendarComponentComponent implements OnInit {
       const dayObject = moment(`${year}-${month}-${day}`)
 
       let events = this.events.filter( (e) => {
-
-        
         return e.date.format('YYYY-MMMM-D') == dayObject.format('YYYY-MMMM-D');
-
       })
-
-      console.log(events)
-
 
       return {
         name: dayObject.format('dddd'),
@@ -71,6 +67,7 @@ export class CalendarComponentComponent implements OnInit {
     for(let i = 1; i < startDay.isoWeekday(); i++){
       days.unshift({name:null, value: '', weekDay: -1, events: null})
     }
+    
     this.dateSelected = days;
   }
 
@@ -84,8 +81,8 @@ export class CalendarComponentComponent implements OnInit {
     }
   }
 
-  showEvent(day:any){
-    console.log(day)
+  showDayEvents(day:any){
+    this.showingEvents = day.events
   }
 
   ngOnInit(): void {}
