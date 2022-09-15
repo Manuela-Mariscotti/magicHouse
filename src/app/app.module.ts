@@ -36,7 +36,8 @@ import { CardGastoComponent } from './components/card-gasto/card-gasto.component
 import { CardHomeComponent } from './components/card-home/card-home.component';
 import { TableTareasComponent } from './components/table-tareas/table-tareas.component';
 import { DialogTareasComponent } from './components/dialogs/dialog-tareas/dialog-tareas.component';
-import { DialogPresupuestoComponent } from './components/dialogs/dialog-presupuesto/dialog-presupuesto.component'; 
+import { DialogPresupuestoComponent } from './components/dialogs/dialog-presupuesto/dialog-presupuesto.component';
+import { CardPresuComponent } from './components/card-presu/card-presu.component';
 
 
 @NgModule({
@@ -67,6 +68,7 @@ import { DialogPresupuestoComponent } from './components/dialogs/dialog-presupue
     TableTareasComponent,
     DialogTareasComponent,
     DialogPresupuestoComponent,
+    CardPresuComponent
   ],
   imports: [
     BrowserModule,
