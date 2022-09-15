@@ -8,6 +8,7 @@ import { TareasComponent } from './pages/tareas/tareas.component';
 import { ResumenGastosComponent } from './pages/resumen-gastos/resumen-gastos.component';
 import { NuevaTareaComponent } from './pages/nueva-tarea/nueva-tarea.component';
 import { NuevoEventoComponent } from './pages/nuevo-evento/nuevo-evento.component';
+import { LoginComponent } from './pages/login/login.component';
 
 const routes: Routes = [
   {path: "",component: HomeComponent},
@@ -18,7 +19,8 @@ const routes: Routes = [
   {path: "calendario", component: CalendarioComponent},
   {path: "resumen-gastos", component: ResumenGastosComponent},
   {path: "nueva-tarea", component: NuevaTareaComponent},
-  {path: "nuevo-evento", component: NuevoEventoComponent}
+  {path: "nuevo-evento", component: NuevoEventoComponent},
+  {path: "login", component: LoginComponent}
 
 ];
 

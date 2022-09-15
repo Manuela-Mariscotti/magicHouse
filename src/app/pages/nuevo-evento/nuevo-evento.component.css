@@ -1,0 +1,46 @@
+.page{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+
+    gap: 2%
+
+}
+
+img{
+    width: 30%;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+.caja-blanca{
+    padding: 5%;
+    width: 100%;
+    height: 70vh;
+    
+}
+
+.inputs{
+    display: flex;
+    flex-direction: column;
+    gap: 5%;
+    height: 90%;
+
+}
+
+.buttons{
+    display: flex;
+    justify-content: space-around;
+    gap: 2%;
+}
+button{
+    padding: 2%;
+}
