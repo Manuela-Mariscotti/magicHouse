@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-calendar-component',
@@ -6,47 +7,85 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./calendar-component.component.css'],
 })
 export class CalendarComponentComponent implements OnInit {
-  date = new Date();
 
-  month = this.date.getMonth();
-  day = this.date.getDate();
-  year = this.date.getFullYear();
+  style;
 
-  diasPorMes = new Date(this.year, this.month, 0).getDate();
-  public primerDiaMes = new Date(this.year, this.month, 1).getDay();
+  daySelected;
+  dateSelected;
 
-  semanas = this.diasPorMes / 7;
-  semanas_resto = this.diasPorMes % 7;
+  dias_semana = ['Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado', 'Domin']
+
+  events = [
+    {
+      date: moment.utc('2022-09-25'),
+      title: 'Cita con el medico',
+      description: 'XXXXXX'
+    },
+    {
+      date: moment.utc('2022-09-21'),
+      title: 'Cita con el medico',
+      description: 'XXXXXX'
+    } 
+  ];
 
   constructor() {
-
-    console.log(this.getCalendar())
+    let date = new Date()
+    this.getMonth(date.getMonth()+1, date.getFullYear())
   }
 
-  getCalendar() {
-    let result: Date[][] = [];
+  getMonth(month:number, year:number) {
 
-    let dia = 1;
-    let tmp = []
+    const startDay = moment.utc(`${year}/${month}/01`);
+    const endDay = startDay.clone().endOf('month')
 
-   if(result.length == 0 && tmp.length < 7){
+    this.daySelected = startDay
 
-     for (let i = 0; i < this.primerDiaMes; i++) {
-       tmp.push(0);
-     }
+    const diff = endDay.diff(startDay, 'days', true);
+    const MonthLength = Math.round(diff);
 
-     let i = 0
-     while( i >= this.primerDiaMes && tmp.length < 7){
-       tmp.push(new Date(this.year, this.month, dia))
-       dia++;
-       
+    const arrayDays = Object.keys([...Array(MonthLength)])
+
+    const days = arrayDays.map( (day:any) => {
+      day = parseInt(day) + 1;
+      const dayObject = moment(`${year}-${month}-${day}`)
+
+      let events = this.events.filter( (e) => {
+
+        
+        return e.date.format('YYYY-MMMM-D') == dayObject.format('YYYY-MMMM-D');
+
+      })
+
+      console.log(events)
+
+
+      return {
+        name: dayObject.format('dddd'),
+        value: day,
+        weekDay: dayObject.isoWeekday(),
+        events: events.length > 0 ? events : null
       }
-    }else{
-      result.push(tmp)
-    } 
+    })
     
-    return result    
 
+    for(let i = 1; i < startDay.isoWeekday(); i++){
+      days.unshift({name:null, value: '', weekDay: -1, events: null})
+    }
+    this.dateSelected = days;
+  }
+
+  changeMonth(flag:number){
+    if (flag < 0){
+      const date = this.daySelected.clone().subtract(1, 'month');
+      this.getMonth(date.format('MM'), date.format('YYYY'))
+    }else{
+      const date = this.daySelected.clone().add(1, 'month');
+      this.getMonth(date.format('MM'), date.format('YYYY'))
+    }
+  }
+
+  showEvent(day:any){
+    console.log(day)
   }
 
   ngOnInit(): void {}

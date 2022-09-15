@@ -1,39 +1,27 @@
-<div class="page">
-    <table>
-        <tr>
-            <th>L</th>
-            <th>M</th>
-            <th>X</th>
-            <th>J</th>
-            <th>V</th>
-            <th>S</th>
-            <th>D</th>
-        </tr>
-        <tr>
-            <td>
-                x
-            </td>
-            <td>
-                x
-            </td>
-            <td>
-                x
-            </td>
-            <td>
-                x
-            </td>
-            <td>
-                x
-            </td>
-            <td>
-                x
-            </td>
-            <td>
-                {{primerDiaMes}}
-                x
-            </td>
-        </tr>
+
+    <button>Semana</button>
+    <button>Mes</button>
+    <br>
+    <button (click)="changeMonth(-1)">&lt;</button>
+    {{daySelected | date: 'MMMM yyyy'}}
+    <button (click)="changeMonth(+1)">&gt;</button>
 
 
-    </table>
-</div>
+
+  <div class="calendar">
+
+    <ng-container *ngFor="let dia of dias_semana">
+        <p>{{dia | slice:0:3}}</p>
+    </ng-container>
+
+    <ng-container *ngFor="let day of dateSelected">
+
+        <div [ngClass]="day.weekDay == -1 ? ['dia', 'dia--disabled'] : 'dia'" (click)="showEvent(day)">
+            <div [ngClass]="day.events ? ['dia', 'dia--event']: 'dia'">{{day.value}}</div> 
+        </div>
+
+    </ng-container>
+
+
+
+  </div>
