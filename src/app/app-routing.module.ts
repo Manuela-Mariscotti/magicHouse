@@ -9,6 +9,8 @@ import { ResumenGastosComponent } from './pages/resumen-gastos/resumen-gastos.co
 import { NuevaTareaComponent } from './pages/nueva-tarea/nueva-tarea.component';
 import { NuevoEventoComponent } from './pages/nuevo-evento/nuevo-evento.component';
 import { LoginComponent } from './pages/login/login.component';
+import { PerfilComponent } from './pages/perfil/perfil.component';
+import { AjustesComponent } from './pages/ajustes/ajustes.component';
 
 const routes: Routes = [
   {path: "",component: HomeComponent},
@@ -20,7 +22,9 @@ const routes: Routes = [
   {path: "resumen-gastos", component: ResumenGastosComponent},
   {path: "nueva-tarea", component: NuevaTareaComponent},
   {path: "nuevo-evento", component: NuevoEventoComponent},
-  {path: "login", component: LoginComponent}
+  {path: "login", component: LoginComponent},
+  {path: "perfil", component: PerfilComponent},
+  {path: "ajustes", component: AjustesComponent}
 
 ];
 
