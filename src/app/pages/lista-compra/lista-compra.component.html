@@ -1,1 +1,58 @@
-<p>lista-compra works!</p>
+<!-- PAGINA -->
+<div class="page fondo">
+
+<!-- TITULO -->
+    <div class="conten-titulo bg-red">
+        <h1 class="texto-titulo-2">Lista de la compra</h1>
+    </div>
+
+<!-- BTN-AÑADIR -->
+    <div class="btn-add bg-yellow">
+        <div class="caja-btn-add">
+            <button type="button" (click)="addItem()"><p>+</p></button>
+        </div>
+    </div>
+
+<!-- LISTA ITEMS -->
+    <div class="caja-blanca">
+        <div class="cards" *ngFor="let item of items">
+            <app-card-lista-compra [info]="item"></app-card-lista-compra>
+        </div>
+    </div>
+ <!-- IMPORTE COMPRA  -->
+    <div class="conten-importe">
+        <div class="importe-compra">
+            <input type="text" placeholder="Ingrese el importe">
+        </div>
+        <button>Añadir a gastos</button>
+    </div>
+</div>
+
+<!-- CARD -->
+        <!-- <div class="conten-item"> -->
+<!-- CARD TITULO -->
+            <!-- <div class="item-titulo">
+                <p>Pan</p>
+            </div> -->
+<!-- CARD BTN -->
+            <!-- <div class="conten-item-btn">
+
+                <button><mat-icon class="remove_circle">remove_circle_outline</mat-icon></button>
+
+                <button ><mat-icon class="check_box">check_box</mat-icon></button> 
+
+                <button><mat-icon class="check_box_blank check_box_display">check_box_outline_blank</mat-icon></button>
+
+            </div>
+        </div>-->
+
+
+<!-- 
+    <mat-icon>clear</mat-icon> EQUIS
+	<mat-icon> monetization_on</mat-icon> DOLAR CIRCULO NEGRO
+    <mat-icon>cancel</mat-icon>
+    <mat-icon >remove_circle_outline</mat-icon>
+    <mat-icon>check_box_outline_blank</mat-icon>
+    <mat-icon>check_box</mat-icon> 
+    <mat-icon>check</mat-icon>
+-->

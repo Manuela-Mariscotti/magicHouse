@@ -1,0 +1,46 @@
+/*----------TITULO-------------*/
+.conten-titulo{
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.texto-titulo-2{
+    font-size: 30px;
+    font-weight: bold;
+    color: black;
+}
+
+/*----------BTN-AÑADIR-------------*/
+.btn-add{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+/* ----------LISTA ITEMS-------- */
+.caja-blanca{
+    margin-top: 10px;
+    height: fit-content;
+    padding: 5px;
+}
+
+/* --------IMPORTE COMPRA-------- */
+.conten-importe{
+    height: 150px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    
+}
+.importe-compra input{
+    text-align: center;
+}
+.conten-importe button{
+    width: 150px;
+    padding: 5px;
+    text-align: center;
+}

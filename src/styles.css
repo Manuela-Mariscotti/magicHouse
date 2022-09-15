@@ -2,6 +2,7 @@
 :root{
     --background-color: #E6E6E6;/*borré el repe. Manu*/
     --primary-color: #297373;
+    --secondary-color : #454545;/*agregué el gris oscuro. Manu*/
     --accent-color: #FFCE4F;
     --header-color: #A6CBC2;
     --header-height: 45px;
