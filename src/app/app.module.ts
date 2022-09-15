@@ -40,6 +40,8 @@ import { DialogPresupuestoComponent } from './components/dialogs/dialog-presupue
 import { CardPresuComponent } from './components/card-presu/card-presu.component';
 import { CardListaCompraComponent } from './components/card-lista-compra/card-lista-compra.component';
 import { DialogListaCompraComponent } from './components/dialogs/dialog-lista-compra/dialog-lista-compra.component';
+import { CalendarComponentComponent } from './components/calendar-component/calendar-component.component';
+import { CardEventComponent } from './components/card-event/card-event.component';
 
 
 @NgModule({
@@ -72,7 +74,9 @@ import { DialogListaCompraComponent } from './components/dialogs/dialog-lista-co
     DialogPresupuestoComponent,
     CardPresuComponent,
     CardListaCompraComponent,
-    DialogListaCompraComponent
+    DialogListaCompraComponent,
+    CalendarComponentComponent,
+    CardEventComponent
   ],
   imports: [
     BrowserModule,

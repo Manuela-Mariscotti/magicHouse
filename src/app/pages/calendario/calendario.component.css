@@ -1,0 +1,21 @@
+.page{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+
+    height: 100%;
+}
+
+.caja-btn-add{
+    align-self: flex-end;
+}
+
+.calendar{
+    overflow-x: scroll;
+}
+
+app-calendar-component{
+
+    width: 100%;
+}

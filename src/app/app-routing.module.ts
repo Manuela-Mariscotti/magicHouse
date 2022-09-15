@@ -7,6 +7,7 @@ import { ListaCompraComponent } from './pages/lista-compra/lista-compra.componen
 import { TareasComponent } from './pages/tareas/tareas.component';
 import { ResumenGastosComponent } from './pages/resumen-gastos/resumen-gastos.component';
 import { NuevaTareaComponent } from './pages/nueva-tarea/nueva-tarea.component';
+import { NuevoEventoComponent } from './pages/nuevo-evento/nuevo-evento.component';
 
 const routes: Routes = [
   {path: "",component: HomeComponent},
@@ -16,7 +17,8 @@ const routes: Routes = [
   {path: "lista-compra", component: ListaCompraComponent},
   {path: "calendario", component: CalendarioComponent},
   {path: "resumen-gastos", component: ResumenGastosComponent},
-  {path: "nueva-tarea", component: NuevaTareaComponent}
+  {path: "nueva-tarea", component: NuevaTareaComponent},
+  {path: "nuevo-evento", component: NuevoEventoComponent}
 
 ];
 
