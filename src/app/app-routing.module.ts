@@ -11,12 +11,14 @@ import { NuevoEventoComponent } from './pages/nuevo-evento/nuevo-evento.componen
 import { LoginComponent } from './pages/login/login.component';
 import { PerfilComponent } from './pages/perfil/perfil.component';
 import { AjustesComponent } from './pages/ajustes/ajustes.component';
+import { PresupuestoComponent } from './pages/presupuesto/presupuesto.component';
+import { RegistroComponent } from './pages/registro/registro.component';
 
 const routes: Routes = [
   {path: "",component: HomeComponent},
   {path: "tareas", component: TareasComponent},
   {path: "gastos", component: GastosComponent},
-  {path: "gastos", component: GastosComponent},
+  {path: "registro", component: RegistroComponent},
   {path: "lista-compra", component: ListaCompraComponent},
   {path: "calendario", component: CalendarioComponent},
   {path: "resumen-gastos", component: ResumenGastosComponent},
@@ -24,7 +26,9 @@ const routes: Routes = [
   {path: "nuevo-evento", component: NuevoEventoComponent},
   {path: "login", component: LoginComponent},
   {path: "perfil", component: PerfilComponent},
-  {path: "ajustes", component: AjustesComponent}
+  {path: "ajustes", component: AjustesComponent},
+  {path: "presupuesto", component: PresupuestoComponent},
+
 
 ];
 
