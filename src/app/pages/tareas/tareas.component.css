@@ -1,7 +1,7 @@
 .page{
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
   gap: 20px;
   height: 100%;
@@ -10,4 +10,8 @@
 
 .caja-btn-add{
   align-self: flex-end;
+}
+
+app-table-tareas{
+  height: 70vh;
 }
