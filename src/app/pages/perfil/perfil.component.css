@@ -19,31 +19,6 @@
     color: black;
 }
 
-/* ---------INICIAL USUARIO-------- */
-.conten-inicial-usuario{
-    height: 100px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-
-}
-
-.conten-inicial{
-    background-color: rgb(138, 29, 160);
-    width: 100px;
-    height: 100px;
-    font-size: 50px;
-    margin-bottom: 30px;
-    padding-top: 5px;    
-    color: white;
-    border-radius: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow:  0px 2px 4px 4px #d3d2d2,
-    inset 0 0 15px 0 rgba(0, 0, 0, 0.144); 
-}
-
 /*----------BTN-EDITAR-------------*/
 .btn-editar{
     display: flex;
