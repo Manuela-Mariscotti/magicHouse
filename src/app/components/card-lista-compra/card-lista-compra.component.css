@@ -1,11 +1,11 @@
 .conten-item{
     /* background-color: aqua; */
-    height: 45px;
+    height: 60px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     flex-wrap: wrap;
-    border-bottom: 0.5px dotted var(--primary-color);
+    border-bottom: 1px solid var(--primary-color);
 }
 .item-titulo{
     /* background-color: blue; */
