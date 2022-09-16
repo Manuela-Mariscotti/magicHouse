@@ -7,11 +7,10 @@
   height: 100%;
 }
 
-
 .caja-btn-add{
   align-self: flex-end;
 }
 
 app-table-tareas{
-  height: 70vh;
+  height: 60vh;
 }

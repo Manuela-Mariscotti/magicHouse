@@ -2,19 +2,19 @@
     <table>
         <tr>
             <th></th>
-            <th>L</th>
-            <th>M</th>
-            <th>X</th>
-            <th>J</th>
-            <th>V</th>
-            <th>S</th>
-            <th>D</th>
+            <th>Lun</th>
+            <th>Mar</th>
+            <th>Mie</th>
+            <th>Jue</th>
+            <th>Vie</th>
+            <th>Sab</th>
+            <th>Dom</th>
         </tr>
 
         <ng-container *ngFor="let tarea of tareas;">
 
             <tr class="tr_tareas">
-                <td>{{tarea}}</td>
+                <th>{{tarea}}</th>
 
                 <td (click)="openDialog(L, tarea)" #L><mat-icon>person</mat-icon></td>
                 <td (click)="openDialog(M, tarea)" #M><mat-icon>person</mat-icon></td>
