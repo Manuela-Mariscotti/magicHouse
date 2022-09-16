@@ -71,7 +71,7 @@ button{
 
 button:active{
     color: var(--accent-color);
-    box-shadow: 0px 0px 5px var(--accent-color);
+    box-shadow: 0px 0px 5px var(--accent-color); /* el scale quedaba raro*/
 }
 
 .button--secondary{
