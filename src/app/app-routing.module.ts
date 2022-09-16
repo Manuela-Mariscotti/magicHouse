@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CalendarioComponent } from './pages/calendario/calendario.component';
 import { GastosComponent } from './pages/gastos/gastos.component';
@@ -7,6 +7,8 @@ import { ListaCompraComponent } from './pages/lista-compra/lista-compra.componen
 import { TareasComponent } from './pages/tareas/tareas.component';
 import { ResumenGastosComponent } from './pages/resumen-gastos/resumen-gastos.component';
 import { NuevaTareaComponent } from './pages/nueva-tarea/nueva-tarea.component';
+import { PerfilComponent } from './pages/perfil/perfil.component';
+import { AjustesComponent } from './pages/ajustes/ajustes.component';
 
 const routes: Routes = [
   {path: "",component: HomeComponent},
@@ -16,7 +18,9 @@ const routes: Routes = [
   {path: "lista-compra", component: ListaCompraComponent},
   {path: "calendario", component: CalendarioComponent},
   {path: "resumen-gastos", component: ResumenGastosComponent},
-  {path: "nueva-tarea", component: NuevaTareaComponent}
+  {path: "nueva-tarea", component: NuevaTareaComponent},
+  {path: "perfil", component: PerfilComponent},
+  {path: "ajustes", component: AjustesComponent}
 
 ];
 
