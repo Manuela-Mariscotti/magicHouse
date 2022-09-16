@@ -4,9 +4,11 @@
     </div>
 
     <div class="top-area">
-        <button class="button-add">
-            +
-        </button>
+        <div class="caja-btn-add" (click)="navigate('nuevo-gasto')">
+            <button type="button">
+                <p>+</p>
+            </button>
+        </div>
     </div>
 
    <div class="cards" *ngFor="let gasto of gastos">

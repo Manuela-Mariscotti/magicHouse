@@ -16,13 +16,47 @@
             <tr class="tr_tareas">
                 <th>{{tarea}}</th>
 
-                <td (click)="openDialog(L, tarea)" #L><mat-icon>person</mat-icon></td>
-                <td (click)="openDialog(M, tarea)" #M><mat-icon>person</mat-icon></td>
-                <td (click)="openDialog(X, tarea)" #X><mat-icon>person</mat-icon></td>
-                <td (click)="openDialog(J, tarea)" #J><mat-icon>person</mat-icon></td>
-                <td (click)="openDialog(V, tarea)" #V><mat-icon>person</mat-icon></td>
-                <td (click)="openDialog(S, tarea)" #S><mat-icon>person</mat-icon></td>
-                <td (click)="openDialog(D, tarea)" #D><mat-icon>person</mat-icon></td>
+                <td (click)="openDialog(L, tarea)" #L>
+
+                    <div class="avatar-pq">
+                        <p>J</p>
+                    </div>
+                </td>
+                <td (click)="openDialog(M, tarea)" #M>
+                    <div class="avatar-pq">
+                        <p>S</p>
+                    </div>
+                </td>
+
+                <td (click)="openDialog(X, tarea)" #X>
+                    <div class="avatar-pq">
+                        <p>M</p>
+                    </div>
+                </td>
+
+                <td (click)="openDialog(J, tarea)" #J>
+                    <div class="avatar-pq">
+                        <p>R</p>
+                    </div>
+                </td>
+
+                <td (click)="openDialog(V, tarea)" #V>
+                    <div class="avatar-pq">
+                        <p>Q</p>
+                    </div>
+                </td>
+
+                <td (click)="openDialog(S, tarea)" #S>
+                    <div class="avatar-pq">
+                        <p>H</p>
+                    </div>
+                </td>
+
+                <td (click)="openDialog(D, tarea)" #D>
+                    <div class="avatar-pq">
+                        <p>J</p>
+                    </div>
+                </td>
             </tr>
 
         </ng-container>
