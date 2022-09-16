@@ -24,7 +24,11 @@
         <ng-container *ngFor="let day of dateSelected">
     
             <div [ngClass]="day.weekDay == -1 ? ['dia', 'dia--disabled'] : 'dia'" (click)="showDayEvents(day)">
-                <div [ngClass]="day.events ? 'dia--event' : '' ">{{day.value}} <br> </div>
+                <div [ngClass]="day.events ? 'dia--event' : '' ">
+                    <div [ngClass]="day.today ? 'dia--today' : '' ">
+                        {{day.value}}
+                    </div>
+                </div>
             </div>
     
         </ng-container>

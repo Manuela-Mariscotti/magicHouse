@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
+import { Component, Inject, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -8,7 +9,13 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  public location;
+
+  constructor(private router: Router, @Inject(DOCUMENT)document:any) {
+
+    this.location = document.location.href;
+
+   }
 
   navigate(where: string){
     this.router.navigateByUrl(where)

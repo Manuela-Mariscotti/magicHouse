@@ -59,13 +59,14 @@ export class CalendarComponentComponent implements OnInit {
         name: dayObject.format('dddd'),
         value: day,
         weekDay: dayObject.isoWeekday(),
-        events: events.length > 0 ? events : null
+        events: events.length > 0 ? events : null,
+        today: dayObject.format('YYYY-MMMM-D') == moment().format('YYYY-MMMM-D')
       }
     })
     
 
     for(let i = 1; i < startDay.isoWeekday(); i++){
-      days.unshift({name:null, value: '', weekDay: -1, events: null})
+      days.unshift({name:null, value: '', weekDay: -1, events: null, today: false})
     }
     
     this.dateSelected = days;
