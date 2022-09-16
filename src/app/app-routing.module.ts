@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CalendarioComponent } from './pages/calendario/calendario.component';
 import { GastosComponent } from './pages/gastos/gastos.component';

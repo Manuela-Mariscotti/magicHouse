@@ -1,0 +1,111 @@
+/*----------TITULO-------------*/
+.conten-titulo{
+    margin-top: -20px;
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.texto-titulo-2{
+    font-size: 30px;
+    font-weight: bold;
+    color: black;
+}
+
+/*----------SUB-TITULO-------------*/
+.conten-subtitulo{
+    height: 15vh;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+}
+
+.texto-titulo-3{
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+/* ----------ZONA MIEMBROS-------- */
+.caja-blanca{
+    height: fit-content;
+    padding: 5px;
+}
+.conten-miembros{
+
+
+}
+.conten-miembro{
+    /* background-color: darkgray; */    
+    width: 100%;
+    height: 60px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    border-bottom: 3px solid var(--primary-color);
+}
+
+.conten-miembro-nombre{
+    /* background-color: crimson; */
+    width: 60%;
+    
+    padding-top: 10px;
+}
+.miembro-nombre{
+    font-size: 25px;
+}
+.btn-eliminar-miembro{
+    /* background-color: blueviolet; */
+    width: 20%;
+    padding-top: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.btn-eliminar-miembro button{
+    /* background-color: darksalmon; */
+    height: initial;
+    background: none;
+    border: none;
+    border-radius: none;
+    color: var(--primary-color);
+}
+
+/* ---------INICIAL USUARIO-------- */
+.conten-inicial-usuario{
+    /* background-color: aqua; */
+    width: 20%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+}
+
+.conten-inicial{
+    background-color: rgb(138, 29, 160);
+    width: 50px;
+    height: 50px;
+    padding-top: 7px;
+    font-size: 25px;
+    color: white;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow:  0px 1px 2px 2px #d3d2d2,
+    inset 0 0 7px 0 rgba(0, 0, 0, 0.144); 
+}
+.juancito{
+    background-color: orange;
+}
+.antonella{
+    background-color: red;
+}
+.pancracio{
+    background-color: rgb(9, 53, 175);
+}
