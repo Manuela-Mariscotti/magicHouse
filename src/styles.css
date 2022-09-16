@@ -64,10 +64,14 @@ button{
 
     color: white;
     font-weight: medium;
+    font-size: 20px;
+
+    padding: 5px
 }
 
 button:active{
-    color: var(--accent-color)
+    color: var(--accent-color);
+    box-shadow: 0px 0px 5px var(--accent-color);
 }
 
 .button--secondary{
