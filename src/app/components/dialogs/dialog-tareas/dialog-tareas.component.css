@@ -5,6 +5,8 @@
     gap: 20px;
 
     padding: 5px;
+
+    color: var(--primary-color)
 }
 
 button{
@@ -18,6 +20,6 @@ button{
 }
 .buttons{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     width: 100%;
 }
