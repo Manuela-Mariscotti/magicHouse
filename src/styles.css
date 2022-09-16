@@ -156,3 +156,102 @@ input:focus{
     margin: 0px;
     padding: 0px;
 }
+
+/* ---------AVATAR USUARIO GR(GRANDE) - PAG: PERFIL-------- */
+
+/*
+<div class="conten-avatar-gr">
+    <div class="avatar-gr">
+        <p>P</p>
+    </div>
+</div>
+*/
+
+.conten-avatar-gr{
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.avatar-gr{
+    background-color: rgb(133, 14, 156);
+    width: 100px;
+    height: 100px;
+    font-size: 50px;
+    padding-top: 15px;    
+    margin-bottom: 30px;
+    color: white;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow:  0px 2px 4px 4px #d3d2d2,
+    inset 0 0 15px 0 rgba(0, 0, 0, 0.144); 
+}
+
+/* ---------AVATAR USUARIO MD(MEDIO) - PAG: AJUSTES-------- */
+
+/*
+<div class="conten-avatar-usuario-md">
+    <div class="avatar-md">
+        <p>J</p>
+    </div>
+</div>
+*/
+
+.conten-avatar-usuario-md{
+    width: 20%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+}
+
+.avatar-md{
+    background-color: rgb(138, 29, 160);
+    width: 50px;
+    height: 50px;
+    padding-top: 7px;
+    font-size: 25px;
+    color: white;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow:  0px 1px 2px 2px #d3d2d2,
+    inset 0 0 7px 0 rgba(0, 0, 0, 0.144); 
+}
+
+/* ---------AVATAR USUARIO PQ(PEQUEÑO) - PAG: TAREAS-------- */
+
+/*
+<div class="conten-avatar-usuario-pq">
+    <div class="avatar-pq">
+        <p>J</p>
+    </div>
+</div>
+*/
+
+.conten-avatar-usuario-pq{
+    width: 15%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: aqua;
+
+}
+
+.avatar-pq{
+    background-color: rgb(138, 29, 160);
+    width: 30px;
+    height: 30px;
+    padding-top: 10px;
+    font-size: 12px;
+    color: white;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow:  0px 0px 1px 1px #d3d2d2;
+}

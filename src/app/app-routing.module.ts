@@ -13,6 +13,8 @@ import { PerfilComponent } from './pages/perfil/perfil.component';
 import { AjustesComponent } from './pages/ajustes/ajustes.component';
 import { PresupuestoComponent } from './pages/presupuesto/presupuesto.component';
 import { RegistroComponent } from './pages/registro/registro.component';
+import { NuevoGastoComponent } from './pages/nuevo-gasto/nuevo-gasto.component';
+import { CrearHogarComponent } from './pages/crear-hogar/crear-hogar.component';
 
 const routes: Routes = [
   {path: "",component: HomeComponent},
@@ -28,6 +30,8 @@ const routes: Routes = [
   {path: "perfil", component: PerfilComponent},
   {path: "ajustes", component: AjustesComponent},
   {path: "presupuesto", component: PresupuestoComponent},
+  {path: "nuevo-gasto", component: NuevoGastoComponent},
+  {path: "crear-hogar", component: CrearHogarComponent}
 
 
 ];
