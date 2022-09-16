@@ -2,9 +2,14 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     gap:30px;
 }
 
 .texto-titulo{
     text-align: center;
+}
+
+app-card-home{
+    width: 100%;
 }

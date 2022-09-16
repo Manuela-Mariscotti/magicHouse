@@ -3,8 +3,13 @@
     <p class="texto-titulo">Notificaciones</p>
 
     <div class="cards" *ngFor="let notificacion of notificaciones">
-        <app-card-home [info]="notificacion"></app-card-home>
+        <app-card-home (onDelete)="deleteNotification($event)" [info]="notificacion"></app-card-home>
     </div>
+
+    <ng-container *ngIf="notificaciones.length == 0">
+        <p>* No hay notificaciones *</p>
+    </ng-container>
+    
 
     
 </div>

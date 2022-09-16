@@ -1,5 +1,6 @@
 .caja-blanca{
     height: 15vh;
+    width: 95vw;
     padding: 2%;
 }
 
@@ -42,13 +43,13 @@
     align-items: center;
 
     position: absolute;
-    right: 30px;
+    right: 20px;
 
     width: 25px;
     height: 25px;
 
-    border: 1px solid var(--primary-color);
-    border-radius: 50%;
+    font-size: 30px;
+
 }
 .eliminar:active{
     transform: scale(0.8);

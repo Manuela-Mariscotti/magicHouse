@@ -1,4 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Notificacion } from 'src/app/models/notificacion';
 
 @Component({
   selector: 'app-card-home',
@@ -8,8 +9,13 @@ import { Component, Input, OnInit } from '@angular/core';
 export class CardHomeComponent implements OnInit {
 
   @Input() info:any;
+  @Output() onDelete = new EventEmitter<Notificacion>()
 
   constructor() { }
+
+  borrar(){
+    this.onDelete.emit(this.info);
+  }
 
   ngOnInit(): void {
   }

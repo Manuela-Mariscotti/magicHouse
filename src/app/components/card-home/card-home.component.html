@@ -1,6 +1,6 @@
 <div class="caja-blanca">
-    <div class="eliminar">
-        X
+    <div class="eliminar" (click)="borrar()">
+        <mat-icon>cancel</mat-icon>
     </div>
     <div class="notificacion">
         
@@ -18,7 +18,7 @@
         
         <div class="notificacion__contenido">
             <h1>{{info.title}}</h1>
-            <p class="texto-gral">{{info.content}}</p>
+            <p class="texto-gral">{{info.description}}</p>
         </div>
 
     </div>
