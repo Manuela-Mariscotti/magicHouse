@@ -6,4 +6,6 @@ app.get('/*',function(req,res){
     res.sendFile("index.html",{root:__dirname+'/dist/magic-house'});
 });
 
-app.listen(process.env.PORT || 8080);
+app.listen(process.env.PORT || 8080, function(){
+    console.log("Listen on server");
+});
