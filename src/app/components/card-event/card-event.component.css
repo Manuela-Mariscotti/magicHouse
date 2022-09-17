@@ -13,3 +13,21 @@
     width: 100%;
     padding: 5%
 }
+
+
+.fila{
+    display: flex;
+    justify-content: space-between;
+}
+.controls{
+    display: flex;
+    justify-content: flex-end;
+    width: 50%;
+    gap: 5px;
+}.titulo{
+    width: 50%;
+}
+
+mat-icon:active{
+    transform: scale(0.8);
+}

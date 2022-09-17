@@ -42,6 +42,7 @@ import { CardListaCompraComponent } from './components/card-lista-compra/card-li
 import { DialogListaCompraComponent } from './components/dialogs/dialog-lista-compra/dialog-lista-compra.component';
 import { CalendarComponentComponent } from './components/calendar-component/calendar-component.component';
 import { CardEventComponent } from './components/card-event/card-event.component';
+import { DateTranslatePipe } from './pipes/date-translate.pipe';
 
 
 @NgModule({
@@ -76,7 +77,8 @@ import { CardEventComponent } from './components/card-event/card-event.component
     CardListaCompraComponent,
     DialogListaCompraComponent,
     CalendarComponentComponent,
-    CardEventComponent
+    CardEventComponent,
+    DateTranslatePipe
   ],
   imports: [
     BrowserModule,

@@ -3,13 +3,8 @@
     <div class="controls">
         <div class="month_chooser">
             <button (click)="changeMonth(-1)">&lt;</button>
-            {{daySelected | date: 'MMMM yyyy'}}
+            <span class="texto-gral">{{daySelected | date: 'MMMM yyyy' | dateTranslate}}</span>
             <button (click)="changeMonth(+1)">&gt;</button>
-        </div>
-        
-        <div class="period_buttons">
-            <button>Semana</button>
-            <button>Mes</button>
         </div>
     </div>
     
@@ -37,8 +32,11 @@
 
     <ng-container *ngFor="let event of showingEvents">
 
-        <app-card-event [event]="event"></app-card-event>
+        <app-card-event (onDelete)="delete($event)" [event]="event"></app-card-event>
         
     </ng-container>
+
+    <p class="texto-gral" *ngIf="!showingEvents" style="text-align: center; width: 100%;">* Haz click en un día para ver los eventos *</p>
+    
 
 </div>

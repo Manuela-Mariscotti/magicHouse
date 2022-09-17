@@ -1,21 +1,31 @@
 <div class="page">
     <div class="caja-blanca">
-        <div>
-            <span class="text-subt">Título</span>
+
+        <div class="text-subt fila">
+                
+                <span class="titulo">
+                    {{event.title}}
+                </span>
+
+                <span class="controls">
+                    <mat-icon (click)="edit()">edit</mat-icon>
+                    <mat-icon (click)="delete()">cancel</mat-icon>
+                </span>
+
             <br>
-            {{event.title}}
         </div>
 
         <div>
-            <span class="text-subt">Fecha</span>
+            <span class="texto-gral">{{event.date}}</span>
             <br>
-            {{event.date}}
+            <br>
+            
         </div>
 
         <div>
-            <span class="text-subt">Descripcion</span>
-            <br>
-            {{event.description}}
+            <span class="text-subt">{{event.description}}</span>
+            
         </div>
+
     </div>
 </div>

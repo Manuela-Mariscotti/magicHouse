@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as moment from 'moment';
+import { Event } from 'src/app/models/event';
 
 @Component({
   selector: 'app-calendar-component',
@@ -16,16 +17,9 @@ export class CalendarComponentComponent implements OnInit {
   dias_semana = ['Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado', 'Domingo']
 
   events = [
-    {
-      date: moment.utc('2022-09-25'),
-      title: 'Cita con el medico',
-      description: 'XXXXXX'
-    },
-    {
-      date: moment.utc('2022-09-21'),
-      title: 'Cita con el medico',
-      description: 'XXXXXX'
-    } 
+    new Event(moment.utc('2022-09-25').format('YYYY-MMMM-D'), 'Veterinario', 'Gato'),
+    new Event(moment.utc('2022-09-25').format('YYYY-MMMM-D'), 'Cumpleaños', 'Gato'),
+    new Event(moment.utc('2022-09-17').format('YYYY-MMMM-D'), 'Veterinario', 'Gato')
   ];
 
   showingEvents;
@@ -33,6 +27,10 @@ export class CalendarComponentComponent implements OnInit {
   constructor() {
     let date = new Date()
     this.getMonth(date.getMonth()+1, date.getFullYear())
+
+    //! implementar(mostrar eventos del dia al abir pag)
+    // this.showDayEvents({moment: moment()})
+
   }
 
   getMonth(month:number, year:number) {
@@ -52,7 +50,7 @@ export class CalendarComponentComponent implements OnInit {
       const dayObject = moment(`${year}-${month}-${day}`)
 
       let events = this.events.filter( (e) => {
-        return e.date.format('YYYY-MMMM-D') == dayObject.format('YYYY-MMMM-D');
+        return e.date == dayObject.format('YYYY-MMMM-D');
       })
 
       return {
@@ -60,15 +58,16 @@ export class CalendarComponentComponent implements OnInit {
         value: day,
         weekDay: dayObject.isoWeekday(),
         events: events.length > 0 ? events : null,
-        today: dayObject.format('YYYY-MMMM-D') == moment().format('YYYY-MMMM-D')
+        today: dayObject.format('YYYY-MMMM-D') == moment().format('YYYY-MMMM-D'),
+        moment: dayObject
       }
     })
-    
+
 
     for(let i = 1; i < startDay.isoWeekday(); i++){
-      days.unshift({name:null, value: '', weekDay: -1, events: null, today: false})
+      days.unshift({name:null, value: '', weekDay: -1, events: null, today: false, moment: moment()})
     }
-    
+
     this.dateSelected = days;
   }
 
@@ -84,6 +83,29 @@ export class CalendarComponentComponent implements OnInit {
 
   showDayEvents(day:any){
     this.showingEvents = day.events
+  }
+
+  delete(event:Event){
+    let i = this.events.findIndex((e) => e == event); // i = indice de events donde esta el evento
+    this.events.splice(i, 1);
+
+    this.showingEvents = this.events.filter((e) => e.date == event.date);
+
+    let j; // j = indice de dateSelcted donde esta el dia del evento
+    this.dateSelected.forEach((e, i) => {
+      let tmp = -1;
+      if (e.events) {
+        tmp = e.events.findIndex((element) => element == event);
+      }
+
+      if (tmp >= 0) {
+        j = i;
+      }
+    });
+
+    this.dateSelected[j].events.splice(i, 1);
+    console.log(j);
+    console.log(this.events);
   }
 
   ngOnInit(): void {}

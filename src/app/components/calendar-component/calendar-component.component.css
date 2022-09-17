@@ -79,21 +79,18 @@
     justify-content: space-between;
     width: 100%;
 }
-.period_buttons, .month_chooser{
+.month_chooser{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
 
     text-align: center;
 
-    width: 40%;
+    width: 100%;
     gap: 5px;
-}
-.month_chooser{
-    justify-content: flex-end;
-
 }
 
 button{
     padding: 5px;
+    width: 10%;
 }
