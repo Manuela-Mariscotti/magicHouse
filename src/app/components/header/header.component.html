@@ -1,14 +1,18 @@
-<div class="header1" *ngIf="document.location.href != 'http://magic--house.herokuapp.com/login'">
+<div class="header1" *ngIf="!hrefIsLogin()">
+
     <div class="header1_1" (click)="navigate('ajustes')">
         <img src="../../../assets/img/herramientas.png" 
-            [ngClass]="document.location.href == 'http://magic--house.herokuapp.com/ajustes' ? 'active' : ''">
+            [ngClass]="hrefIsSettings() ? 'active' : ''">
     </div>
+
     <div class="header1_2">
         <img src="../../../assets/img/MagicHouse-logo-transparente-png.png">
     </div>
+
     <div class="header1_3" (click)="navigate('perfil')">
         <img src="../../../assets/img/perfil.png"
-            [ngClass]="document.location.href == 'http://magic--house.herokuapp.com/perfil' ? 'active' : ''">
+            [ngClass]="hrefIsProfile() ? 'active' : ''">
     </div>
+
 </div>
 

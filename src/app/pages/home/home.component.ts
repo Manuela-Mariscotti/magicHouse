@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Notificacion } from 'src/app/models/notificacion';
+import { UserServiceService } from 'src/app/shared/user-service.service';
 
 @Component({
   selector: 'app-home',
@@ -13,7 +15,9 @@ export class HomeComponent implements OnInit {
     new Notificacion('Calendario', 'Cumpleanos del gato', 'event'),
   ];
 
-  constructor() {}
+  constructor(private userService : UserServiceService, private router:Router) {
+
+  }
 
   deleteNotification(notif:Notificacion){
     let i = this.notificaciones.findIndex( (element) => element.description == notif.description);
@@ -21,5 +25,7 @@ export class HomeComponent implements OnInit {
     console.log(i)
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    !this.userService.logged ? this.router.navigateByUrl('/login') : null
+  }
 }

@@ -1,16 +1,38 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { User } from '../models/user';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class UserServiceService {
+  private url: string = 'https://api-magic--house.herokuapp.com';
 
-  private url : string = "https://api-magic--house.herokuapp.com"
+  public logged = false;
+  private user: User;
 
-  constructor( private http : HttpClient) { }
+  constructor(private http: HttpClient) {}
 
-  test(){
-    return this.http.get(this.url+"/")
+  login(user: User) {
+    return this.http.post(this.url + '/login', user);
+  }
+
+  test() {
+    return this.http.get(this.url + '/');
+  }
+
+  setUserData(data: any[]) {
+    this.user = new User();
+    let userData = data[0];
+
+    this.user.username = userData.name;
+    this.user.password = userData.password;
+    this.user.email = userData.email;
+    this.user.type = userData.type;
+    this.user.id_hogar = userData.id_hogar;
+  }
+
+  getUserData() {
+    return this.user ? this.user : null
   }
 }

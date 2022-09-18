@@ -1,14 +1,17 @@
 .footer1{
-    width: 100%;
-    height: var(--footer-height);
-    background-color: var(--primary-color);
-    position: fixed;
-    bottom: 0px;
     display: flex;
-    flex-direction: row;
     justify-content: center;
     align-items: center;
 
+    width: 100%;
+    height: var(--footer-height);
+    
+    position: fixed;
+    bottom: 0px;
+    
+    background-color: var(--primary-color);
+
+    box-shadow: 0px 0px 5px var(--primary-color);
 }
 
 .conten-imgs{

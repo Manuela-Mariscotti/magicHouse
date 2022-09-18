@@ -3,7 +3,7 @@
         <img src="../../../assets/img/MagicHouse-transparente-logo-png.png" alt="Logo Magic house">
     </figure>
 
-    <form class="form" #loginForm="ngForm" (ngSubmit)="onSubmit()">
+    <form class="form" #loginForm="ngForm" (ngSubmit)="login()">
 
         <div class="inputs">
 
@@ -27,7 +27,7 @@
         <div class="buttons">
 
             <button>Login</button>
-            <button class="button--secondary">Registrate</button>
+            <button type="button" class="button--secondary" (click)="register()">Registrate</button>
             
         </div>
 
