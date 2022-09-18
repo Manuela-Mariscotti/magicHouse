@@ -52,3 +52,7 @@ a{
 .footer-selected{
     color:var(--accent-color);
 }
+
+.active{
+    color: var(--accent-color)
+}

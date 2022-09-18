@@ -8,11 +8,11 @@ import { Component, Inject, OnInit } from '@angular/core';
 })
 export class FooterComponent implements OnInit {
 
-  public location;
+  public document;
 
   constructor(@Inject(DOCUMENT) document:any) {
 
-    this.location = document.location.href
+    this.document = document
 
   }
   

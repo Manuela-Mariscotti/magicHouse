@@ -1,25 +1,44 @@
-<div class="footer1" *ngIf="location != 'http://localhost:4200/login'">
+<div class="footer1">
    <div class="conten-imgs">
+
       <div class="caja">
-         <a routerLink="/tareas"><mat-icon>assignment</mat-icon></a>
+         <a routerLink="/tareas">
+            <mat-icon [ngClass]="document.location.href == 'http://localhost:4200/tareas' ?  'active' : ''">assignment
+            </mat-icon>
+         </a>
          <p class="text-navbar">Tareas</p>
       </div>
+
       <div class="caja">
-         <a routerLink="/gastos"><mat-icon>attach_money</mat-icon></a>
+         <a routerLink="/gastos">
+            <mat-icon [ngClass]="document.location.href == 'http://localhost:4200/gastos' ?  'active' : ''">attach_money
+            </mat-icon>
+         </a>
          <p class="text-navbar">Gastos</p>
       </div>
+
       <div class="caja">
-         <a routerLink="/"><mat-icon fontIcon="home"></mat-icon></a>
+         <a routerLink="/">
+            <mat-icon [ngClass]="document.location.href == 'http://localhost:4200/' ?  'active' : ''" fontIcon="home">
+            </mat-icon>
+         </a>
          <p class="text-navbar">Home</p>
       </div>
+
       <div class="caja">
-         <a routerLink="/lista-compra"><mat-icon>local_grocery_store</mat-icon></a>
+         <a routerLink="/lista-compra">
+            <mat-icon [ngClass]="document.location.href == 'http://localhost:4200/lista-compra' ?  'active' : ''">
+               local_grocery_store</mat-icon>
+         </a>
          <p class="text-navbar">Compra</p>
       </div>
+
       <div class="caja">
-         <a routerLink="/calendario"><mat-icon>date_range</mat-icon></a> 
+         <a routerLink="/calendario">
+            <mat-icon [ngClass]="document.location.href == 'http://localhost:4200/calendario' ?  'active' : ''">
+               date_range</mat-icon>
+         </a>
          <p class="text-navbar">Calendario</p>
       </div>
    </div>
 </div>
-
