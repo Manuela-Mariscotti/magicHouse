@@ -11,10 +11,7 @@ export class FooterComponent implements OnInit {
   public document;
 
   constructor(@Inject(DOCUMENT) document:any) {
-    console.log(document.location.href);
-    
     this.document = document
-
   }
   
   ngOnInit(): void {
