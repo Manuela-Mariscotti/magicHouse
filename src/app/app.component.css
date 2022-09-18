@@ -10,10 +10,14 @@
 }
 
 .contenido{
+    position: fixed;
+    bottom: calc(var(--footer-height) + 20px);
+
     overflow-x: scroll;
     width: 100vw;
+
     margin-top: var(--header-height);
-    height: calc(99vh - var(--header-height) - var(--footer-height));
+    height: calc(99vh - var(--header-height) - var(--footer-height) - 20px); 
 }
 
 .footer{

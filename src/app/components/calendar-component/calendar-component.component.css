@@ -4,9 +4,11 @@
     justify-content: flex-start;
     gap:30px;
 
-    padding: 5%;
+    /* height: 60vh; */
 
-    height: fit-content;
+    padding-left: 5%;
+    padding-right: 5%;
+
 }
 
 .calendar{

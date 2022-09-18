@@ -22,7 +22,6 @@ export class HomeComponent implements OnInit {
   deleteNotification(notif:Notificacion){
     let i = this.notificaciones.findIndex( (element) => element.description == notif.description);
     this.notificaciones.splice(i,1);
-    console.log(i)
   }
 
   ngOnInit(): void {
