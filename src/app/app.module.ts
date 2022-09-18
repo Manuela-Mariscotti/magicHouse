@@ -43,6 +43,7 @@ import { DialogListaCompraComponent } from './components/dialogs/dialog-lista-co
 import { CalendarComponentComponent } from './components/calendar-component/calendar-component.component';
 import { CardEventComponent } from './components/card-event/card-event.component';
 import { DateTranslatePipe } from './pipes/date-translate.pipe';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -93,6 +94,7 @@ import { DateTranslatePipe } from './pipes/date-translate.pipe';
     ReactiveFormsModule,
     MatIconModule,
     NgbModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent],

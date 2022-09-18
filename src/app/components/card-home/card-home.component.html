@@ -4,7 +4,7 @@
     </div>
     <div class="notificacion">
         
-        <div class="notificacion__icono">
+        <div class="notificacion__icono" (click)="testApi()">
             
             <ng-container *ngIf="info.type == 'task'">
                 <img src="../../../assets/img/escoba.png">
