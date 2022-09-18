@@ -5,7 +5,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class DateTranslatePipe implements PipeTransform {
 
-  transform(value: string, ...args: unknown[]): unknown {
+  transform(value: string | null, ...args: unknown[]): unknown {
 
     let data = value.split(' ');
     let month = data.shift();

@@ -10,10 +10,11 @@ import { Router } from '@angular/router';
 export class HeaderComponent implements OnInit {
 
   public location;
+  public document;
 
   constructor(private router: Router, @Inject(DOCUMENT)document:any) {
 
-    this.location = document.location.href;
+    this.document = document
 
    }
 
