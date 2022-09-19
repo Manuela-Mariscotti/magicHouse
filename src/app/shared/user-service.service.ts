@@ -29,6 +29,7 @@ export class UserServiceService {
     this.user.password = userData.password;
     this.user.email = userData.email;
     this.user.type = userData.type;
+    this.user.id_user = userData.id_user;
     this.user.id_hogar = userData.id_hogar;
   }
 
