@@ -13,6 +13,6 @@ export class NotificationService {
   }
 
   get(user_id:number){
-    return this.http.get(this.url + `/notifications`)
+    return this.http.get(this.url + `/notifications?id_user=${user_id}`)
   }
 }

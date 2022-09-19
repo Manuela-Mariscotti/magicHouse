@@ -30,10 +30,14 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     !this.userService.logged ? this.router.navigateByUrl('/login') : null
 
-    console.log('holi');
-
     this.notificationService.get(this.userService.getUserData().id_user).subscribe( (response: ApiResponse) => {
-      this.notificaciones.push(new Notificacion(response.data[0].title, response.data[0].description, response.data[0].type))
+      
+      this.notificaciones.push(new Notificacion(response.data.nextEvent.title , response.data.nextEvent.description, 'event'))
+
+      response.data.pendingTasks.forEach(task => {
+        this.notificaciones.push(new Notificacion('Tarea pendiente', task.taskname, 'task'))
+      });
     })
+    
   }
 }

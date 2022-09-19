@@ -15,14 +15,6 @@ export class CardHomeComponent implements OnInit {
 
   constructor(private userService : UserServiceService) { }
 
-  testApi(){
-    // let data = 
-    this.userService.test().subscribe((data:any)=>{
-      console.log(data);
-      // return data
-      
-    })
-  }
 
   borrar(){
     this.onDelete.emit(this.info);
