@@ -35,7 +35,7 @@
     width: 80%;
     gap: 15%;
 }
-input{
+input, select{
     width: 100%;
 
 }
@@ -50,4 +50,8 @@ button{
     padding: 5px;
 }
 
+.invalid-feedback{
+    height: 10px !important;
+    border: 1px solid green
+}
 
