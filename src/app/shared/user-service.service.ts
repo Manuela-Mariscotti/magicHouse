@@ -6,7 +6,8 @@ import { User } from '../models/user';
   providedIn: 'root',
 })
 export class UserServiceService {
-  private url: string = 'https://api-magic--house.herokuapp.com';
+  // private url: string = 'https://api-magic--house.herokuapp.com';
+  private url: string = 'http://localhost:8080';
 
   public logged = false;
   private user: User;
@@ -35,5 +36,9 @@ export class UserServiceService {
 
   getUserData() {
     return this.user ? this.user : null
+  }
+
+  getUserNames(){
+    return this.http.get(this.url + `/getUsersByHome?id_hogar=${this.user.id_hogar}`);
   }
 }

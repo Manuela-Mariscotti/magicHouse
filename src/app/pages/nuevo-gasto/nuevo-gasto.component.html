@@ -3,13 +3,35 @@
 
     <div class="caja-blanca">
 
-        <form class="form">
+        <form class="form" #formNewGasto="ngForm" (ngSubmit)="postSpent()">
             <div class="inputs">
 
-                <input type="text" placeholder="Nombre del gasto">
-                <input type="text" placeholder="Importe">
-                <input type="text" placeholder="Usuario">
-                <input type="date" placeholder="fecha">
+            
+                <input type="text" placeholder="Nombre del gasto" name="spent_title" [(ngModel)]="form_spent_title"
+                   [ngClass]="{'is-invalid' : spent_title.touched && spent_title.invalid}" #spent_title="ngModel" required>
+                
+                   <!-- <div class="invalid-feedback" *ngIf="spent_title.invalid">
+                    <p *ngIf="spent_title.errors?.['required']">Introduce un nombre para el gasto</p>                    
+                   </div> -->
+                
+
+                <input type="text" placeholder="Importe" name="spent_value" [(ngModel)]="form_spent_value"
+                    [ngClass]="{'is-invalid' : spent_value.touched && spent_value.invalid}" #spent_value="ngModel" required>
+
+                <!-- <div class="invalid-feedback" *ngIf="spent_title.invalid">
+                    <p *ngIf="spent_title.errors?.['required']">Introduce un nombre para el gasto</p>                    
+                   </div> -->
+                
+
+                <select type="text" placeholder="Usuario" name="spent_user" [(ngModel)]="form_spent_user" 
+                    #spent_user="ngModel">
+                    <ng-container *ngFor="let user of usernames">
+                        <option value={{user.id_user}}> {{user.username}}</option>
+                    </ng-container>
+                </select>
+
+                <input type="date" placeholder="fecha" name="spent_date"
+                    [(ngModel)]="form_spent_date" #spent_date="ngModel">
             </div>
 
             <div class="buttons">
