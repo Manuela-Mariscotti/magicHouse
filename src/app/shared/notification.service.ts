@@ -12,7 +12,11 @@ export class NotificationService {
   constructor(private http: HttpClient) {
   }
 
-  get(user_id:number){
-    return this.http.get(this.url + `/notifications?id_user=${user_id}`)
+  getNextEvent(){
+    return this.http.get(this.url + `/nextEvent`);
+  }
+
+  getPendingTasks(id_user: number){
+    return this.http.get(this.url + `/pendingTasks?id_user=${id_user}`)
   }
 }
