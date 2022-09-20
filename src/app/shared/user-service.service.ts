@@ -7,11 +7,15 @@ import { User } from '../models/user';
 })
 export class UserServiceService {
   private url: string = 'https://api-magic--house.herokuapp.com';
-
+  // private url: string  = "http://localhost:8080"
   public logged = false;
   private user: User;
 
   constructor(private http: HttpClient) {}
+
+  insertUser(user:User){
+    return this.http.post(this.url + '/registro',user)
+  }
 
   login(user: User) {
     return this.http.post(this.url + '/login', user);

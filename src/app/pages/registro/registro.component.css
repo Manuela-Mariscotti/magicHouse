@@ -1,6 +1,6 @@
 /*----------FONDO-------------*/
 .fondo{
-    height: 100vh;
+    height: fit-content;
     background-color: var(--background-color);
 }
 
@@ -19,11 +19,12 @@
 
 /*----------FORMULARIO-------------*/
 .caja-blanca{
-    height: 350px;
+    height: fit-content;
 }
+
 .conten-form{
     width: 100%;
-    height: 400px;
+    height: fit-content;
     padding: 10px;    
     display: block;
     display: flex;
@@ -32,17 +33,15 @@
     align-items: center;
     border-radius: 4px;
     background-color: #FBFBFB;
-    box-shadow: 0px 2px 3px 2px #d3d2d2;      
+    box-shadow: 0px 2px 3px 2px #d3d2d2;
 }
-.caja-blanca{
-    margin-top: 10%;
 
-}
 .form-registro{
     width: 100%;
-    height: 45vh;
+    height: fit-content;
     display: flex;
-    padding: 10px;     
+    padding: 10px;
+    padding-top: 20px;
     flex-direction: column;
     justify-content: center;
     align-content: space-around;
@@ -50,19 +49,26 @@
 
 /*----------INPUTS-------------*/
 .form-registro input{
-    margin-bottom: 20px;  
+    margin-top: 20px;
+    width: 100%;  
 }
 
 /*----------CHECKBOX-------------*/
 .conten-checkbox{
+    width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items:baseline;
+    align-content:center;
     margin: 10px;
 }
 
+.conten-checkbox input{
+    width: fit-content;
+}
+
 .conten-checkbox label{
+    width: fit-content;
     margin-left: 10px;
 }
 
@@ -78,7 +84,6 @@
     padding-left: 20px;
     padding-right: 20px;
     margin: 10px 20px 20px 20px;
-    
 }
 
 .button-cancelar{
@@ -86,4 +91,17 @@
     color: var(--primary-color);
     border: none;
     font-weight: bold;
+}
+.registroRealizado{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 5px;
+}
+.text-link{
+    text-decoration: none;
+    color: var(--primary-color);
+    font-weight: bolder;
+    margin-left: 3px;
 }

@@ -5,21 +5,73 @@
         <h1 class="texto-titulo-2">Regístrate</h1>
     </div>
 <!-- FORMULARIO -->
+    <div [hidden]="cartelHidden" class="registroRealizado">
+        <p class="text-subt">Registro realizado! </p>
+        <a class="text-subt text-link" (click)="goLogin()"> Iniciar sesión</a>
+    </div>
     <div class="conten-form caja-blanca">
-        <form class="form-registro" action="">
-            <input type="text" placeholder="Introduce tu nombre">
-            <input type="email" placeholder="Introduce tu email">
-            <input type="password" placeholder="Introduce un password">
-            <input type="password" placeholder="Repite el password">
-<!-- CHECKBOX -->
-            <div class="conten-checkbox">
-                <input type="checkbox" id="terminos" name="terminos" value="Bike">        
-                <label for="terminos">Acepto términos y condiciones</label>
+
+        <form class="form-registro" [formGroup]="registroForm" >
+            
+            <div class="form-group">
+
+                <input type="text" placeholder="Nombre" formControlName="nombre" [ngClass]="{'is-invalid': (registroForm.get('nombre').dirty || registroForm.get('nombre').touched ) &&!registroForm.get('nombre').valid}">
+                <div *ngIf="!registroForm.get('nombre').valid" class="invalid-feedback">
+                    El nombre es necesario.
+                </div>
+
+            </div>       
+
+            <div class="form-group">
+                
+                <input type="email" placeholder="Email" formControlName="email"
+                [ngClass]="{'is-invalid': (registroForm.get('email').dirty || registroForm.get('email').touched ) && !registroForm.get('email').valid}">
+                <div *ngIf="!registroForm.get('email').valid" class="invalid-feedback">
+                    <div *ngIf="!registroForm.get('email').errors?.['required']">El email es obligatorio</div>
+                    <div *ngIf="!registroForm.get('email').errors?.['email']">El email es incorrecto</div>
+                </div>
+
+            </div>    
+
+            <div class="form-group">
+                
+                <input type="password" placeholder="Password" formControlName="password" [ngClass]="{'is-invalid': (registroForm.get('password').dirty || registroForm.get('password').touched) &&!registroForm.get('password').valid}">
+                <div *ngIf="!registroForm.get('password').valid" class="invalid-feedback">
+                   <div *ngIf = "registroForm.get('password').errors?.['required']">La contraseña es obligatoria</div>
+                   <div *ngIf = "registroForm.get('password').errors?.['minlength']">La contraseña debe tener al menos 8 caracteres</div>
+                </div>
+
             </div>
+
+            <div class="form-group">
+                
+                <input type="password" placeholder="Repetir password" formControlName="password2" [ngClass]="{'is-invalid': (registroForm.get('password2').dirty || registroForm.get('password2').touched) && !registroForm.get('password2').valid}">
+                <div *ngIf="!registroForm.get('password2').valid" class="invalid-feedback">
+                    <div *ngIf = "registroForm.get('password2').errors?.['required']">La contraseña es obligatoria</div>
+                    <div *ngIf = "!registroForm.get('password2').errors?.['required'] && registroForm.get('password2').errors?.['matchPassword']">Las contraseñas no coinciden</div>
+                </div>
+
+            </div>
+                         
+<!-- CHECKBOX -->
+            
+            <div class="conten-checkbox">
+
+                <div class="form-group">
+                    <input type="checkbox"  formControlName="terminos" [ngClass]="{'is-invalid': !registroForm.get('terminos').valid}"><label for="terminos">Acepto los Términos y condiciones</label>
+                    
+                    <div *ngIf="!registroForm.get('terminos').errors?.['requiredTrue']" class="invalid-feedback">Acepte los terminos y condiciones para continuar</div>
+                </div>      
+
+           </div>
+
 <!-- BOTONES -->
+
             <div class="conten-button">
-                    <button class="button-registro">Confirmar</button>
-                    <button class="button-registro button-cancelar">Cancelar</button>
+                <div class="form-group">
+                    <button class="button-registro" [disabled]="registroForm.invalid" (click)="insertUser()" >Confirmar</button>
+                </div>
+                    <button class="button-registro button--secondary" routerLink="/login">Cancelar</button>
             </div>
         </form>
     </div>
