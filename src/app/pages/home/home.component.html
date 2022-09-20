@@ -2,11 +2,23 @@
 
     <p class="texto-titulo">Notificaciones</p>
 
-    <div class="cards" *ngFor="let notificacion of notificaciones">
-        <app-card-home (onDelete)="deleteNotification($event)" [info]="notificacion"></app-card-home>
-    </div>
+    <ng-container *ngIf="nextEvent">
+        <p>Proximo evento</p>
 
-    <ng-container *ngIf="notificaciones.length == 0">
+        <app-card-home [info]="nextEvent"></app-card-home>
+    </ng-container>
+    
+    <ng-container *ngIf="pendingTasks.length > 0">
+        <p>Tareas pendientes</p>
+
+        <ng-container *ngFor="let task of pendingTasks">
+
+            <app-card-home [info]="task"></app-card-home>
+        </ng-container>
+
+    </ng-container>
+
+    <ng-container *ngIf="!nextEvent">
         <p>* No hay notificaciones *</p>
     </ng-container>
     
