@@ -6,16 +6,21 @@
     <div mat-dialog-content>
 <!-- FORMULARIO -->
     <div class="conten-popup">
-            <form>
+            <form [formGroup]="joinHogarForm">
 <!-- INPUTS -->
-                <div class="conten-inputs">
-                    <input type="text" placeholder="Código">
+                <div class="form-group">
+                    <div class="conten-inputs">
+                        <input type="text" placeholder="Código" formControlName="id_hogar" [ngClass]="{'is-invalid' : !joinHogarForm.get('id_hogar').valid}">
+                        <div *ngIf="!joinHogarForm.get('id_hogar').valid" class="invalid-feedback">El código es necesario</div>
+                    </div>
                 </div>
 <!-- BOTONES CONFIRM / CANCEL -->
                 <div mat-dialog-actions>
-                    <div class="conten-buttons">
-                        <button class="button-popup button-cancelar" (click)="cancelar()">Cancelar</button>                        
-                        <button class="button-popup" [mat-dialog-close]>Confirmar</button>
+                    <div class="form-group">
+                        <div class="conten-buttons">
+                            <button class="button-popup button-cancelar" (click)="cancelar()">Cancelar</button>                        
+                            <button class="button-popup" [mat-dialog-close] [disabled]="joinHogarForm.invalid" (click)="joinHogar()">Confirmar</button>
+                        </div>
                     </div>
                 </div>
 

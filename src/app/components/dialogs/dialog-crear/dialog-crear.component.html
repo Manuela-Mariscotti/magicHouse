@@ -6,20 +6,34 @@
     <div mat-dialog-content>
 <!-- FORMULARIO -->
         <div class="conten-popup">
-            <form>
+            <form class="form-registro" [formGroup]="newHogarForm">
 <!-- INPUTS -->
                 <div class="conten-inputs">
-                    <input type="text" placeholder="Nombre de hogar">
-                    <input type="text" placeholder="tipo de hogar">
-                </div>
-<!-- BOTONES CONFIRM / CANCEL -->
-                <div mat-dialog-actions>
-                    <div class="conten-buttons">
-                        <button class="button-popup button-cancelar" (click)="cancelar()">Cancelar</button>                        
-                        <button class="button-popup" [mat-dialog-close]>Confirmar</button>
+
+                    <div class="form-group">
+                        <input type="text" placeholder="Nombre de hogar" formControlName="name" [ngClass]="{'is-invalid' : (newHogarForm.get('name').dirty || newHogarForm.get('name').touched) && !newHogarForm.get('name').valid }">
+                        <div *ngIf="!newHogarForm.get('name').valid" class="invalid-feedback">El nombre es necesario</div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <select placeholder="Tipo de hogar" formControlName="type" [ngClass]="{'is-invalid' : !newHogarForm.get('type').valid }">
+                            <option selected>Seleccionar..</option>
+                            <option value="familiar">Casa familiar</option>
+                            <option value="compartido">Casa compartida</option>
+                        </select>
+                        <div *ngIf="!newHogarForm.get('type').valid" class="invalid-feedback">El tipo de hogar es necesario</div>
 
                     </div>
-
+                </div>
+<!-- BOTONES CONFIRM / CANCEL -->
+                
+                <div mat-dialog-actions>
+                    <div class="form-group">
+                        <div class="conten-buttons">
+                            <button class="button-popup button-cancelar"  (click)="cancelar()">Cancelar</button>                        
+                            <button class="button-popup" [mat-dialog-close] [disabled]="newHogarForm.invalid" (click)="newHogar()">Confirmar </button>
+                        </div>
+                    </div>
                 </div>
 
             </form>

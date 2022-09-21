@@ -6,9 +6,14 @@ import { User } from '../models/user';
   providedIn: 'root',
 })
 export class UserServiceService {
+<<<<<<< HEAD
   private url: string = 'https://api-magic--house.herokuapp.com';
   // private url: string = 'http://localhost:8080';
 
+=======
+  // private url: string = 'https://api-magic--house.herokuapp.com';
+  private url: string  = "http://localhost:8080"
+>>>>>>> crear-hogar
   public logged = false;
   private user: User;
 
