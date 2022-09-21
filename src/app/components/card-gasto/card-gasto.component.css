@@ -1,6 +1,7 @@
 
 .caja-blanca{
     display: flex;
+
     justify-content: space-between;
     align-items: center;
     
@@ -11,9 +12,19 @@
     padding-right: 15px;
 }
 
-.spent_value{
+.spent_data{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 100%;
+    width: 70%;
+
+    
+}.spent_value{
     font-size: 40px;
     font-weight: bold;
+    text-align: center;
+    width: 30%;
 }
 
 p{

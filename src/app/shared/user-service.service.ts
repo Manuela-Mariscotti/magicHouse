@@ -45,4 +45,7 @@ export class UserServiceService {
   getUserNames(){
     return this.http.get(this.url + `/getUsersByHome?id_hogar=${this.user.id_hogar}`);
   }
+  getUserById(id_user:number){
+    return this.http.get(this.url + `/userById?id_user=${id_user}`)
+  }
 }
