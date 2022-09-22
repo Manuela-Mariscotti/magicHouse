@@ -28,8 +28,8 @@ export class NuevoGastoComponent implements OnInit {
     !this.id_user ? this.id_user = this.userService.getUserData().id_user : null
     let spent:Spent = new Spent(this.form_spent_title, this.form_spent_date.toString(),this.form_spent_user ,this.id_user, this.form_spent_value)
 
-    this.spentsService.postSpent(spent).subscribe( (response: ApiResponse) => {
-      response.error ? console.log(response) : null
+    this.spentsService.postSpent(spent, this.userService.getUserData().id_hogar).subscribe( (response: ApiResponse) => {
+      console.log(response)
       this.router.navigateByUrl('/gastos')
     })
   }

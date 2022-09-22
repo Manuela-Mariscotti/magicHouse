@@ -25,48 +25,30 @@
         </table>
     </div>
 
-    <div class="caja-blanca">
+    <ng-container *ngFor="let transaction of transactions">
 
-        <div class="fila">
+        <div class="caja-blanca">
 
-          <div class="columna text-subt">
-            <span>User1</span>
-            <mat-icon>arrow_drop_down</mat-icon>
-            <span>User2</span>
-        </div> 
+            <div class="fila">
 
-        <div class="columna texto-titulo">
-            50$
+                <div class="columna text-subt">
+                    <span>{{transaction.pagador.nombre}}</span>
+                    <mat-icon>arrow_drop_down</mat-icon>
+                    <span>{{transaction.cobrador.nombre}}</span>
+                </div> 
+            
+                <div class="columna texto-titulo">
+                    {{transaction.value}}
+                </div>
+            
+            </div>
+
+            <div class="fila">
+                    <button (click)="confirm()">Confirmar pago</button>
+            </div>
         </div>
-         
-        </div>
-        
+    
+        </ng-container>
 
-        <div class="fila">
-            <button (click)="confirm()">Confirmar pago</button>
-        </div>
     </div>
 
-    <div class="caja-blanca">
-
-        <div class="fila">
-
-          <div class="columna text-subt">
-            <span>User3</span>
-            <mat-icon>arrow_drop_down</mat-icon>
-            <span>User2</span>
-        </div> 
-
-        <div class="columna texto-titulo">
-            25$
-        </div>
-         
-        </div>
-        
-
-        <div class="fila">
-            <button (click)="confirm()">Confirmar pago</button>
-        </div>
-    </div>
-
-</div>
