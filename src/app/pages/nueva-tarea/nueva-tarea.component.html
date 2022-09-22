@@ -4,44 +4,68 @@
     </p>
 
     <img src="../../../assets/img/escoba.png" alt="icono-escoba">
+
     <div class="caja-blanca">
-        <form class="form">
+        
+        <form class="form form-registro" [formGroup]="newTaskForm">
 
-            <select name="" id="">
-                <option value="0">Elige un usuario</option>
+            <div [hidden]="cartelHidden" class="registroRealizado">
+                <p class="text-subt">Tarea asignada.</p>
+                <a class="text-subt text-link" (click)="goTasks()">Ver tareas</a>
+            </div>
 
-                <ng-container *ngFor="let user of users; let i = index">
+<!-- SELECT USER -->
+            <div class="form-group">
+                <!-- <label for="">Elige usuario</label> -->
+                <select  formControlName="id_user" [ngClass]="{'is-invalid' : (newTaskForm.get('id_user').dirty || newTaskForm.get('id_task').touched) && !newTaskForm.get('id_user').valid }">
+                    <option [ngValue]="null" disabled selected>Elige un usuario</option>
 
-                    <option value="{{i+1}}">{{user}}</option>
+                    <ng-container *ngFor="let user of users; let i = index">
+                        <option value={{user.id_user}}>{{user.username}}</option>
+                    </ng-container>
 
-                </ng-container>
-                
-            </select>
+                </select>
 
-            <select name="" id="">
-                <option value="0">Elige una tarea</option>
+                <div *ngIf="!newTaskForm.get('id_user').valid" class="invalid-feedback">El usuario es necesario</div> 
 
-                <ng-container *ngFor="let task of tareas; let i = index">
-                
-                    <option value="{{i+1}}">{{task}}</option>
-                
-                </ng-container>
+            </div>
+            <!-- SELECT USER -->
+            <div class="form-group">
+                <!-- <label for="">Elige tarea</label> -->
+                <select  formControlName="id_task" [ngClass]="{'is-invalid' : (newTaskForm.get('id_task').dirty || newTaskForm.get('id_task').touched) && !newTaskForm.get('id_task').valid }">
 
-            </select>
+                    <option [ngValue]="null" disabled selected>Elige una tarea</option>
 
-            <select name="" id="">
-                <option value="0">Elige un dia</option>
+                    <ng-container *ngFor="let task of tasks; let i = index">
+                        <option value={{task.id_task}}>{{task.taskname}}</option>
+                    </ng-container>
 
-                <ng-container *ngFor="let day of dias; let i = index">
-                
-                    <option value="{{i+1}}">{{day}}</option>
-                
-                </ng-container>
-                
-            </select>
+                </select>
 
-            <button>Añadir tarea</button>
+                <div *ngIf="!newTaskForm.get('id_task').valid" class="invalid-feedback">La tarea es necesaria</div> 
+
+            </div>
+<!-- SELECT DAY -->
+            <div class="form-group">
+                <!-- <label for="">Elige día</label> -->
+                <select  formControlName="day" [ngClass]="{'is-invalid' : (newTaskForm.get('day').dirty || newTaskForm.get('id_task').touched) && !newTaskForm.get('id_task').valid }">
+                    <option [ngValue]="null" disabled selected>Elige un dia</option>
+
+                    <ng-container *ngFor="let day of days; let i = index">
+                        <option value={{day}}>{{day}}</option>
+                    </ng-container>
+                    
+                </select>
+
+                <div *ngIf="!newTaskForm.get('day').valid" class="invalid-feedback">La tarea es necesario</div> 
+
+            </div>
+<!-- BUTTON -->
+            <div class="form-group button-newTask">
+                <button [disabled]="newTaskForm.invalid" (click)="newTask()">Añadir tarea</button>
+            </div>
 
         </form>
+
     </div>
 </div>

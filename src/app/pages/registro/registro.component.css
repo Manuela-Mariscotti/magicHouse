@@ -92,6 +92,8 @@
     border: none;
     font-weight: bold;
 }
+
+/*----------CARTEL "REALIZADO"-------------*/
 .registroRealizado{
     width: 100%;
     display: flex;

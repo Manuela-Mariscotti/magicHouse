@@ -45,7 +45,7 @@
     transform: scale(0.8);
 }
 
-.active{
+.text-link:active{
     border-radius: 50%; 
     background-color: var(--accent-color);
 }
