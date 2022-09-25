@@ -12,12 +12,16 @@
             <div class="fila">
 
                 <div class="columna text-subt">
-                    <span>{{transaction.pagador.nombre}}</span>
-                    <mat-icon>arrow_drop_down</mat-icon>
-                    <span>{{transaction.cobrador.nombre}}</span>
+
+                    <div class="fila transaction_direction">
+                        <span>{{transaction.pagador.nombre}}</span>
+                        <mat-icon>trending_flat</mat-icon>
+                        <span>{{transaction.cobrador.nombre}}</span>
+                    </div>
+
                 </div> 
             
-                <div class="columna texto-titulo">
+                <div class="columna transaction_value">
                     {{transaction.value}}
                 </div>
             
