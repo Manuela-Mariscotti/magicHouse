@@ -39,6 +39,9 @@
 .columna:first-child{
     width: 70%;
 }
+.columna:not(:first-child){
+    flex-grow: 1;
+}
 .transaction_direction{
     width: 100%;
 }
