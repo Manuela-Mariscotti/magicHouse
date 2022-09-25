@@ -20,6 +20,10 @@ export class SpentsService {
     return this.http.post(this.url + `/newSpent`, {spent: spent, id_hogar: id_hogar});
   }
 
+  doTransaction(data:any){
+    return this.http.post(this.url + `/transactions`, data)
+  }
+
   getHomeSpents(id_home:number){
     return this.http.get(this.url + `/getHomeSpents?id_hogar=${id_home}`)
   }

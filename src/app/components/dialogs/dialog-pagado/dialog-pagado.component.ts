@@ -14,8 +14,10 @@ export class DialogPagadoComponent implements OnInit {
     
   }
 
-  cancelar() {
-    this.dialogRef.close();
+  confirmar() {
+    this.dialogRef.close({confirmed: true, data: this.data});
+  }cancelar() {
+    this.dialogRef.close({confirmed: false});
   }
 
   ngOnInit(): void {
