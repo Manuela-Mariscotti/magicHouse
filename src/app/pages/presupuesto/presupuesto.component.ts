@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogPresupuestoComponent } from 'src/app/components/dialogs/dialog-presupuesto/dialog-presupuesto.component';
+import { ApiResponse } from 'src/app/models/api-response';
+import { BudgetService } from 'src/app/shared/budget.service';
+import { UserServiceService } from 'src/app/shared/user-service.service';
 
 @Component({
   selector: 'app-presupuesto',
@@ -9,26 +12,31 @@ import { DialogPresupuestoComponent } from 'src/app/components/dialogs/dialog-pr
 })
 export class PresupuestoComponent implements OnInit {
 
-  gastos = [
-    {title: "Luz", importe: 100, saldo: 400},
-    {title: "Agua", importe: 50, saldo: 450},
-    {title: "Internet", importe: 50, saldo: 500},
-    {title: "Calcetines", importe: 100, saldo: 600},
-    {title: "Mercadona", importe: 100, saldo: 700},
-    {title: "Luz", importe: 100, saldo: 400},
-    {title: "Agua", importe: 50, saldo: 450},
-    {title: "Internet", importe: 50, saldo: 500},
-    {title: "Calcetines", importe: 100, saldo: 600},
-    {title: "Mercadona", importe: 100, saldo: 700}
-  ]
+  budget:number ;
+  remaining:number;
 
-  constructor(public dialog:MatDialog) { }
+  value:number;
+
+  constructor(public dialog:MatDialog, private userService: UserServiceService, private budgetService: BudgetService) { }
 
   editarPresu(){
     const dialogo = this.dialog.open(DialogPresupuestoComponent)
   }
 
+  getBudget(){
+    const id_hogar = this.userService.getUserData().id_user;
+    this.budgetService.getBudgetPercent(id_hogar).subscribe( (response: ApiResponse) => {
+      let data = response.data;
+
+      this.budget= data.budget;
+      this.remaining = (data.budget - data.spents);
+
+      this.value =  (this.remaining * 100) / this.budget
+      console.log(this.value);
+    })
+  }
   ngOnInit(): void {
+    this.getBudget()
   }
 
 }
