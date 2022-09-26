@@ -11,55 +11,55 @@
             <th>Dom</th>
         </tr>
 
-        <ng-container *ngFor="let tarea of tareas;">
+        <ng-container *ngFor="let tarea of tareas; let i = index">
 
-            <tr class="tr_tareas">
-                <th>{{tarea}}</th>
+            <!-- <tr class="tr_tareas">
+                <th>{{tarea[i].taskname}}</th> -->
 
-                <td (click)="openDialog(L, tarea)" #L>
+                <!-- <td (click)="openDialog(L, tarea)" #L>
 
                     <div class="avatar-pq">
-                        <p>J</p>
+                        <p>{{tarea.username}}</p>
                     </div>
                 </td>
                 <td (click)="openDialog(M, tarea)" #M>
                     <div class="avatar-pq">
-                        <p>S</p>
+                        <p>{{tarea.username}}</p>
                     </div>
                 </td>
 
                 <td (click)="openDialog(X, tarea)" #X>
                     <div class="avatar-pq">
-                        <p>M</p>
+                        <p>{{tarea.username}}</p>
                     </div>
                 </td>
 
-                <td (click)="openDialog(J, tarea)" #J>
+                <td (click)="openDialog(J,tarea)" #J>
                     <div class="avatar-pq">
-                        <p>R</p>
+                        <p>{{tarea.username}}</p>
                     </div>
                 </td>
 
                 <td (click)="openDialog(V, tarea)" #V>
                     <div class="avatar-pq">
-                        <p>Q</p>
+                        <p>{{tarea.username}}</p>
                     </div>
                 </td>
 
                 <td (click)="openDialog(S, tarea)" #S>
                     <div class="avatar-pq">
-                        <p>H</p>
+                        <p>{{tarea.username}}</p>
                     </div>
                 </td>
 
                 <td (click)="openDialog(D, tarea)" #D>
                     <div class="avatar-pq">
-                        <p>J</p>
+                        <p>{{tarea.username}}</p>
                     </div>
-                </td>
-            </tr>
+                </td>-->
 
-        </ng-container>
+            <!-- </tr>  -->
+</ng-container>
     </table>
 
 </div>
