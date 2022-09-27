@@ -13,13 +13,8 @@ import { DialogTareasComponent } from '../dialogs/dialog-tareas/dialog-tareas.co
 })
 export class TableTareasComponent implements OnInit {
 
-  // tareas = [
-  //   'Lavar platos',
-  //   'Pasear perro',
-  //   'Limpiar caja del gato',
-  //   'limpiar suelo',
-  // ]
-  tareas = [];
+
+  public tareas = [];
   id_hogar:number;
 
   constructor(
@@ -36,12 +31,10 @@ export class TableTareasComponent implements OnInit {
         }else{
           console.log(res.data);
           
-          this.tareas.push(res.data)
+          this.tareas=res.data
         }
       })
      }
-
-
 
   openDialog(td:HTMLTableCellElement, task:string){
 
@@ -54,9 +47,7 @@ export class TableTareasComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    // this.id_hogar = this.userService.getUserData().id_hogar
-    // console.log(this.id_hogar);
-    
+   
   }
 
 }
