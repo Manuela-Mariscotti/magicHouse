@@ -18,4 +18,8 @@ export class EventsService {
 
     return this.http.post(this.url + `/events`, formatEvent)
   }
+
+  getAll(id_hogar:number){
+    return this.http.get(this.url + `/events?id_hogar=${id_hogar}`)
+  }
 }

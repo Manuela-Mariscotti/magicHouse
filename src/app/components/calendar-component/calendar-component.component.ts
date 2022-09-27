@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import * as moment from 'moment';
+import { ApiResponse } from 'src/app/models/api-response';
 import { Event } from 'src/app/models/event';
+import { EventsService } from 'src/app/shared/events.service';
+import { UserServiceService } from 'src/app/shared/user-service.service';
 
 @Component({
   selector: 'app-calendar-component',
@@ -17,16 +20,15 @@ export class CalendarComponentComponent implements OnInit {
   dias_semana = ['Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado', 'Domingo']
 
   events = [
-    new Event(moment.utc('2022-09-25').format('YYYY-MMMM-D'), 'Veterinario', 'Gato'),
-    new Event(moment.utc('2022-09-25').format('YYYY-MMMM-D'), 'Cumpleaños', 'Gato'),
-    new Event(moment.utc('2022-09-17').format('YYYY-MMMM-D'), 'Veterinario', 'Gato')
+    // new Event(moment.utc('2022-09-25').format('YYYY-MMMM-D'), 'Veterinario', 'Gato'),
+    // new Event(moment.utc('2022-09-25').format('YYYY-MMMM-D'), 'Cumpleaños', 'Gato'),
+    // new Event(moment.utc('2022-09-17').format('YYYY-MMMM-D'), 'Veterinario', 'Gato')
   ];
 
   showingEvents;
 
-  constructor() {
-    let date = new Date()
-    this.getMonth(date.getMonth()+1, date.getFullYear())
+  constructor(private eventsService:EventsService, private userService: UserServiceService) {
+
 
     //! implementar(mostrar eventos del dia al abir pag)
     // this.showDayEvents({moment: moment()})
@@ -34,7 +36,6 @@ export class CalendarComponentComponent implements OnInit {
   }
 
   getMonth(month:number, year:number) {
-
     const startDay = moment.utc(`${year}/${month}/01`);
     const endDay = startDay.clone().endOf('month')
 
@@ -50,7 +51,7 @@ export class CalendarComponentComponent implements OnInit {
       const dayObject = moment(`${year}-${month}-${day}`)
 
       let events = this.events.filter( (e) => {
-        return e.date == dayObject.format('YYYY-MMMM-D');
+        return e.date == dayObject.format('YYYY-MM-D');
       })
 
       return {
@@ -108,5 +109,16 @@ export class CalendarComponentComponent implements OnInit {
     console.log(this.events);
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.eventsService.getAll(this.userService.getUserData().id_hogar).subscribe( (response:ApiResponse) => {
+      response.data.forEach( (item) => {
+        let event = new Event(item.date, item.title, item.description);
+        this.events.push(event)
+        
+        let date = new Date()
+        this.getMonth(date.getMonth()+1, date.getFullYear())
+        console.log(this.events)
+      })
+    });
+  }
 }
