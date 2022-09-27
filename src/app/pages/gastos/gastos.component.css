@@ -29,16 +29,6 @@
     height: 30px;
 }
 
-.importe p:first-child{
-    color: red
-}
-.importe p:first-child::before{
-    content: '-'
-}
-.importe p{
-    margin: 2px
-}
-
 .cards{
     width: 100%;
 }

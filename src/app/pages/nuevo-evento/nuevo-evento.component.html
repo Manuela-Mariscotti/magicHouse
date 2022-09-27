@@ -1,24 +1,22 @@
 <div class="page">
-    <p class="texto-titulo">Nuevo evento</p>
+    <p class="texto-titulo">Nuevo evento <img src="../../../assets/img/calendario.png"></p>
 
-    <img src="../../../assets/img/calendario.png">
+    
 
     <div class="caja-blanca">
         <form>
             <div class="inputs">
-                <input type="text" placeholder="Titulo">
-                <input type="date" placeholder="Fecha">
-                <input type="text" placeholder="Descripcion">
-                <select>
-                    <option value="Avisos">AVISOS</option>
-                </select>
-                <select>
-                    <option value="Participantes">PARTICIPANTES</option>
-                </select>
-            </div>
+                <input type="text" name='title' [(ngModel)]="title" placeholder="Titulo">
+                <input type="date" name='date' [(ngModel)]="date" placeholder="Fecha">
+                <input type="text" name='description' [(ngModel)]="description" placeholder="Descripcion">
 
+                <!-- <select>
+                    <option value="Avisos">AVISOS</option>
+                </select> -->
+
+            </div>
             <div class="buttons">
-                <button>Añadir evento</button>
+                <button (click)="create()">Añadir evento</button>
                 <button>Cancelar</button>
             </div>
         </form>

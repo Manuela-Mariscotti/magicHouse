@@ -19,9 +19,18 @@ export class PresupuestoComponent implements OnInit {
 
   constructor(public dialog:MatDialog, private userService: UserServiceService, private budgetService: BudgetService) { }
 
-  editarPresu(){
-    const dialogo = this.dialog.open(DialogPresupuestoComponent)
+  postBudget(){
+    const dialogo = this.dialog.open(DialogPresupuestoComponent).afterClosed().subscribe( (data:any) => {
+      
+      this.budgetService.postBudget(data, this.userService.getUserData().id_user).subscribe( (response:ApiResponse) => {
+
+        this.ngOnInit()
+
+      });
+
+    });
   }
+
 
   getBudget(){
     const id_hogar = this.userService.getUserData().id_user;

@@ -7,14 +7,14 @@
         <form>
 <!-- INPUTS -->
             <div class="conten-inputs">
-                <input type="text" placeholder="Ingrese nuevo importe">
+                <input type="text" placeholder="Ingrese nuevo importe" #value>
             </div>
 <!-- BOTONES CONFIRM / CANCEL -->
             <div mat-dialog-actions>
                 <div class="conten-buttons">
                     <button  class="button-popup button-cancelar" (click)="cancelar()">Cancelar</button>
 
-                    <button [mat-dialog-close] class="button-popup" >Confirmar</button>                        
+                    <button [mat-dialog-close] class="button-popup" (click)="aceptar(value)">Confirmar</button>                        
                 </div>
             </div>
 
