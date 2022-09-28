@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { response } from 'express';
 import * as moment from 'moment';
 import { ApiResponse } from 'src/app/models/api-response';
 import { Event } from 'src/app/models/event';
@@ -12,26 +13,14 @@ import { UserServiceService } from 'src/app/shared/user-service.service';
 })
 export class CalendarComponentComponent implements OnInit {
 
-  style;
-
   daySelected;
   dateSelected;
 
   dias_semana = ['Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado', 'Domingo']
-
-  events = [
-    // new Event(moment.utc('2022-09-25').format('YYYY-MMMM-D'), 'Veterinario', 'Gato'),
-    // new Event(moment.utc('2022-09-25').format('YYYY-MMMM-D'), 'Cumpleaños', 'Gato'),
-    // new Event(moment.utc('2022-09-17').format('YYYY-MMMM-D'), 'Veterinario', 'Gato')
-  ];
-
+  events = [];
   showingEvents;
 
   constructor(private eventsService:EventsService, private userService: UserServiceService) {
-
-
-    //! implementar(mostrar eventos del dia al abir pag)
-    // this.showDayEvents({moment: moment()})
 
   }
 
@@ -105,8 +94,10 @@ export class CalendarComponentComponent implements OnInit {
     });
 
     this.dateSelected[j].events.splice(i, 1);
-    console.log(j);
-    console.log(this.events);
+    this.eventsService.deleteEvent(event, this.userService.getUserData().id_user).subscribe( (response:any) => {
+      this.ngOnInit()
+    })
+
   }
 
   ngOnInit(): void {
@@ -116,8 +107,10 @@ export class CalendarComponentComponent implements OnInit {
         this.events.push(event)
         
         let date = new Date()
+        
         this.getMonth(date.getMonth()+1, date.getFullYear())
         console.log(this.events)
+
       })
     });
   }

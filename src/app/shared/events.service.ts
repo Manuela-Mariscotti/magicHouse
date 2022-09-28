@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Event } from '../models/event';
 
@@ -21,5 +21,17 @@ export class EventsService {
 
   getAll(id_hogar:number){
     return this.http.get(this.url + `/events?id_hogar=${id_hogar}`)
+  }
+
+  deleteEvent(event:Event, created_by:number){
+    let formatEvent = JSON.parse( JSON.stringify(event) );
+    formatEvent.created_by = created_by
+
+    let options = {
+      headers: new HttpHeaders({'content-type':'application/json'}),
+      body: formatEvent
+    }
+
+    return this.http.delete(this.url + '/events', options)
   }
 }
