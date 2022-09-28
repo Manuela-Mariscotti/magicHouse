@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-card-lista-compra',
@@ -8,8 +8,13 @@ import { Component, Input, OnInit } from '@angular/core';
 export class CardListaCompraComponent implements OnInit {
 
   @Input() info : any;
+  @Output() alertaItem =  new EventEmitter<number>();
 
   constructor() { }
+
+  deleteByIdProduct(id_product:number){
+    this.alertaItem.emit(id_product);
+  }
 
   ngOnInit(): void {
   }

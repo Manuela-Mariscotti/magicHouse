@@ -6,8 +6,8 @@ import { Injectable } from '@angular/core';
 })
 export class BudgetService {
 
-  private url: string = 'https://api-magic--house.herokuapp.com';
-  // private url: string = 'http://localhost:8080';
+  // private url: string = 'https://api-magic--house.herokuapp.com';
+  private url: string = 'http://localhost:8080';
 
   constructor(private http: HttpClient) {}
 

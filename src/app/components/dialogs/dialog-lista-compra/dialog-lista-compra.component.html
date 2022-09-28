@@ -1,23 +1,27 @@
 <!-- MODAL -->
 <div>
-    <!-- TITULO -->    
-        <h1 class="texto-titulo" mat-dialog-title>Añadir item</h1>
-    <!-- FORMULARIO -->
-        <div mat-dialog-content>
-            <form>
-    <!-- INPUTS -->
-                <div class="conten-inputs">
-                    <input type="text" placeholder="Ingrese nuevo item">
+<!-- TITULO -->    
+    <h1 class="texto-titulo" mat-dialog-title>Añadir item</h1>
+<!-- FORMULARIO -->
+    <div mat-dialog-content>
+        <form [formGroup]="addItemForm">
+<!-- INPUTS -->
+            <div class="conten-inputs">
+                <div class="form-group">
+                    <input type="text" placeholder="Ingrese nuevo item" formControlName="productname" [ngClass]="{'is-invalid' : (addItemForm.get('productname').dirty || addItemForm.get('productname').touched) && addItemForm.get('productname').valid}">
+                    <div *ngIf="!addItemForm.get('productname').valid" class="invalid-feedback">El nombre del item es necesario</div>
                 </div>
-    <!-- BOTONES CONFIRM / CANCEL -->
-                <div mat-dialog-actions>
+            </div>
+<!-- BOTONES CONFIRM / CANCEL -->
+            <div mat-dialog-actions>
+                <div class="form-group">
                     <div class="conten-buttons">
                         <button  class="button-popup button-cancelar" (click)="cancelar()">Cancelar</button>
     
-                        <button [mat-dialog-close] class="button-popup" >Confirmar</button>                        
-                    </div>
+                        <button [mat-dialog-close] class="button-popup" [disabled]="addItemForm.invalid" (click)="addItemListaCompra()">Confirmar</button>                        
+                    </div>                        
                 </div>
-    
-            </form>
-        </div>   
-    </div>
+            </div>
+        </form>
+    </div>   
+</div>

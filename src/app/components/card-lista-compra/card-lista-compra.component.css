@@ -15,6 +15,13 @@
     flex-direction: column;
     justify-content: center;
 }
+.item-autor{
+    width: 80%;
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 .conten-item-btn{
     /* background-color: brown; */
     width: 20%;
