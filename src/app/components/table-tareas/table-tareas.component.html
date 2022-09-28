@@ -17,71 +17,18 @@
                 <th>{{tarea.taskname}}</th>
              
                 <ng-container *ngFor="let clave of tarea.asignacion">
-                    1
-                    <ng-container  #L >
-                        <td class="avatar-pq" *ngIf="clave.taskday =='L'; else sinAvatar" >
-                            <p>{{clave.username[0]}}</p>
+                       
+                        <td *ngIf="clave.username == 'unasigned'">
+                            <div class="sin-avatar">X</div>
                         </td>
-                        <ng-template #sinAvatar>
-                            <td class="sin-avatar">.</td>
-                        </ng-template>
-                    </ng-container>
+                        
+                        <td *ngIf="clave.username != 'unasigned'">
+                            <div class="avatar-pq">{{clave.username[0]}}</div>
+                        </td>
 
-                    <ng-container  #M >
-                        <td class="avatar-pq" *ngIf="clave.taskday =='M'; else sinAvatar">
-                            <p>{{clave.username[0]}}</p>
-                        </td>
-                        <ng-template #sinAvatar>
-                            <td class="sin-avatar">.</td>
-                        </ng-template>
-                    </ng-container>
-
-                    <ng-container #X >
-                        <td class="avatar-pq" *ngIf="clave.taskday =='X'; else sinAvatar">
-                            <p>{{clave.username[0]}}</p>
-                        </td>
-                        <ng-template #sinAvatar>
-                            <td class="sin-avatar">.</td>
-                        </ng-template>
-                    </ng-container>
-
-                    <ng-container  #J >
-                        <td class="avatar-pq" *ngIf="clave.taskday =='J'; else sinAvatar">
-                            <p>{{clave.username[0]}}</p>
-                        </td>
-                        <ng-template #sinAvatar>
-                            <td class="sin-avatar">.</td>
-                        </ng-template>
-                    </ng-container>
-
-                    <ng-container  #V >
-                        <td class="avatar-pq" *ngIf="clave.taskday =='V'; else sinAvatar">
-                            <p>{{clave.username[0]}}</p>
-                        </td>
-                        <ng-template #sinAvatar>
-                            <td class="sin-avatar">.</td>
-                        </ng-template>
-                    </ng-container>
-
-                    <ng-container  #S >
-                        <td class="avatar-pq" *ngIf="clave.taskday =='S'; else sinAvatar">
-                            <p >{{clave.username[0]}}</p>
-                        </td>
-                        <ng-template #sinAvatar>
-                            <td class="sin-avatar">.</td>
-                        </ng-template>
-                    </ng-container>
-
-                    <ng-container  #D >
-                        <td class="avatar-pq" *ngIf="clave.taskday =='D'; else sinAvatar">
-                            <p>{{clave.username[0]}}</p>
-                        </td>
-                        <ng-template #sinAvatar>
-                            <td class="sin-avatar">.</td>
-                        </ng-template>
-                    </ng-container>
 
                 </ng-container>
+
             </tr>
             
         </ng-container>
