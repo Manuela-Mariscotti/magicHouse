@@ -16,9 +16,10 @@
 <!-- LISTA ITEMS -->
     <div class="caja-blanca">
         <div class="cards" *ngFor="let item of items">
-            <app-card-lista-compra [info]="item"></app-card-lista-compra>
+            <app-card-lista-compra [info]="item" (alertaItem)="deleteByIdProduct2($event)"></app-card-lista-compra>
         </div>
     </div>
+    
  <!-- IMPORTE COMPRA  -->
     <div class="conten-importe">
         <div class="importe-compra">
