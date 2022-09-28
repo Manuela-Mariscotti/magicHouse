@@ -30,4 +30,4 @@ export class TasksService {
     return this.http.get(this.url+'/taskbyhome?id_hogar='+id_hogar)
   }
 
-}
+} 
