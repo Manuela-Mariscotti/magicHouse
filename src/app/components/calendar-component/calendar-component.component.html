@@ -1,37 +1,40 @@
 <div class="page">
-    
-    <div class="controls">
-        <div class="month_chooser">
-            <button (click)="changeMonth(-1)">&lt;</button>
-            <span class="texto-gral">{{daySelected | date: 'MMMM yyyy' | dateTranslate}}</span>
-            <button (click)="changeMonth(+1)">&gt;</button>
+    <div class="caja-blanca">
+
+        <div class="controls">
+                <div class="month_chooser">
+                <button (click)="changeMonth(-1)">&lt;</button>
+                <span class="texto-gral">{{daySelected | date: 'MMMM yyyy' | dateTranslate}}</span>
+                <button (click)="changeMonth(+1)">&gt;</button>
+            </div>
         </div>
-    </div>
-    
-    
-    
-    <div class="calendar">
-    
-        <ng-container *ngFor="let dia of dias_semana">
-            <p>{{dia | slice:0:3}}</p>
-        </ng-container>
-    
-        <ng-container *ngFor="let day of dateSelected">
-    
-            <div [ngClass]="day.weekDay == -1 ? ['dia', 'dia--disabled'] : 'dia'" (click)="showDayEvents(day)">
-                <div [ngClass]="day.events ? 'dia--event' : '' ">
-                    <div [ngClass]="day.today ? 'dia--today' : '' ">
-                        {{day.value}}
+
+
+
+        <div class="calendar">
+        
+            <ng-container *ngFor="let dia of dias_semana">
+                <p>{{dia | slice:0:3}}</p>
+            </ng-container>
+        
+            <ng-container *ngFor="let day of dateSelected">
+            
+                <div [ngClass]="day.weekDay == -1 ? ['dia', 'dia--disabled'] : 'dia'" (click)="showDayEvents(day)">
+                    <div [ngClass]="day.events ? 'dia--event' : '' ">
+                        <div [ngClass]="day.today ? 'dia--today' : '' ">
+                            {{day.value}}
+                        </div>
                     </div>
                 </div>
-            </div>
-    
-        </ng-container>
-    
+            
+            </ng-container>
+        
+        </div>
+
     </div>
-
+    
     <ng-container *ngFor="let event of showingEvents">
-
+        
         <app-card-event (onDelete)="delete($event)" [event]="event"></app-card-event>
         
     </ng-container>
