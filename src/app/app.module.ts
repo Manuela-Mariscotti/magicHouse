@@ -45,6 +45,7 @@ import { CalendarComponentComponent } from './components/calendar-component/cale
 import { CardEventComponent } from './components/card-event/card-event.component';
 import { DateTranslatePipe } from './pipes/date-translate.pipe';
 import { HttpClientModule } from '@angular/common/http';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 
 @NgModule({
@@ -96,7 +97,8 @@ import { HttpClientModule } from '@angular/common/http';
     MatIconModule,
     NgbModule,
     HttpClientModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatCheckboxModule
   ],
   providers: [],
   bootstrap: [AppComponent],

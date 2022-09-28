@@ -8,10 +8,8 @@
     <div class="conten-item-btn">
 
         <button on-click=deleteByIdProduct(info.id_product)><mat-icon class="remove_circle">remove_circle_outline</mat-icon></button>
-
-        <button><mat-icon class="check_box">check_box</mat-icon></button> 
-
-        <button><mat-icon class="check_box_blank check_box_display">check_box_outline_blank</mat-icon></button>
+        
+        <mat-checkbox class="checkbox" [(ngModel)]="checked" (change)="setCheckState(info,checked)"></mat-checkbox> 
 
     </div>
 </div>

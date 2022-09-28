@@ -262,3 +262,11 @@ input:focus{
 .mat-progress-spinner circle, .mat-spinner circle {
     stroke: var(--primary-color)!important;
 }
+.mat-checkbox-checked.mat-accent .mat-checkbox-ripple .mat-ripple-element {
+    opacity: 0.03 !important;
+    background-color: var(--primary-color)!important;
+  }
+
+.mat-checkbox-checked.mat-accent .mat-checkbox-background,.mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {
+    background-color: var(--primary-color)!important;
+  }
