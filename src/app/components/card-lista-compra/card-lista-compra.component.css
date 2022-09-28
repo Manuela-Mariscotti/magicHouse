@@ -1,5 +1,5 @@
+/* ---------- CARD LISTA COMPRA ----------*/
 .conten-item{
-    /* background-color: aqua; */
     height: 60px;
     display: flex;
     flex-direction: row;
@@ -7,23 +7,18 @@
     flex-wrap: wrap;
     border-bottom: 1px solid var(--primary-color);
 }
+
+/* ---------- TITULO ----------*/
 .item-titulo{
-    /* background-color: blue; */
     width: 80%;
     font-size: 28px;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
-.item-autor{
-    width: 80%;
-    font-size: 18px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
+
+/* ---------- CONTENEDOR BUTTONS ----------*/
 .conten-item-btn{
-    /* background-color: brown; */
     width: 20%;
     display: flex;
     flex-direction: row;
@@ -31,6 +26,7 @@
     flex-wrap: wrap;
 }
 
+/* ---------- BUTTON ELIMINAR ----------*/
 .conten-item-btn button{
     height: initial;
     background: none;
@@ -39,6 +35,8 @@
     color: var(--primary-color);
 }
 
-.check_box_display{
-    display: none;
+/* ---------- BUTTON CHECK ----------*/
+.checkbox{
+    margin-top: 16px;
+    margin-right: 10px ;
 }
