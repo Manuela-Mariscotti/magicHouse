@@ -14,46 +14,24 @@
     </div>
 
 <!-- LISTA ITEMS -->
-    <div class="caja-blanca">
-        <div class="cards" *ngFor="let item of items">
-            <app-card-lista-compra [info]="item" (alertaItem)="deleteByIdProduct2($event)"></app-card-lista-compra>
+    <div class="caja-blanca" >
+        <div class="cards" *ngFor="let item of items" >
+            <app-card-lista-compra [info]="item" (alertaItem)="deleteByIdProduct2($event)" (onChangeCheckState)="getChecked($event)"></app-card-lista-compra>
         </div>
     </div>
     
  <!-- IMPORTE COMPRA  -->
-    <div class="conten-importe">
-        <div class="importe-compra">
-            <input type="text" placeholder="Ingrese el importe">
-        </div>
-        <button>Añadir a gastos</button>
-    </div>
-</div>
-
-<!-- CARD -->
-        <!-- <div class="conten-item"> -->
-<!-- CARD TITULO -->
-            <!-- <div class="item-titulo">
-                <p>Pan</p>
-            </div> -->
-<!-- CARD BTN -->
-            <!-- <div class="conten-item-btn">
-
-                <button><mat-icon class="remove_circle">remove_circle_outline</mat-icon></button>
-
-                <button ><mat-icon class="check_box">check_box</mat-icon></button> 
-
-                <button><mat-icon class="check_box_blank check_box_display">check_box_outline_blank</mat-icon></button>
-
+    <form [formGroup]="addGastoCompraForm">
+        <div class="conten-importe">
+            <div class="form-group">
+                <div class="importe-compra">
+                    <input type="text" placeholder="Ingrese el importe" formControlName="compra" [ngClass]="{'is-invalid': (addGastoCompraForm.get('compra').dirty || addGastoCompraForm.get('compra').touched) && !addGastoCompraForm.get('compra').valid}">
+                    <div *ngIf="!addGastoCompraForm.get('compra').valid" class="invalid-feedback">El importe es necesario</div>
+                </div>
             </div>
-        </div>-->
-
-
-<!-- 
-    <mat-icon>clear</mat-icon> EQUIS
-	<mat-icon> monetization_on</mat-icon> DOLAR CIRCULO NEGRO
-    <mat-icon>cancel</mat-icon>
-    <mat-icon >remove_circle_outline</mat-icon>
-    <mat-icon>check_box_outline_blank</mat-icon>
-    <mat-icon>check_box</mat-icon> 
-    <mat-icon>check</mat-icon>
--->
+            <div class="form-group">
+                <button  (click)="addGastoCompra()">Añadir a gastos</button>
+            </div>    
+        </div>
+    </form>    
+</div>

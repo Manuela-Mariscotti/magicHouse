@@ -3,7 +3,12 @@ import { MatDialog } from '@angular/material/dialog';
 import { DialogListaCompraComponent } from 'src/app/components/dialogs/dialog-lista-compra/dialog-lista-compra.component';
 import { ApiResponse } from 'src/app/models/api-response';
 import { ListaCompraService } from 'src/app/shared/lista-compra.service';
+import { SpentsService } from 'src/app/shared/spents.service';
 import { UserServiceService } from 'src/app/shared/user-service.service';
+import { FormGroup, Validators, FormBuilder } from '@angular/forms';
+import { Spent } from 'src/app/models/spent';
+import { Moment } from 'moment';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-lista-compra',
@@ -12,44 +17,72 @@ import { UserServiceService } from 'src/app/shared/user-service.service';
 })
 export class ListaCompraComponent implements OnInit {
 
-    
-  // items = [
-  //   {title: "Pan"},
-  //   {title: "Leche"},
-  //   {title: "Huevos"},
-  //   {title: "Aceite"},
-  //   {title: "1/2 tomate pera"},
-  //   {title: "Wisky"},
-  //   {title: "Pastillas"},
-  //   {title: "Papel de fumar"},
-  //   {title: "Hielos"},
-  //   {title: "Coca-cola"},
-  //   {title: "Chope"},
-  //   {title: "Sombrero cowboy"},
-  //   {title: "Una vida"},
-  // ]
-  public items = [] //-- PASAR A ONINIT EL LLAMADO DE LA INFO PARA QUE DESPUES SE LO USE EN AFTERCLOSE DEL DIALOG Y ASI RECARGAR LA VISTA
+  public addGastoCompraForm : FormGroup;
+  public items = [] ;
   public id_hogar : number;
+  public id_user : number;
+  public compra : Spent;
+  public checked = [];
 
-  constructor(public dialog:MatDialog,
+  constructor(
+    public dialog:MatDialog,
     private userService : UserServiceService,
-    private listaCompraService : ListaCompraService) { 
+    private listaCompraService : ListaCompraService,
+    private spentService : SpentsService,
+    private formBuilder : FormBuilder) 
+  { 
+      this.buildForm();
+  }
 
-      this.id_hogar = this.userService.getUserData().id_hogar
-      console.log(this.id_hogar);
-      
-      this.listaCompraService.getListaCompraByHome(this.id_hogar).subscribe((res : ApiResponse) =>{
-        if (res.error) {
-          console.log(res);
-        } else {
-          console.log(res.data);
-          this.items = res.data
-        }
+  addGastoCompra(){
+    
+    let temporal = this.items.filter( item=> !item.checked )
+    console.log(temporal);
+    this.items = temporal
+
+    this.checked.forEach((item)=>{
+      this.listaCompraService.deleteByIdProduct(item.id_product).subscribe((res : ApiResponse)=>{
+        console.log(res.data);
+        
       })
+    })
+
+    const form = this.addGastoCompraForm.value
+    let date = moment().format('YYYY-M-D')
+    console.log(date);
+
+    this.compra = new Spent ("Compra día :"+date, date,this.id_user,this.id_user,form.compra )
+    
+    this.spentService.postSpent(this.compra, this.id_hogar).subscribe((res : ApiResponse) => {
+      console.log(res);
+    })
+
+  }
+
+  getChecked(info:any){
+    if (info.checked) {
+      this.checked.push(info)
+    } else {
+      let i = this.checked.findIndex((item)=>{
+        return item.id_product == info.id_product
+      });
+      if (i != -1) {
+        this.checked.splice(i,1)
+      }
     }
+    return this.checked
+  }
+
+  private buildForm() {
+    this.addGastoCompraForm = this.formBuilder.group({
+      compra : [,Validators.required]
+    })
+  }
 
   addItem(){
-    const dialogo = this.dialog.open(DialogListaCompraComponent)
+    const dialogo = this.dialog.open(DialogListaCompraComponent).afterClosed().subscribe((data : any)=>{
+      this.ngOnInit();
+    })
   }
 
   deleteByIdProduct2(id_product:number){
@@ -61,11 +94,27 @@ export class ListaCompraComponent implements OnInit {
       }
       console.log("Producto eliminado de la lista");
       console.log(res);
-      
     })
   }
 
+
   ngOnInit(): void {
+    this.id_hogar = this.userService.getUserData().id_hogar
+
+    this.id_user = this.userService.getUserData().id_user
+    
+    this.listaCompraService.getListaCompraByHome(this.id_hogar).subscribe((res : ApiResponse) =>{
+      if (res.error) {
+        console.log(res);
+      } else {
+        console.log(res.data);
+        this.items = res.data;
+        this.items.forEach((item)=>{
+          console.log(item);
+          
+        })
+      }
+    })
   }
 
 }
