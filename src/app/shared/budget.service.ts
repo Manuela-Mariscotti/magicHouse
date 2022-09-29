@@ -6,8 +6,8 @@ import { Injectable } from '@angular/core';
 })
 export class BudgetService {
 
-  private url: string = 'https://api-magic--house.herokuapp.com';
-  // private url: string = 'http://localhost:8080';
+  // private url: string = 'https://api-magic--house.herokuapp.com';
+  private url: string = 'http://localhost:8080';
 
   constructor(private http: HttpClient) {}
 
@@ -16,7 +16,13 @@ export class BudgetService {
   }
 
   postBudget(budget:number, id_hogar:number){
-    return this.http.post(this.url + `/budget`, {budget: budget, id_hogar: id_hogar});
+    const body = {
+      budget : budget,
+      id_hogar : id_hogar
+    };
+    console.log(body);
+    
+    return this.http.post(this.url + `/budget`, body);
   }
 
 }

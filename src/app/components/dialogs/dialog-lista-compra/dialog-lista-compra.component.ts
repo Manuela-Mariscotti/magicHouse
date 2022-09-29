@@ -26,8 +26,7 @@ export class DialogListaCompraComponent implements OnInit {
       this.buildForm(); 
 
   }
-  //-- PASAR A ONINIT EN EL LISTA-COMPRA-PAGE EL LLAMADO DE LA INFO PARA QUE DESPUES SE LO USE EN AFTERCLOSE DEL DIALOG Y ASI RECARGAR LA VISTA
-  //afeterClosed
+
   addItemListaCompra(){
     const form = this.addItemForm.value;
 

@@ -22,14 +22,19 @@ export class LoginComponent implements OnInit {
     this.userService.login(this.user).subscribe( (res:ApiResponse) => {
       
       if(res.data.length > 0){
-        this.userService.logged = true
+        this.userService.logged = true;
         this.userService.setUserData(res.data);
-        this.goHome();
+        console.log(res.data[0]);
+        
+        res.data[0].id_hogar ? this.goHome() : this.goCrearHogar();
       }else{
         console.log('datos erroneos');
       }
 
     });
+  }
+  goCrearHogar(){
+    this.router.navigateByUrl('/crear-hogar')
   }
 
   goHome(){

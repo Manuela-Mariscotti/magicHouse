@@ -1,0 +1,36 @@
+<!-- MODAL -->
+<div>
+    <!-- TITULO -->    
+        <h1 class="texto-titulo" mat-dialog-title>Editar usuario</h1>
+    <!-- FORMULARIO -->
+        <div mat-dialog-content>
+            <form  [formGroup]="editUserForm">
+    <!-- INPUTS -->
+                <div class="conten-inputs">
+                    <div class="form-group">
+                        <input type="text" placeholder="Modificar nombre" formControlName="username" [ngClass]="{'is-invalid' : (editUserForm.get('username').dirty || editUserForm.get('username').touched) && editUserForm.get('username').valid}">
+                        <div *ngIf="!editUserForm.get('username').valid" class="invalid-feedback">Ingrese nuevo nombre</div>
+                    </div>
+                </div>
+
+                <div class="conten-inputs">
+                    <div class="form-group">
+                        <input type="email" placeholder="Modificar email" formControlName="email" [ngClass]="{'is-invalid' : (editUserForm.get('email').dirty || editUserForm.get('email').touched) && editUserForm.get('email').valid}">
+                        <div *ngIf="!editUserForm.get('email').valid" class="invalid-feedback">Ingrese nuevo email
+                        </div>
+                    </div>
+                </div>
+    <!-- BOTONES CONFIRM / CANCEL -->
+                <div mat-dialog-actions>
+                    <div class="form-group">
+                        <div class="conten-buttons">
+                            <button  class="button-popup button-cancelar" (click)="cancelar()">Cancelar</button>
+        
+                            <button [mat-dialog-close] class="button-popup" [disabled]="editUserForm.invalid" (click)="editUserById()">Confirmar</button>                        
+                        </div>                        
+                    </div>
+                </div>
+            </form>
+        </div>   
+    </div>
+    

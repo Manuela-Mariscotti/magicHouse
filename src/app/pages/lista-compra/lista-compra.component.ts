@@ -9,6 +9,7 @@ import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 import { Spent } from 'src/app/models/spent';
 import { Moment } from 'moment';
 import * as moment from 'moment';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-lista-compra',
@@ -25,6 +26,7 @@ export class ListaCompraComponent implements OnInit {
   public checked = [];
 
   constructor(
+    public router : Router,
     public dialog:MatDialog,
     private userService : UserServiceService,
     private listaCompraService : ListaCompraService,
@@ -99,6 +101,9 @@ export class ListaCompraComponent implements OnInit {
 
 
   ngOnInit(): void {
+    !this.userService.logged ? this.router.navigateByUrl('/login') : null
+
+
     this.id_hogar = this.userService.getUserData().id_hogar
 
     this.id_user = this.userService.getUserData().id_user

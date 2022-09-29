@@ -6,8 +6,8 @@ import { User } from '../models/user';
   providedIn: 'root',
 })
 export class UserServiceService {
-  private url: string = 'https://api-magic--house.herokuapp.com';
-  // private url: string = 'http://localhost:8080';
+  // private url: string = 'https://api-magic--house.herokuapp.com';
+  private url: string = 'http://localhost:8080';
 
   public logged = false;
   private user: User;
@@ -30,7 +30,7 @@ export class UserServiceService {
     this.user = new User();
     let userData = data[0];
 
-    this.user.username = userData.name;
+    this.user.username = userData.username;
     this.user.password = userData.password;
     this.user.email = userData.email;
     this.user.type = userData.type;
@@ -39,7 +39,7 @@ export class UserServiceService {
   }
 
   getUserData() {
-    return this.user ? this.user : null
+    return this.user ? this.user : null;
   }
 
   getUserNames(){
@@ -47,5 +47,18 @@ export class UserServiceService {
   }
   getUserById(id_user:number){
     return this.http.get(this.url + `/userById?id_user=${id_user}`)
+  }
+
+  deleteUserById(id_user:number){
+    return this.http.delete(this.url +'/user?id_user='+id_user);
+  }
+
+  editUserById(id_user:number, username:string, email:string){
+    let editUser = {
+      id_user : id_user,
+      username : username,
+      email : email
+    }
+    return this.http.put(this.url+'/user', editUser)
   }
 }

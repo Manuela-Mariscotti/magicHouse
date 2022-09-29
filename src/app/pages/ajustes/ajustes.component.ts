@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { UserServiceService } from 'src/app/shared/user-service.service';
 
 @Component({
   selector: 'app-ajustes',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AjustesComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private userService : UserServiceService,
+    private router : Router
+  ) { }
 
   ngOnInit(): void {
+    !this.userService.logged ? this.router.navigateByUrl('/login') : null
+
   }
 
 }
