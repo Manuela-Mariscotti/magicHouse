@@ -46,6 +46,8 @@ import { CardEventComponent } from './components/card-event/card-event.component
 import { DateTranslatePipe } from './pipes/date-translate.pipe';
 import { HttpClientModule } from '@angular/common/http';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { CardSettingComponent } from './components/card-setting/card-setting.component';
+import { DialogPerfilComponent } from './components/dialogs/dialog-perfil/dialog-perfil.component';
 
 
 @NgModule({
@@ -81,7 +83,9 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     DialogListaCompraComponent,
     CalendarComponentComponent,
     CardEventComponent,
-    DateTranslatePipe
+    DateTranslatePipe,
+    CardSettingComponent,
+    DialogPerfilComponent
   ],
   imports: [
     BrowserModule,

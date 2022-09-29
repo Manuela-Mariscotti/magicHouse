@@ -1,0 +1,17 @@
+<!-- ITEM MIEMBRO INDIVIDUAL-->
+<div class="conten-miembro">
+    <!-- LETRA INICIAL USUARIO -->
+    <div class="conten-inicial-usuario">
+        <div class="conten-inicial">
+            <p>{{info.username[0]}}</p>
+        </div>
+    </div>
+<!-- NOMBRE -->
+    <div class="conten-miembro-nombre ">
+        <p class="miembro-nombre" routerLink="/perfil">{{info.username}}</p>
+    </div>
+<!-- BTN-ELIMINAR -->
+    <div class="btn-eliminar-miembro">
+        <button (click)="deleteUser(info.id_user)"><mat-icon >remove_circle_outline</mat-icon></button>
+    </div> 
+</div>

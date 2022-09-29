@@ -48,4 +48,19 @@ export class UserServiceService {
   getUserById(id_user:number){
     return this.http.get(this.url + `/userById?id_user=${id_user}`)
   }
+  
+  deleteUserById(id_user:number){
+    return this.http.delete(this.url +'/user?id_user='+id_user);
+  }
+
+  editUserById(id_user:number, username:string, email:string){
+    let editUser = {
+      id_user : id_user,
+      username : username,
+      email : email
+    }
+    return this.http.put(this.url+'/user', editUser)
+  }
+
+
 }

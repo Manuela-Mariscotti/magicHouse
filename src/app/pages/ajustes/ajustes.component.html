@@ -18,87 +18,11 @@
             <h2 class="texto-titulo-3">Miembros de la casa</h2>
 
 <!-- LISTA MIEMBROS GRUPO-->
-            <div class="conten-miembros ">
-
-<!---------------PEPITO------------------>
-
-<!-- ITEM MIEMBRO INDIVIDUAL-->
-                <div class="conten-miembro">
-<!-- LETRA INICIAL USUARIO -->
-                    <div class="conten-inicial-usuario">
-                        <div class="conten-inicial">
-                            <p>P</p>
-                        </div>
-                    </div>
-<!-- NOMBRE -->
-                    <div class="conten-miembro-nombre ">
-                        <p class="miembro-nombre" routerLink="/perfil">Pepito</p>
-                    </div>
-<!-- BTN-ELIMINAR -->
-                    <div class="btn-eliminar-miembro">
-                        <button><mat-icon >remove_circle_outline</mat-icon></button>
-                    </div> 
-                </div>
-
-<!---------------JUANCITO--------------------->
-
-<!-- ITEM MIEMBRO INDIVIDUAL-->
-                    <div class="conten-miembro">
-    <!-- LETRA INICIAL USUARIO -->
-                        <div class="conten-inicial-usuario">
-                            <div class="conten-inicial juancito">
-                                <p>J</p>
-                            </div>
-                        </div>
-    <!-- NOMBRE -->
-                        <div class="conten-miembro-nombre ">
-                            <p class="miembro-nombre">Juancito</p>
-                        </div>
-    <!-- BTN-ELIMINAR -->
-                        <div class="btn-eliminar-miembro">
-                            <button><mat-icon >remove_circle_outline</mat-icon></button>
-                        </div> 
-                    </div>
-
-<!-----------------ANTONELLA------------------->
-
-<!-- ITEM MIEMBRO INDIVIDUAL-->
-                <div class="conten-miembro">
-<!-- LETRA INICIAL USUARIO -->
-                    <div class="conten-inicial-usuario">
-                        <div class="conten-inicial antonella">
-                            <p>A</p>
-                        </div>
-                    </div>
-<!-- NOMBRE -->
-                    <div class="conten-miembro-nombre">
-                        <p class="miembro-nombre">Antonella</p>
-                    </div>
-<!-- BTN-ELIMINAR -->
-                    <div class="btn-eliminar-miembro">
-                        <button><mat-icon >remove_circle_outline</mat-icon></button>
-                    </div> 
-                </div>
-
-<!----------------PANCRACIO-------------------->               
-
-<!-- ITEM MIEMBRO INDIVIDUAL-->
-                <div class="conten-miembro">
-    <!-- LETRA INICIAL USUARIO -->
-                        <div class="conten-inicial-usuario">
-                            <div class="conten-inicial pancracio">
-                                <p>P</p>
-                            </div>
-                        </div>
-    <!-- NOMBRE -->
-                        <div class="conten-miembro-nombre ">
-                            <p class="miembro-nombre">Pancracio</p>
-                        </div>
-    <!-- BTN-ELIMINAR -->
-                        <div class="btn-eliminar-miembro">
-                            <button><mat-icon >remove_circle_outline</mat-icon></button>
-                        </div> 
-                    </div>
+            <div class="conten-miembros" >
+                <ng-container *ngFor="let miembro of users">
+                    <app-card-setting [info]="miembro" (onDeleteUser)="deleteUser2($event)"></app-card-setting>
+                </ng-container>
+                
 
 
             </div>
