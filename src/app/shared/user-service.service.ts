@@ -30,7 +30,7 @@ export class UserServiceService {
     this.user = new User();
     let userData = data[0];
 
-    this.user.username = userData.name;
+    this.user.username = userData.username;
     this.user.password = userData.password;
     this.user.email = userData.email;
     this.user.type = userData.type;
