@@ -19,11 +19,11 @@
                 <ng-container *ngFor="let clave of tarea.asignacion">
                        
                         <td *ngIf="clave.username == 'unasigned'">
-                            <div class="sin-avatar">X</div>
+                            <div class="sin-avatar"></div>
                         </td>
                         
                         <td *ngIf="clave.username != 'unasigned'">
-                            <div class="avatar-pq">{{clave.username[0]}}</div>
+                            <div [ngClass]="!clave.isDone ? 'avatar-pq' : ['avatar-pq', 'done']" (click)="openDialog(tarea, clave.taskday)">{{clave.username[0]}}</div>
                         </td>
 
 

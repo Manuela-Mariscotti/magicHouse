@@ -40,7 +40,7 @@ tr:first-child > th{
     border: 2px dashed var(--background-color)
 }
 .sin-avatar:after{
-    content:'+';
+    content:'';
     position: relative;
     top: 15%;
     left: -15%;
@@ -50,4 +50,21 @@ tr:first-child > th{
 }
 .avatar-pq{
     padding:0
+}
+.done{
+    border: 2px solid rgb(10, 163, 10)
+}
+.done::after{
+    content: 'hecho';
+    color: white;
+
+    text-shadow:
+    -1px -1px 0 rgb(10, 163, 10),  
+    1px -1px 0 rgb(10, 163, 10),
+    -1px 1px 0 rgb(10, 163, 10),
+    1px 1px 0 rgb(10, 163, 10);
+  
+
+    transform: rotate(-45deg);
+
 }

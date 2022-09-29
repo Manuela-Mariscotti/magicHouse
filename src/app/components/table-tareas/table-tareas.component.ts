@@ -24,29 +24,34 @@ export class TableTareasComponent implements OnInit {
     ) {
       this.id_hogar = this.userService.getUserData().id_hogar
       console.log(this.id_hogar);
-      this.taskService.getTasksByHome(this.id_hogar).subscribe((res : ApiResponse)=>{
-        if(res.error){
-          console.log(res);
-          
-        }else{
-          console.log(res.data);
-          
-          this.tareas=res.data
-        }
-      })
+
+      
      }
 
-  openDialog(td:HTMLTableCellElement, task:string){
+  openDialog(tarea:any, dia:string){
 
     const dialog_data = {
-      td: td,
-      task_name: task
+      tarea:tarea,
+      dia:dia
     };
 
-    const dialog = this.dialog.open(DialogTareasComponent, {data: dialog_data})
+    const dialog = this.dialog.open(DialogTareasComponent, {data: dialog_data}).afterClosed().subscribe( () => {
+      this.ngOnInit()
+    })
   }
 
   ngOnInit(): void {
+
+    this.taskService.getTasksByHome(this.id_hogar).subscribe((res : ApiResponse)=>{
+      if(res.error){
+        console.log(res);
+        
+      }else{
+        console.log(res.data);
+        
+        this.tareas=res.data
+      }
+    })
    
   }
 

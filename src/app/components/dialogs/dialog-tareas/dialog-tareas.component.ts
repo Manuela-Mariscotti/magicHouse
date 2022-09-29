@@ -1,5 +1,7 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { TasksService } from 'src/app/shared/tasks.service';
+import { UserServiceService } from 'src/app/shared/user-service.service';
 
 @Component({
   selector: 'app-dialog-tareas',
@@ -13,43 +15,57 @@ export class DialogTareasComponent implements OnInit {
 
 
   constructor(public dialogRef:MatDialogRef<DialogTareasComponent>, 
-    @Inject(MAT_DIALOG_DATA) public data:any)
+    @Inject(MAT_DIALOG_DATA) public data:any, private taskService: TasksService, private userService: UserServiceService)
   {
-
-    switch(data.td.cellIndex){
-      case 1:
-        this.dia = 'Lunes';
-        break;
-      case 2:
-        this.dia = 'Martes';
-        break;
-      case 3:
-        this.dia = 'Miercoles';
-        break;
-      case 4:
-        this.dia = 'Jueves';
-        break;
-      case 5:HTMLTableCellElement;
-        this.dia = 'Viernes'
-        break;
-      case 6:
-        this.dia = 'Sabado'
-        break;
-      case 7:
-        this.dia = 'Domingo'
-        break;
-    }
-
-    this.tarea = data.task_name;
-    
     console.log(data)
   }
-
+  
   cancelar() {
     this.dialogRef.close();
   }
-
+  
   ngOnInit(): void {
+    console.log(this.data)
+    this.tarea = this.data.tarea.taskname;
+    
+    switch(this.data.dia){
+
+      case 'L' :
+        this.dia = 'Lunes';
+        break;
+      case 'M' :
+        this.dia = 'Martes';
+        break;
+      case 'X' :
+        this.dia = 'Miercoles';
+        break;
+      case 'J' :
+        this.dia = 'Jueves';
+        break;
+      case 'V' :
+        this.dia = 'Viernes';
+        break;
+      case 'S' :
+        this.dia = 'Sabado';
+        break;
+      case 'D' :
+        this.dia = 'Domingo';
+        break;
+      
+    }
+  }
+
+  doTask(){
+    let task = {
+      id_task: this.data.tarea.id_task,
+      day: this.data.dia,
+      id_hogar: this.userService.getUserData().id_hogar
+    }
+
+    this.taskService.doTask(task).subscribe(res => {
+      console.log(res);
+      this.dialogRef.close(0)
+    })
   }
 
 }
