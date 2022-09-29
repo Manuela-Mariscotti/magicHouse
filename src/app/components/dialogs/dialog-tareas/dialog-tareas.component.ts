@@ -1,5 +1,6 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { ApiResponse } from 'src/app/models/api-response';
 import { TasksService } from 'src/app/shared/tasks.service';
 import { UserServiceService } from 'src/app/shared/user-service.service';
 
@@ -24,6 +25,37 @@ export class DialogTareasComponent implements OnInit {
     this.dialogRef.close();
   }
   
+
+  doTask(){
+    let task = {
+      id_task: this.data.tarea.id_task,
+      day: this.data.dia,
+      id_hogar: this.userService.getUserData().id_hogar
+    }
+
+    this.taskService.doTask(task).subscribe(res => {
+      console.log(res);
+      this.dialogRef.close(0)
+    })
+  }
+
+  deleteTask(){
+    let task = {
+      id_task: this.data.tarea.id_task,
+      day: this.data.dia,
+      id_user: this.userService.getUserData().id_user
+    }
+
+    this.taskService.deleteTask(task).subscribe((res : ApiResponse)=>{
+      this.dialogRef.close(0);
+      console.log(res);
+      
+    })
+
+
+  }
+
+
   ngOnInit(): void {
     console.log(this.data)
     this.tarea = this.data.tarea.taskname;
@@ -53,19 +85,6 @@ export class DialogTareasComponent implements OnInit {
         break;
       
     }
-  }
-
-  doTask(){
-    let task = {
-      id_task: this.data.tarea.id_task,
-      day: this.data.dia,
-      id_hogar: this.userService.getUserData().id_hogar
-    }
-
-    this.taskService.doTask(task).subscribe(res => {
-      console.log(res);
-      this.dialogRef.close(0)
-    })
   }
 
 }

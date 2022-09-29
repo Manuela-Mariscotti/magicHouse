@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 
 @Injectable({
@@ -7,8 +7,8 @@ import { HttpClient } from '@angular/common/http';
 })
 export class TasksService {
 
-  private url: string = 'https://api-magic--house.herokuapp.com';
-  // private url: string  = "http://localhost:8080"
+  // private url: string = 'https://api-magic--house.herokuapp.com';
+  private url: string  = "http://localhost:8080"
 
 
   constructor(private http: HttpClient) { }
@@ -32,6 +32,15 @@ export class TasksService {
 
   doTask(task:any){
     return this.http.put(this.url + `/task`, task)
+  }
+
+  deleteTask(task:any){
+    const options ={
+      headers : new HttpHeaders ({'content-type':'application/json'}),
+      body : {task : task}
+    }
+
+    return this.http.delete(this.url + '/task', options)
   }
 
 } 
