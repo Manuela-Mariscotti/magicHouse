@@ -25,7 +25,8 @@ export class NuevoEventoComponent implements OnInit {
   create(){
 
     let event = new Event(this.date, this.title, this.description);
-
+    console.log(event);
+    
     this.eventsService.createEvent(event, this.id_user).subscribe( (response: ApiResponse) => {
       this.router.navigateByUrl('calendario');
     });
