@@ -22,7 +22,7 @@ export class PresupuestoComponent implements OnInit {
   postBudget(){
     const dialogo = this.dialog.open(DialogPresupuestoComponent).afterClosed().subscribe( (data:any) => {
       
-      this.budgetService.postBudget(data, this.userService.getUserData().id_user).subscribe( (response:ApiResponse) => {
+      this.budgetService.postBudget(data, this.userService.getUserData().id_hogar).subscribe( (response:ApiResponse) => {
 
         this.ngOnInit()
 
@@ -33,7 +33,7 @@ export class PresupuestoComponent implements OnInit {
 
 
   getBudget(){
-    const id_hogar = this.userService.getUserData().id_user;
+    const id_hogar = this.userService.getUserData().id_hogar;
     this.budgetService.getBudgetPercent(id_hogar).subscribe( (response: ApiResponse) => {
       let data = response.data;
 
