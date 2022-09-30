@@ -24,7 +24,7 @@ export class LoginComponent implements OnInit {
       if(res.data.length > 0){
         this.userService.logged = true
         this.userService.setUserData(res.data);
-        this.goHome();
+        this.userService.getUserData().id_hogar ?  this.goHome() : this.router.navigateByUrl('/crear-hogar') ;
       }else{
         console.log('datos erroneos');
       }

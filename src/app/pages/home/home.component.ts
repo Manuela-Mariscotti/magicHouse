@@ -1,7 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { response } from 'express';
 import { ApiResponse } from 'src/app/models/api-response';
 import { Notificacion } from 'src/app/models/notificacion';
 import { NotificationService } from 'src/app/shared/notification.service';
@@ -31,7 +30,7 @@ export class HomeComponent implements OnInit {
 
     //get nextEvent
 
-    this.notificationService.getNextEvent().subscribe( (response: ApiResponse) => {
+    this.notificationService.getNextEvent(this.userService.getUserData().id_hogar).subscribe( (response: ApiResponse) => {
       let eventJSON = response.data.pop();
       eventJSON ? this.nextEvent = new Notificacion(eventJSON.title, eventJSON.description, 'event') : this.nextEvent = null;
     })
@@ -53,13 +52,16 @@ export class HomeComponent implements OnInit {
             day = 'Martes'
             break;
           case 'X':
-            day = 'Miercoles'
+            day = 'Miércoles'
             break
           case 'J':
             day = 'Jueves'
             break
+          case 'V':
+            day = 'Viernes'
+            break
           case 'S':
-            day = 'Sabado'
+            day = 'Sábado'
             break
           case 'D':
             day = 'Domingo'

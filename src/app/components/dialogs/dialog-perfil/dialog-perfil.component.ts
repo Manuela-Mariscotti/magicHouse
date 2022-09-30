@@ -23,12 +23,15 @@ export class DialogPerfilComponent implements OnInit {
     public userService : UserServiceService
     ) { 
       this.buildForm();
+      console.log(this.data);
+      
     }
 
   public buildForm(){
+
     this.editUserForm = this.formBuilder.group({
-      username : [,Validators.required],
-      email : [,Validators.required]
+      username : [this.data.user.username,Validators.required],
+      email : [this.data.user.email,Validators.required]
     })
   }
 

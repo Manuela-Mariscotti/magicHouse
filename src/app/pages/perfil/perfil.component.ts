@@ -23,7 +23,11 @@ export class PerfilComponent implements OnInit {
   ) { }
 
   editUser(){
-    const dialog = this.dialog.open(DialogPerfilComponent).afterClosed().subscribe((res : ApiResponse)=>{
+    let data = {
+      user : this.user
+    }
+
+    const dialog = this.dialog.open(DialogPerfilComponent,{data:data}).afterClosed().subscribe((res : ApiResponse)=>{
      
       this.ngOnInit();
        console.log(this.user);

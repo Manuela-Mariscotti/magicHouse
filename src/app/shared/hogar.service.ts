@@ -25,5 +25,8 @@ export class HogarService {
     return this.http.put(this.url+'/hogar', ids) 
   }
 
+  getHogarById(id_hogar:number){
+    return this.http.get(this.url+'/hogar?id_hogar='+id_hogar)
+  }
 
 }

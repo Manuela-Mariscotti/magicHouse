@@ -6,8 +6,8 @@ import { User } from '../models/user';
   providedIn: 'root',
 })
 export class UserServiceService {
-  // private url: string = 'https://api-magic--house.herokuapp.com';
-  private url: string = 'http://localhost:8080';
+  private url: string = 'https://api-magic--house.herokuapp.com';
+  // private url: string = 'http://localhost:8080';
 
   public logged = false;
   private user: User;
@@ -45,6 +45,7 @@ export class UserServiceService {
   getUserNames(){
     return this.http.get(this.url + `/getUsersByHome?id_hogar=${this.user.id_hogar}`);
   }
+
   getUserById(id_user:number){
     return this.http.get(this.url + `/userById?id_user=${id_user}`)
   }
@@ -62,5 +63,8 @@ export class UserServiceService {
     return this.http.put(this.url+'/user', editUser)
   }
 
+  setHogarNullByIdUser(id_user:number){
+    return this.http.put(this.url+'/usersethogar', {id_user:id_user})
+  }
 
 }

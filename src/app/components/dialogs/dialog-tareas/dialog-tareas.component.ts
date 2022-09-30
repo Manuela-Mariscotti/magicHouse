@@ -49,9 +49,8 @@ export class DialogTareasComponent implements OnInit {
     this.taskService.deleteTask(task).subscribe((res : ApiResponse)=>{
       this.dialogRef.close(0);
       console.log(res);
-      
+    
     })
-
 
   }
 

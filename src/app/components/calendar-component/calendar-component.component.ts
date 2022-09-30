@@ -40,9 +40,10 @@ export class CalendarComponentComponent implements OnInit {
       const dayObject = moment(`${year}-${month}-${day}`)
 
       let events = this.events.filter( (e) => {
-        return e.date == dayObject.format('YYYY-MM-D');
+        return e.date == dayObject.format('YYYY-MM-DD');
       })
-
+     
+      
       return {
         name: dayObject.format('dddd'),
         value: day,
@@ -109,7 +110,10 @@ export class CalendarComponentComponent implements OnInit {
         let date = new Date()
         
         this.getMonth(date.getMonth()+1, date.getFullYear())
+        console.log("---------");
         console.log(this.events)
+        console.log("---------");
+        
 
       })
     });

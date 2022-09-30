@@ -12,8 +12,8 @@ export class NotificationService {
   constructor(private http: HttpClient) {
   }
 
-  getNextEvent(){
-    return this.http.get(this.url + `/nextEvent`);
+  getNextEvent(id_hogar:number){
+    return this.http.get(this.url + `/nextEvent?id_hogar=${id_hogar}`);
   }
 
   getPendingTasks(id_user: number){

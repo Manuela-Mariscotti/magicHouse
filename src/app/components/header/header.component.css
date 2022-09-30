@@ -49,3 +49,8 @@
     border-radius: 50%; 
     background-color: var(--accent-color);
 }
+
+.active {
+    background-color: var(--accent-color);
+    border-radius: 50%;
+}
