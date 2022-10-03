@@ -8,8 +8,8 @@ import { UserServiceService } from './user-service.service';
 })
 export class SpentsService {
 
-  // private url:string = 'http://localhost:8080'
-  private url: string = 'https://api-magic--house.herokuapp.com';
+  private url:string = 'http://localhost:8080'
+  // private url: string = 'https://api-magic--house.herokuapp.com';
 
   constructor(private http: HttpClient) {
 

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { Router } from '@angular/router';
 import { DialogPresupuestoComponent } from 'src/app/components/dialogs/dialog-presupuesto/dialog-presupuesto.component';
 import { ApiResponse } from 'src/app/models/api-response';
 import { BudgetService } from 'src/app/shared/budget.service';
@@ -17,7 +18,7 @@ export class PresupuestoComponent implements OnInit {
 
   value:number;
 
-  constructor(public dialog:MatDialog, private userService: UserServiceService, private budgetService: BudgetService) { }
+  constructor(public dialog:MatDialog, private userService: UserServiceService, private budgetService: BudgetService, public router : Router) { }
 
   postBudget(){
     const dialogo = this.dialog.open(DialogPresupuestoComponent).afterClosed().subscribe( (data:any) => {
@@ -33,6 +34,9 @@ export class PresupuestoComponent implements OnInit {
 
 
   getBudget(){
+
+    !this.userService.logged ? this.router.navigateByUrl('/login') : null
+
     const id_hogar = this.userService.getUserData().id_hogar;
     this.budgetService.getBudgetPercent(id_hogar).subscribe( (response: ApiResponse) => {
       let data = response.data;

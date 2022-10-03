@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { UserServiceService } from 'src/app/shared/user-service.service';
 
 @Component({
   selector: 'app-calendario',
@@ -8,13 +9,16 @@ import { Router } from '@angular/router';
 })
 export class CalendarioComponent implements OnInit {
 
-  constructor(private router:Router) { }
+  constructor(
+    private router:Router,
+    public userService:UserServiceService) { }
 
   navigate(where:string){
     this.router.navigateByUrl(where);
   }
 
   ngOnInit(): void {
+    !this.userService.logged ? this.router.navigateByUrl('/login') : null
   }
 
 }

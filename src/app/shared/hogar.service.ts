@@ -7,8 +7,8 @@ import { Hogar } from '../models/hogar';
 })
 export class HogarService {
 
-    private url: string = 'https://api-magic--house.herokuapp.com';
-    // private url: string  = "http://localhost:8080"
+    // private url: string = 'https://api-magic--house.herokuapp.com';
+    private url: string  = "http://localhost:8080"
     private hogar : Hogar
 
   constructor(private http: HttpClient) { }

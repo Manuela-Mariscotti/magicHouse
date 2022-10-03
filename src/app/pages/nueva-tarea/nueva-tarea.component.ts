@@ -63,6 +63,9 @@ export class NuevaTareaComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
+    !this.userService.logged ? this.router.navigateByUrl('/login') : null
+
     this.userService.getUserNames().subscribe((res : ApiResponse) =>{
       this.users = res.data;
       console.log(this.users);

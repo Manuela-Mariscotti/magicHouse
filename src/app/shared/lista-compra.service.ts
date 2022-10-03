@@ -6,8 +6,8 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ListaCompraService {
 
-  private url: string = 'https://api-magic--house.herokuapp.com';
-  // private url: string  = "http://localhost:8080"
+  // private url: string = 'https://api-magic--house.herokuapp.com';
+  private url: string  = "http://localhost:8080"
 
   constructor(private http: HttpClient) { }
 

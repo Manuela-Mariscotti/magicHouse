@@ -14,7 +14,7 @@ export class RegistroComponent implements OnInit {
   
 
   public registroForm: FormGroup
-  public cartelHidden : boolean = true;
+
 
 
   constructor(private userService : UserServiceService,private formBuilder: FormBuilder,private router:Router) {
@@ -28,7 +28,8 @@ export class RegistroComponent implements OnInit {
     this.userService.insertUser(new User(form.nombre,form.password,form.email)).subscribe((res: ApiResponse)=>{
       console.log("Registro exitoso");      
       console.log(res);
-      this.cartelHidden = false;
+      this.goLogin()
+     
     })
   }
 

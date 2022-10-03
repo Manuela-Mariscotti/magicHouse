@@ -7,8 +7,8 @@ import { Event } from '../models/event';
 })
 export class EventsService {
 
-  private url: string = 'https://api-magic--house.herokuapp.com';
-  // private url: string  = "http://localhost:8080"
+  // private url: string = 'https://api-magic--house.herokuapp.com';
+  private url: string  = "http://localhost:8080"
 
   constructor(private http:HttpClient) { }
 
