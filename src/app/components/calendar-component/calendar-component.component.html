@@ -1,4 +1,13 @@
 <div class="page">
+
+    <ng-container *ngFor="let event of showingEvents">
+        
+        <app-card-event (onDelete)="delete($event)" [event]="event"></app-card-event>
+        
+    </ng-container>
+
+    <p class="texto-gral" *ngIf="!showingEvents" style="text-align: center; width: 100%;">* Haz click en un día para ver los eventos *</p>
+
     <div class="caja-blanca">
 
         <div class="controls">
@@ -33,13 +42,7 @@
 
     </div>
     
-    <ng-container *ngFor="let event of showingEvents">
-        
-        <app-card-event (onDelete)="delete($event)" [event]="event"></app-card-event>
-        
-    </ng-container>
-
-    <p class="texto-gral" *ngIf="!showingEvents" style="text-align: center; width: 100%;">* Haz click en un día para ver los eventos *</p>
+    
     
 
 </div>

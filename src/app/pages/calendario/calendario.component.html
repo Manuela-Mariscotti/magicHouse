@@ -1,12 +1,16 @@
 <div class="page">
-    <p class="texto-titulo">Calendario</p>
+    <div class="head">
 
-    <div class="caja-btn-add" (click)="navigate('nuevo-evento')">
-        <button type="button">
-            <p>+</p>
-        </button>
+        <p class="texto-titulo">Calendario</p>
+        
+        <div class="caja-btn-add" (click)="navigate('nuevo-evento')">
+            <button type="button">
+                <p>+</p>
+            </button>
+        </div>
+
     </div>
-    
+
     <div class="calendar">
         <app-calendar-component> </app-calendar-component>
     </div>
