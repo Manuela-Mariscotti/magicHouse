@@ -55,7 +55,7 @@ tr:first-child > th{
     border: 2px solid rgb(10, 163, 10)
 }
 .done::after{
-    content: 'hecho';
+    content: '✓';
     color: white;
 
     text-shadow:
@@ -63,8 +63,8 @@ tr:first-child > th{
     1px -1px 0 rgb(10, 163, 10),
     -1px 1px 0 rgb(10, 163, 10),
     1px 1px 0 rgb(10, 163, 10);
-  
 
-    transform: rotate(-45deg);
+    position: absolute;
+    transform: scale(3);
 
 } 
