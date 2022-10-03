@@ -9,17 +9,30 @@
   height: 100%;
   width: 100%;
 }
-
-.caja-btn-add{
-  align-self: flex-end;
+.head{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  height: 30%;
 }
-.caja-blanca{
+.body{
   display: flex;
   flex-direction: column;
   justify-content: center;
-
-  height: 70vh;
-
+  align-items: center;
+  height: 70%;
+}
+.caja-btn-add{
+  align-self: flex-end;
+}
+.table-wrapper{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-grow: 1;
+  
   overflow: scroll;
 }
 

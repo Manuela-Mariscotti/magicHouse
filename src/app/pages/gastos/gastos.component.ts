@@ -29,7 +29,7 @@ export class GastosComponent implements OnInit {
 
       response.data.forEach( (item) => {
         const tmp = new Spent(item.title, item.date, item.id_user, item.created_by, item.value);
-        spents.push(tmp);
+        spents.unshift(tmp);
       });
 
       this.gastos = spents
@@ -38,6 +38,6 @@ export class GastosComponent implements OnInit {
   }
 
   navigate(where:string){
-    this.router.navigateByUrl(where)
+    this.router.navigateByUrl(where) 
   }
 }

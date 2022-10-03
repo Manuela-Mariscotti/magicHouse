@@ -37,13 +37,20 @@ export class PresupuestoComponent implements OnInit {
     this.budgetService.getBudgetPercent(id_hogar).subscribe( (response: ApiResponse) => {
       let data = response.data;
 
-      this.budget= data.budget;
-      this.remaining = (data.budget - data.spents);
+      if(data.spents && data.budget){
 
-      this.value =  (this.remaining * 100) / this.budget
+        this.budget= data.budget;
+        this.remaining = (data.budget - data.spents);
+        
+        this.value =  (this.remaining * 100) / this.budget
+      }else{
+        this.value = -1
+      }
+      
       console.log(this.value);
     })
   }
+  
   ngOnInit(): void {
     this.getBudget()
   }

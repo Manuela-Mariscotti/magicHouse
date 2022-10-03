@@ -1,13 +1,22 @@
 <div class="page">
-  <p class="texto-titulo">Tareas semanales</p>
 
-  <div class="caja-btn-add" (click)="navigate('nueva-tarea')">
-    <button type="button">
-      <p>+</p>
-    </button>
+  <div class="head">
+     <p class="texto-titulo">Tareas semanales</p>
+
+    <div class="caja-btn-add" (click)="navigate('nueva-tarea')">
+      <button type="button">
+        <p>+</p>
+      </button>
+    </div>
+
   </div>
 
-  <div class="caja-blanca">
-    <app-table-tareas> </app-table-tareas>
+  <div class="body">
+    <div class="table-wrapper">
+      <app-table-tareas> </app-table-tareas>
+    </div>
   </div>
+ 
+
+ 
 </div>

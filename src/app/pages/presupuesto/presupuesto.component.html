@@ -4,8 +4,10 @@
     <div class="texto-titulo">
         <p>Presupuesto</p>
     </div>
-
-    <div class="caja-blanca">
+    
+    <button (click)="postBudget()">Modificar presupuesto mensual</button>
+    
+    <div class="caja-blanca" *ngIf="value != -1">
         <div>
             <p class="text-subt"><b>Presupuesto mensual: </b>{{budget}}</p>
             <p class="text-subt"><b>Presupuesto restante: </b>{{remaining}}</p>
@@ -15,4 +17,10 @@
             <p class="text-subt percent">{{value}} %</p>
 
     </div>    
-    <button (click)="postBudget()">Modificar presupuesto mensual</button>
+
+    <div class="caja-blanca" *ngIf="value == -1">
+        <p>* No hay sufientes datos para computar el mes *</p>
+        <p>* Prueba a anadir un gasto *</p>
+    </div>
+
+</div>
