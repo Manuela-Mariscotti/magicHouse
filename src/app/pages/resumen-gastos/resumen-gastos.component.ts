@@ -38,6 +38,9 @@ export class ResumenGastosComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
+    !this.userService.logged ? this.router.navigateByUrl('/login') : null;
+
     const id_hogar = this.userService.getUserData().id_hogar
 
     this.spentsService.isTransacionsUpdated(id_hogar).subscribe( (response: ApiResponse) => {

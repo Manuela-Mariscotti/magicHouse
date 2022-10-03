@@ -16,7 +16,7 @@
 .texto-titulo-2{
     font-size: 30px;
     font-weight: bold;
-    color: black;
+    color: var(--primary-color);
 }
 
 /*----------BTN-EDITAR-------------*/

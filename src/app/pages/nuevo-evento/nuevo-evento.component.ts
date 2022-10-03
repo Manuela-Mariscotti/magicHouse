@@ -33,6 +33,8 @@ export class NuevoEventoComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    
+    !this.userService.logged ? this.router.navigateByUrl('/login') : null
 
   }
 

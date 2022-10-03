@@ -7,8 +7,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 })
 export class TasksService {
 
-  private url: string = 'https://api-magic--house.herokuapp.com';
-  // private url: string  = "http://localhost:8080"
+  // private url: string = 'https://api-magic--house.herokuapp.com';
+  private url: string  = "http://localhost:8080"
 
 
   constructor(private http: HttpClient) { }

@@ -13,6 +13,21 @@
         </div>
     </div>
 
+ <!-- IMPORTE COMPRA  -->
+    <form [formGroup]="addGastoCompraForm">
+        <div class="conten-importe">
+            <div class="form-group">
+                <div class="importe-compra">
+                    <input type="text" placeholder="Ingrese el importe" formControlName="compra" [ngClass]="{'is-invalid': (addGastoCompraForm.get('compra').dirty || addGastoCompraForm.get('compra').touched) && !addGastoCompraForm.get('compra').valid}">
+                    <div *ngIf="!addGastoCompraForm.get('compra').valid" class="invalid-feedback text-center">El importe es necesario</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <button  (click)="addGastoCompra()">Añadir a gastos</button>
+            </div>    
+        </div>
+    </form>
+    
 <!-- LISTA ITEMS -->
     <div class="caja-blanca" >
         <div class="cards" *ngFor="let item of items" >
@@ -20,18 +35,5 @@
         </div>
     </div>
     
- <!-- IMPORTE COMPRA  -->
-    <form [formGroup]="addGastoCompraForm">
-        <div class="conten-importe">
-            <div class="form-group">
-                <div class="importe-compra">
-                    <input type="text" placeholder="Ingrese el importe" formControlName="compra" [ngClass]="{'is-invalid': (addGastoCompraForm.get('compra').dirty || addGastoCompraForm.get('compra').touched) && !addGastoCompraForm.get('compra').valid}">
-                    <div *ngIf="!addGastoCompraForm.get('compra').valid" class="invalid-feedback">El importe es necesario</div>
-                </div>
-            </div>
-            <div class="form-group">
-                <button  (click)="addGastoCompra()">Añadir a gastos</button>
-            </div>    
-        </div>
-    </form>    
+    
 </div>
