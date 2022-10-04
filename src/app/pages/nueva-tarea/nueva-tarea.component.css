@@ -3,19 +3,21 @@
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-
-    height: 100%;
+    height: 70vh;
 }
 
-.page > img{
-    width: 50px;
+/* .texto-titulo{
+    width: 100%;
+} */
+.texto-titulo > img{
+    width: 75px;
 }
 
 .caja-blanca{
     width: 100%;
-    height: 70%;
+    height: 100%;
 
-    padding: 20px;
+    padding: 5%;
 }
 
 .form{
@@ -23,6 +25,7 @@
     flex-direction: column;
     height: 100%;
     justify-content: space-around;
+    gap: 5%
 }
 .form label{
     font-weight: bolder;

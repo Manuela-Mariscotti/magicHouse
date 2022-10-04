@@ -1,9 +1,13 @@
 <div class="page">
-    <p class="texto-titulo">
-        Añadir tarea
-    </p>
+    <!-- <div class="top-area"> -->
 
-    <img src="../../../assets/img/escoba.png" alt="icono-escoba">
+        <p class="texto-titulo">
+            Añadir tarea
+            <img src="../../../assets/img/escoba.png" alt="icono-escoba">
+        </p>
+        
+        
+    <!-- </div> -->
 
     <div class="caja-blanca">
         
@@ -14,9 +18,12 @@
                 <a class="text-subt text-link" (click)="goTasks()">Ver tareas</a>
             </div>
 
-<!-- SELECT USER -->
+            <!-- SELECT USER -->
+            
             <div class="form-group">
+              
                 <!-- <label for="">Elige usuario</label> -->
+                
                 <select  formControlName="id_user" [ngClass]="{'is-invalid' : (newTaskForm.get('id_user').dirty || newTaskForm.get('id_task').touched) && !newTaskForm.get('id_user').valid }">
                     <option [ngValue]="null" disabled selected>Elige un usuario</option>
 

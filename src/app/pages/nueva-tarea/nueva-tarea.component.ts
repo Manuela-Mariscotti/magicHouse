@@ -44,7 +44,8 @@ export class NuevaTareaComponent implements OnInit {
       }else {
         console.log("Nuevo tarea asignada");
         console.log(res);
-        this.cartelHidden = false
+        // this.cartelHidden = false
+        this.router.navigateByUrl('tareas')
 
       }
     })
