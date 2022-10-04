@@ -15,10 +15,12 @@
     box-sizing: border-box;
     transition: all 0.5s; /* he agregado transciio general (puede sobreescribirse para cade efecto) Dani*/
 }
+
 html, body { 
     height: 100%;
     color: var(--primary-color) 
 }
+
 body {
     font-family: Roboto, "Helvetica Neue", sans-serif;
     background-color: var(--background-color);
@@ -28,7 +30,7 @@ body {
     width: 100%;
     padding-left: 15px;
     padding-right: 15px;
-    padding-top: var(--header-height);/*cambié el margen superior-Manu*/
+    margin-top: var(--header-height);/*cambié el margen superior-Manu*/
     padding-bottom: calc (var(--footer-height) + 10px);
 }
 
@@ -36,19 +38,23 @@ body {
     font-size: 16px;
     font-weight: light;
 }
+
 .texto-titulo{
     font-size: 30px;
     font-weight: bold;
 }
+
 .text-subt{
     font-size: 22px;
     font-weight: light;
 }
+
 .text-navbar{
     font-size: 12px;
     font-weight: medium;
     color: var(--background-color);/*agregué color. Manu*/
 }
+
 .texto-peq{
     font-size: 10px;
 }

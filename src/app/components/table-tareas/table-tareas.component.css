@@ -7,14 +7,18 @@
     padding: 2%;
 
     width: 100%;
-    height: 100%;
+    height: 100%
+}
+
+.caja-blanca{
+    overflow: scroll;
 }
 
 
 
 table{
     width: 100%;
-    height: 100%; 
+    height: 100%;
 }
 th{
     text-align: center;
@@ -39,8 +43,9 @@ tr:first-child > th{
     background-color: var(--white-color);
            
     border-radius: 50%;
-    border: 2px dashed var(--background-color)
+    border: 2px dashed var(--background-color);
 }
+
 .sin-avatar:after{
     content:'';
     position: relative;
@@ -56,7 +61,7 @@ tr:first-child > th{
 .done{
     border: 2px solid rgb(10, 163, 10)
 }
-.done::after{
+/* .done::after{
     content: '✓';
     color: white;
 
@@ -70,8 +75,7 @@ tr:first-child > th{
     background-color: green;
     border-radius: 100px;
 
-    position: absolute;
+    position: ;
 
     transform: translate(80%,70%);
-
-} 
+}  */

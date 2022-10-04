@@ -46,7 +46,7 @@ export class PresupuestoComponent implements OnInit {
         this.budget= data.budget;
         this.remaining = (data.budget - data.spents);
         
-        this.value =  (this.remaining * 100) / this.budget
+        this.value =  Number( ((this.remaining * 100) / this.budget).toFixed(2))
       }else{
         this.value = -1
       }

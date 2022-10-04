@@ -16,7 +16,8 @@
     padding-top: calc(var(--header-height) + 10px);
     padding-bottom: calc(var(--footer-height) + 10px);
 
-    height: calc(99vh - var(--header-height) - var(--footer-height) - 20px); 
+    /* height: calc(99vh - var(--header-height) - var(--footer-height) - 20px);  */
+    height: 100%;
 }
 
 .footer{

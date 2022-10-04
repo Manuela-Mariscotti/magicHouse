@@ -6,7 +6,7 @@
 }
 .texto-titulo--pagina{
     text-align: center;
-    color: black;
+    color: var(--primary-color);
 }
 .caja-blanca{
     display: flex;
